@@ -10,10 +10,6 @@ public class Arrays{
         int great = greatestAfterRotate(a,0,5);
         System.out.println(great);
     }
-
-
-
-
     public static int greatestAfterRotate(int[] v, int left, int right) {
         if ( left > right ) return -1;
         int m = ( left + right ) >>> 1;
