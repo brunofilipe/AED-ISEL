@@ -30,6 +30,7 @@ $RECYCLE.BIN/
 .idea/tasks.xml
 .idea/dictionaries
 .idea/vcs.xml
+.idea/workspace.xml
 .idea/jsLibraryMappings.xml
 
 # Sensitive or high-churn files:
