@@ -17,7 +17,9 @@ public class ChangeValueInMaxHeapTest {
 	@Test 
 	public void changeValueInMaxHeap_onEmptyHeap(){
 		exception.expect(IllegalArgumentException.class);
-		changeValueInMaxHeap(new int[0],0,0 ,3);	
+		changeValueInMaxHeap(new int[0],0,0 ,3);
+
+
 	}
 	
 	@Test 
