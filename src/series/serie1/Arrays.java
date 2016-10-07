@@ -15,9 +15,8 @@ public class Arrays{
     }
     public static int greatestAfterRotate(int[] v, int left, int right) {
         if (left > right) return -1;
-        if (right - left <= 1) {
-            return (v[left] > v[right])?v[left]:v[right];
-        } else {
+        if (right - left <= 1) return (v[left] > v[right])?v[left]:v[right];
+         else {
             int mid = left + (right - left) / 2;
             int leftMax = greatestAfterRotate(v, left, mid);
             int rightMax = greatestAfterRotate(v, mid + 1, right);
