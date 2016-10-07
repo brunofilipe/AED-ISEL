@@ -6,12 +6,12 @@ package series.serie1;
  */
 public class Arrays{
     public static void main(String[] args) {
-        int[]a = {27,29,35,42,5,15};
-        int great = greatestAfterRotate(a,0,5);
-        System.out.println(great);
-        /*int[]aux1 = {1,3,4,4};
-        int[]aux2 = {1,4,3,3};
-        System.out.println(isPermutation(aux1,0,3,aux2,0,3));*/
+        //int[]a = {27,29,45,42,5,15};
+        int []a1 = {1,3,4,2};
+        int []a2 = {4,2,3,0};
+        System.out.println(isPermutation(a1,0,3,a2,0,3));
+        //int great = greatestAfterRotate(a,0,5);
+        //System.out.println(great);
     }
     public static int greatestAfterRotate(int[] v, int left, int right) {
         if (left > right) return -1;
@@ -24,46 +24,24 @@ public class Arrays{
         }
     }
 
-   /* public static int max(int[] sortedArray, int l, int r) {
-        if (l == r) {
-            return sortedArray[l];
-        } else if (sortedArray[l] < sortedArray[r]) {
-            return max(sortedArray, l + 1, r);
-        } else {
-            return sortedArray[l];
-        }
-    }*/
-
     public static boolean isPermutation(int[] a1, int l1, int r1, int[] a2, int l2, int r2) {
-        int dim = r1-l1 + 1;
-        if(dim != r2-l2 + 1) return false;
-        int count = 0;
-        int startR2 = r2;
-        while(l1<=r1 && r2>=l2 ){
-            if(a1[l1] == a2[r2] ){
+        int dim = r1 - l1 + 1;
+        int count=0;
+        if(dim!=r2-l2+1) return false;
+        boolean[]aux=new boolean[dim];
+
+        for (int i = l1; i <= r1 ; i++)
+            for (int j=l2;j <= r2 ; j++)
+                if(a1[i]==a2[j] && !aux[j-l2]) {
+                    aux[j-l2] = true;
+                    break;
+                }
+        for (int k = 0; k <aux.length ; k++)
+            if(aux[k])
                 ++count;
-                ++l1;
-                r2 = startR2;
-            }
-            else --r2;
-        }
         return count == dim;
     }
-    /*public static boolean isPermutation(int[] a1, int l1, int r1, int[] a2, int l2, int r2) {
-        int dim = r1-l1 + 1;
-        int count = 0;
 
-        for (int i = l1; i <=r1 ; i++) {
-            for (int j = l2; j <=r2; j++) {
-                if (a1[i] == a2[j]) {
-                        ++count;
-                }
-
-            }
-        }
-
-        return count == dim;
-    }*/
     public static void changeValueInMaxHeap(int[] v, int count, int ix, int newValue){
     }
 
