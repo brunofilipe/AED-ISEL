@@ -1,5 +1,7 @@
 package series.serie1;
 
+import java.util.Comparator;
+
 /**
  * Created by msousa on 10/4/2016.
  * M�todos a implementar na s�rie 1
@@ -29,7 +31,6 @@ public class Arrays{
         int count=0;
         if(dim!=r2-l2+1) return false;
         boolean[]aux=new boolean[dim];
-
         for (int i = l1; i <= r1 ; i++)
             for (int j=l2;j <= r2 ; j++)
                 if(a1[i]==a2[j] && !aux[j-l2]) {
@@ -43,9 +44,22 @@ public class Arrays{
     }
 
     public static void changeValueInMaxHeap(int[] v, int count, int ix, int newValue){
+        Comparator<Integer> comp = (cmp1, cmp2) -> Math.abs(cmp1) - Math.abs(cmp2);
+        boolean exists = false;
+        for (int i = 0; i < count; i++) {
+            if(i == ix){
+                v[ix] = newValue;
+                exists = true;
+            }
+        }
+        if(!exists) {
+            throw new IllegalArgumentException();
+        }
+        Heap.buildMaxHeap(v,count,comp);
     }
 
     public static void sortIPv4Addresses(String[] v, int l, int r) {
     }
+
 
 }
