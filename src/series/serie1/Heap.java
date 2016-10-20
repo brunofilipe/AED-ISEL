@@ -1,6 +1,5 @@
 package series.serie1;
-
-import java.util.*;
+import java.util.Comparator;
 
 /**
  * Created by Bruno on 09/04/2016.
@@ -41,12 +40,12 @@ public class Heap {
     }
 
     public static void heapSort(int[] array, int size, Comparator<Integer> cmp) {
-        buildMaxHeap(array, size, cmp);
+        buildMinHeap(array, size, cmp);
         while (size >= 1){
             int aux = array[size - 1];
             array[size - 1] = array[0];
             array[0] = aux;
-            maxHeapify(array, 0, --size, cmp);
+            minHeapify(array, 0, --size, cmp);
         }
     }
 
@@ -101,12 +100,12 @@ public class Heap {
     }
 
     public static <E> void heapSort(E[] array, int size, Comparator<E> cmp) {
-        buildMaxHeap(array, size, cmp);
+        buildMinHeap(array, size, cmp);
         while (size >= 1){
             E aux = array[size - 1];
             array[size - 1] = array[0];
             array[0] = aux;
-            maxHeapify(array, 0, --size, cmp);
+            minHeapify(array, 0, --size, cmp);
         }
     }
 
