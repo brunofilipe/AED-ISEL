@@ -9,9 +9,17 @@ import java.util.Comparator;
 public class Arrays{
     public static void main(String[] args) {
 
-        String[]a1 = {"192.168.1.1","192.168.1.4","80.68.11.31","81.67.12.31"};
+        String[]a1 = {"192.168.1.1",
+                      "192.168.1.4",
+                      "80.68.11.31",
+                      "192.168.10.33",
+                      "192.168.11.3",
+                      "81.67.12.31"};
 
-        sortIPv4Addresses(a1,0,3);
+        sortIPv4Addresses(a1,0,5);
+        for (int i = 0; i < a1.length; ++i) {
+            System.out.println(a1[i]);
+        }
         //int great = greatestAfterRotate(a,0,5);
         //System.out.println(great);
     }
@@ -71,51 +79,29 @@ public class Arrays{
 
     public static void sortIPv4Addresses(String[] v, int l, int r) {
         if(v.length < 2) return;
-        int [] a = v, b = new int [v.length], aux;
-
-        String[] split = v[l].split("\\.");
-        for (int i = 0; i < split.length; i++) {
-
-
-            int auxi = l + 1 ;
-            for (int j = l; j <= r && auxi <=r ; ) {
-                if(!v[j].split("\\.")[i].equals(v[auxi].split("\\.")[i])){
-                    ++j;
-                    ++auxi;
-                }
-                else{
-                    while (auxi + 1 <=r && v[auxi +1 ].split("\\.")[i].equals(v[j].split("\\.")[auxi]) )
-                        ++auxi;
-                    aux(v,i,j,auxi);
-                    j = auxi;
-                    auxi++;
-                }
-
-            }
-
+        int length = v[0].split("\\.").length;
+        String[]  b = new String[r + 1];
+        for (int i = 0; i < length; i++) {
+            countingSort(v,b, l, r, 256, i);
         }
+        System.arraycopy(b,0,v,0,b.length);
     }
-/*
-    public static void countingSort([] a, int[] b, int n, int k) {
-        int[] c = new int[k+1];
-        for (int j = 0; j < n; ++j)
-            ++c[ a[j] ];
-        for (int i = 1; i < c.length; ++i)
-            c[i]+= c[i-1];
-        for (int j= n-1; j >=0; --j) {
-            b[ c[ a[j] ] - 1 ] = a[j];
-            -- c[ a[j] ];
-        }
-    }*/
 
-    private static void aux(String[] v, int idx, int l, int r) {
-        for (int j = l + 1; j <= r; ++j) {
-            String key = v[j];
-            int i = j - 1;
-            for (; i >= l && Integer.parseInt(v[i].split("[.]")[idx]) > Integer.parseInt(key.split("[.]")[idx]); --i) {
-                v[i + 1] = v[i];
-            }
-            v[i + 1] = key;
+    private static void countingSort(String[] a,String [] b, int l, int r, int length, int idx) {
+        int[] c = new int[length];
+        int i2;
+        for (int i = l; i <= r; ++i) {
+            int var = Integer.parseInt(a[i].split("\\.")[idx]);
+            ++c[Integer.parseInt(a[i].split("\\.")[idx])];
         }
+        for (int i = 1; i < length; ++i) {c[i] += c[i-1];}
+        for (int i = r; i >= l; --i) {
+            String s = a[i];
+            i2 = c[Integer.parseInt(a[i].split("\\.")[idx])] - 1;
+            --c[Integer.parseInt(s.split("\\.")[idx])];
+            b[i2] = s;
+        }
+
+
     }
 }
