@@ -66,4 +66,9 @@ public class GreatestAfterRotateTest {
 		assertEquals(60,greatestAfterRotate(array, 0, 12));
 		
 	}
+	@Test
+	public void test_large(){
+		int[]array = {30,29,27,35,42,5,15};
+		assertEquals(42,greatestAfterRotate(array,0,6));
+	}
 }

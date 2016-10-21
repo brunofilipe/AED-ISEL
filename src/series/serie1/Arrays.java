@@ -80,18 +80,20 @@ public class Arrays{
     public static void sortIPv4Addresses(String[] v, int l, int r) {
         if(v.length < 2) return;
         int length = v[0].split("\\.").length;
+        String[]a = v,save;
         String[]  b = new String[r + 1];
-        for (int i = 0; i < length; i++) {
-            countingSort(v,b, l, r, 256, i);
+        for (int i = length -1; i>= l; i--) {
+            countingSort(a,b, l, r, 256, i);
+            save = a;
+            a = b;
+            b = save;
         }
-        System.arraycopy(b,0,v,0,b.length);
+        System.arraycopy(a,0,v,l,b.length);
     }
-
     private static void countingSort(String[] a,String [] b, int l, int r, int length, int idx) {
         int[] c = new int[length];
         int i2;
         for (int i = l; i <= r; ++i) {
-            int var = Integer.parseInt(a[i].split("\\.")[idx]);
             ++c[Integer.parseInt(a[i].split("\\.")[idx])];
         }
         for (int i = 1; i < length; ++i) {c[i] += c[i-1];}
@@ -101,7 +103,5 @@ public class Arrays{
             --c[Integer.parseInt(s.split("\\.")[idx])];
             b[i2] = s;
         }
-
-
     }
 }
