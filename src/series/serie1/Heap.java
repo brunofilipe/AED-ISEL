@@ -115,7 +115,7 @@ public class Heap {
         }
     }
 
-    private static <E> void buildMaxHeap(E[] array, int size, Comparator<E> cmp) {
+    public  static <E> void buildMaxHeap(E[] array, int size, Comparator<E> cmp) {
         int iPai = parent(size - 1);
         while (iPai >= 0) {
             maxHeapify(array, iPai, size, cmp);

@@ -2,36 +2,55 @@ package series.serie1;
 
 import java.io.*;
 import java.util.Comparator;
+import java.util.Objects;
 
 
 public class MaiorNrOcorrencias {
 
-    private static Comparator<File> comparator;
-    private static File[] files;
-    private static BufferedWriter writer;
+    private static int nrWords;
+    private static File [] files = new File[3];
 
     public static void main(String[] args) throws IOException {
         init(args);
-
+        String[] read = readFiles(files);
+        orderFiles(read);
     }
 
-    public static void createFiles(int size, int numberOfFiles) throws IOException {
-        for (int i = 1, aux = size; i <= numberOfFiles; i++, aux = size) {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("test"+i+".txt"));
-            BufferedReader reader = new BufferedReader(new FileReader("f"+i+".txt"));
-            while (aux-- > 0) {
-                writer.write(reader.readLine());
-                writer.newLine();
-            } writer.close(); reader.close();
+
+
+    public static void init(String[] args) throws IOException {
+        if(Integer.parseInt(args[0]) == 0) throw new IllegalArgumentException();
+        nrWords = Integer.parseInt(args[0]);
+        int j = 0;
+        for (int i = 2; i < args.length; i++) {
+            files[j] = new File ("N"+(i-1)+".txt");
+            ++j;
         }
     }
 
-    public static void init(String[] args) throws IOException {
+    public  static String[] readFiles(File[]a) throws IOException {
+        String[]toReturn = new String[3 * a[0].getLength()];
+        int j = 0;
+        for (int i = 0; i < a.length; i++) {
+            BufferedReader reader = new BufferedReader(new FileReader(a[i].getFileName()));
 
+            while (reader.ready()){
+                toReturn[j] = reader.readLine();
+
+                ++j;
+            }
+        }
+        return toReturn;
     }
 
-    public static void orderFiles() throws IOException {
 
+    public static void orderFiles(String[]st) throws IOException {
+       Comparator<String>cmp = (cmp1, cmp2) -> cmp1.equals(cmp2) ? 1 :-1;
+       Heap.buildMinHeap(st,st.length,cmp);
+        int aux;
+    }
+
+    public static void outFile(){
 
     }
 
