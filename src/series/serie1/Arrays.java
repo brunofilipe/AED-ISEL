@@ -53,14 +53,7 @@ public class Arrays{
                 ++count;
         return count == dim;
     }
-    /*
-    public static void changeValueInMaxHeap(int[] v, int count, int ix, int newValue) {
-        Comparator<Integer> comp = (cmp1, cmp2) -> Math.abs(cmp1) - Math.abs(cmp2);
-        if(ix>=count)throw new IllegalArgumentException();
-        v[ix] = newValue;
-        Heap.buildMaxHeap(v,count,comp);
-    }
-*/
+
     public static void changeValueInMaxHeap(int[] v, int count, int ix, int newValue){
         Comparator<Integer> comp = (cmp1, cmp2) -> Math.abs(cmp1) - Math.abs(cmp2);
         boolean exists = false;
@@ -74,7 +67,6 @@ public class Arrays{
         }
         if(!exists) {throw new IllegalArgumentException(); }
         while (ix>=0) Heap.maxHeapify(v,ix--,count,comp);
-
     }
 
     public static void sortIPv4Addresses(String[] v, int l, int r) {

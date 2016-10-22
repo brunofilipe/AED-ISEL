@@ -1,9 +1,7 @@
 package series.serie1;
 import java.util.Comparator;
 
-/**
- * Created by Bruno on 09/04/2016.
- */
+
 public class Heap {
     private static int parent(int i) { return (i-1) >> 1; }
     private static int left(int i) { return (i << 1) + 1; }
