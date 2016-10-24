@@ -2,7 +2,6 @@ package series.serie1;
 
 import java.io.*;
 import java.util.Comparator;
-import java.util.Objects;
 
 
 public class MaiorNrOcorrencias {
@@ -33,10 +32,8 @@ public class MaiorNrOcorrencias {
         int j = 0;
         for (int i = 0; i < a.length; i++) {
             BufferedReader reader = new BufferedReader(new FileReader(a[i].getFileName()));
-
             while (reader.ready()){
                 toReturn[j] = reader.readLine();
-
                 ++j;
             }
         }
@@ -47,7 +44,8 @@ public class MaiorNrOcorrencias {
     public static void orderFiles(String[]st) throws IOException {
        Comparator<String>cmp = (cmp1, cmp2) -> cmp1.equals(cmp2) ? 1 :-1;
        Heap.buildMinHeap(st,st.length,cmp);
-        int aux;
+        int aux = 2;
+        return;
     }
 
     public static void outFile(){
