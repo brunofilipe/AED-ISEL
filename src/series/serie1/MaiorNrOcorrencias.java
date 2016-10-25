@@ -14,8 +14,8 @@ public class MaiorNrOcorrencias {
 
     public static void main(String[] args) throws IOException {
         init(args);
-        orderFiles(files);
-        checkForEquals(files);
+        //orderFiles(files);
+        //checkForEquals(files);
 
     }
 
@@ -31,14 +31,14 @@ public class MaiorNrOcorrencias {
         }
 
     }
-
+/*
     private static void checkForEquals(File[] files) throws IOException {
         int idx = 0,count = 0;
         int[]counter = new int[files[0].getLength()];
         for (int i = 0; i < files.length; i++){
             while (files[i].hasNextLine()){
                 String word = files[i].getReader().readLine();
-                    if( word.equals(files[i].getWord())){
+                if( word.equals(files[i].getWord())){
                     counter[idx] = ++count;
                 }
                 else{
@@ -49,11 +49,15 @@ public class MaiorNrOcorrencias {
             }
         }
     }
+*/
+   /* public static void orderFiles(File[]a) throws IOException {
+        Heap.buildMinHeap(a, a.length, cmp);
+        Object[]
+        for (int i = files.length; i > 0; ) {
 
-    public static void orderFiles(File[]a) throws IOException {
-        Heap.heapSort(a, a.length, cmp);
+        }
     }
-
+*/
     public static void outFile(){
     }
 
