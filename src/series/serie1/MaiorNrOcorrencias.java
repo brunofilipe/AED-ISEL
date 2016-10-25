@@ -8,14 +8,14 @@ public class MaiorNrOcorrencias {
 
     private static int nrWords;
     private static File [] files = new File[3];
+    private static BufferedWriter writer;
+    private static Comparator<File>cmp;
+
 
     public static void main(String[] args) throws IOException {
         init(args);
-        String[] read = readFiles(files);
-        orderFiles(read);
+       orderFiles(files);
     }
-
-
 
     public static void init(String[] args) throws IOException {
         if(Integer.parseInt(args[0]) == 0) throw new IllegalArgumentException();
@@ -41,9 +41,10 @@ public class MaiorNrOcorrencias {
     }
 
 
-    public static void orderFiles(String[]st) throws IOException {
-       Comparator<String>cmp = (cmp1, cmp2) -> cmp1.equals(cmp2) ? 1 :-1;
-       Heap.buildMinHeap(st,st.length,cmp);
+
+    public static void orderFiles(File[]a) throws IOException {
+        cmp = (cmp1, cmp2) -> cmp1.getWord().compareTo(cmp2.getWord());
+        Heap.buildMinHeap(a,a.length,cmp);
         int aux = 2;
         return;
     }

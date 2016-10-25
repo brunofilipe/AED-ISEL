@@ -23,18 +23,19 @@ public class Arrays{
         //int great = greatestAfterRotate(a,0,5);
         //System.out.println(great);
     }
-    public static int greatestAfterRotate(int[] v, int left, int right) {
+   public static int greatestAfterRotate(int[] v, int left, int right) {
         if (left > right) return -1;
-        if (right - left <= 1) return (v[left] > v[right])?v[left]:v[right];
-         else {
+        if (right - left <= 1) return (v[left] > v[right]) ? v[left] : v[right];
+        else {
             int mid = left + (right - left) / 2;
-            /*return (v[left]>v[right]) ?
-                    greatestAfterRotate(v, left, mid) :
-                    greatestAfterRotate(v, mid + 1, right);*/
-            int leftMax = greatestAfterRotate(v, left, mid);
-            int rightMax = greatestAfterRotate(v, mid + 1, right);
-            return (leftMax > rightMax) ? leftMax : rightMax;
-        }
+            if (v[left] > v[right])
+                if (v[left] < v[mid]) {
+
+                } else
+                    return greatestAfterRotate(v, left, mid);
+            else return greatestAfterRotate(v, mid + 1, right);     //falta testar o meio
+        }return  0;
+
     }
 
     public static boolean isPermutation(int[] a1, int l1, int r1, int[] a2, int l2, int r2) {
@@ -55,18 +56,14 @@ public class Arrays{
     }
 
     public static void changeValueInMaxHeap(int[] v, int count, int ix, int newValue){
-        Comparator<Integer> comp = (cmp1, cmp2) -> Math.abs(cmp1) - Math.abs(cmp2);
-        boolean exists = false;
-        int i = 0;
-        while (i < count && !exists) {
-            if(i == ix){
-                v[i] = newValue;
-                exists = true;
-            }
-            i++;
+        Comparator<Integer> comp = (cmp1, cmp2) -> cmp1 - cmp2;
+        if( ix >=  count ) {throw new IllegalArgumentException(); }
+        if ( v[ix] < newValue )
+            Heap.increase(v,ix,newValue);
+        else{
+            v[ix] = newValue;
+            Heap.maxHeapify(v, ix,count,comp);
         }
-        if(!exists) {throw new IllegalArgumentException(); }
-        while (ix>=0) Heap.maxHeapify(v,ix--,count,comp);
     }
 
     public static void sortIPv4Addresses(String[] v, int l, int r) {
@@ -88,7 +85,9 @@ public class Arrays{
         for (int i = l; i <= r; ++i) {
             ++c[Integer.parseInt(a[i].split("\\.")[idx])];
         }
-        for (int i = 1; i < length; ++i) {c[i] += c[i-1];}
+        for (int i = 1; i < length; ++i) {
+            c[i] += c[i-1];
+        }
         for (int i = r; i >= l; --i) {
             String s = a[i];
             i2 = c[Integer.parseInt(a[i].split("\\.")[idx])] - 1;

@@ -3,7 +3,7 @@ import java.util.Comparator;
 
 
 public class Heap {
-    private static int parent(int i) { return (i-1) >> 1; }
+    public static int parent(int i) { return (i-1) >> 1; }
     private static int left(int i) { return (i << 1) + 1; }
     private static int right(int i) { return (i << 1) + 2; }
 
@@ -81,6 +81,15 @@ public class Heap {
             maxHeapify(array, largest, size, cmp);
         }
     }
+    public static void increase(int[] heap, int i, int v ) {
+        int p;
+        while ( i > 0 && heap[p = parent( i )] < v  ) {
+            heap[i] = heap[p];
+            i = p;
+        }
+        heap[i] = v;
+    }
+
 
     public static <E> void minHeapify(E[] array, int pos, int size, Comparator<E> cmp) {
         int largest = pos;

@@ -22,12 +22,11 @@ public class File {
     public File(String fileName) throws java.io.IOException {
         this.fileName = fileName;
         reader = new BufferedReader(new FileReader(fileName));
+        word = reader.readLine();
     }
 
 
     public String getWord() { return word; }
-
-   public void setWord(String word) { this.word = word; }
 
     public boolean hasNextLine() throws IOException { return reader.ready(); }
 
