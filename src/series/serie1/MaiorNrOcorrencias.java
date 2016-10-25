@@ -14,43 +14,47 @@ public class MaiorNrOcorrencias {
 
     public static void main(String[] args) throws IOException {
         init(args);
-       orderFiles(files);
+        orderFiles(files);
+        checkForEquals(files);
+
     }
 
     public static void init(String[] args) throws IOException {
         if(Integer.parseInt(args[0]) == 0) throw new IllegalArgumentException();
+        cmp = (cmp1, cmp2) -> cmp1.getWord().compareTo(cmp2.getWord());
         nrWords = Integer.parseInt(args[0]);
+        writer = new BufferedWriter(new FileWriter(args[1]));
         int j = 0;
         for (int i = 2; i < args.length; i++) {
             files[j] = new File ("N"+(i-1)+".txt");
             ++j;
         }
+
     }
 
-    public  static String[] readFiles(File[]a) throws IOException {
-        String[]toReturn = new String[3 * a[0].getLength()];
-        int j = 0;
-        for (int i = 0; i < a.length; i++) {
-            BufferedReader reader = new BufferedReader(new FileReader(a[i].getFileName()));
-            while (reader.ready()){
-                toReturn[j] = reader.readLine();
-                ++j;
+    private static void checkForEquals(File[] files) throws IOException {
+        int idx = 0,count = 0;
+        int[]counter = new int[files[0].getLength()];
+        for (int i = 0; i < files.length; i++){
+            while (files[i].hasNextLine()){
+                String word = files[i].getReader().readLine();
+                    if( word.equals(files[i].getWord())){
+                    counter[idx] = ++count;
+                }
+                else{
+                    files[i].setWord(word);
+                    counter[idx++] = count;
+                    count = 0;
+                }
             }
         }
-        return toReturn;
     }
 
-
-
     public static void orderFiles(File[]a) throws IOException {
-        cmp = (cmp1, cmp2) -> cmp1.getWord().compareTo(cmp2.getWord());
-        Heap.buildMinHeap(a,a.length,cmp);
-        int aux = 2;
-        return;
+        Heap.heapSort(a, a.length, cmp);
     }
 
     public static void outFile(){
-
     }
 
 }

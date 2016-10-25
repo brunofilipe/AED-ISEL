@@ -11,6 +11,11 @@ public class File {
     }
 
     private BufferedReader reader;
+
+    public void setWord(String word) {
+        this.word = word;
+    }
+
     private String word;
 
     public String getFileName() {
@@ -24,7 +29,6 @@ public class File {
         reader = new BufferedReader(new FileReader(fileName));
         word = reader.readLine();
     }
-
 
     public String getWord() { return word; }
 

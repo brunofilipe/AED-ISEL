@@ -107,12 +107,12 @@ public class Heap {
     }
 
     public static <E> void heapSort(E[] array, int size, Comparator<E> cmp) {
-        buildMinHeap(array, size, cmp);
+        buildMaxHeap(array, size, cmp);
         while (size >= 1){
             E aux = array[size - 1];
             array[size - 1] = array[0];
             array[0] = aux;
-            minHeapify(array, 0, --size, cmp);
+            maxHeapify(array, 0, --size, cmp);
         }
     }
 
