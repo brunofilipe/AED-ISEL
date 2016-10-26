@@ -12,8 +12,6 @@ public class Word {
     }
 
     public int getCount() {
-
-
         return count;
     }
 

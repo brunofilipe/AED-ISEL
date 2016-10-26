@@ -13,10 +13,10 @@ public class File {
     private BufferedReader reader;
 
     public void setWord(String word) {
-        this.word = word;
+        this.fWord = word;
     }
 
-    private String word;
+    private String fWord;
 
     public String getFileName() {
         return fileName;
@@ -27,10 +27,12 @@ public class File {
     public File(String fileName) throws java.io.IOException {
         this.fileName = fileName;
         reader = new BufferedReader(new FileReader(fileName));
-        word = reader.readLine();
+        fWord = reader.readLine();
     }
 
-    public String getWord() { return word; }
+    public String getfWord() { return fWord; }
+    public String nextWord() throws IOException { String  w = fWord; fWord= reader.readLine(); return w; }
+
 
     public boolean hasNextLine() throws IOException { return reader.ready(); }
 
@@ -47,9 +49,5 @@ public class File {
     public String toString(){
         return fileName;
     }
-
-
-
-
 
 }
