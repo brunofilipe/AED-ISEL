@@ -31,7 +31,11 @@ public class File {
     }
 
     public String getfWord() { return fWord; }
-    public String nextWord() throws IOException { String  w = fWord; fWord= reader.readLine(); return w; }
+    public String nextWord() throws IOException {
+        String  w = fWord;
+        fWord= reader.readLine();
+        return w;
+    }
 
 
     public boolean hasNextLine() throws IOException { return reader.ready(); }
