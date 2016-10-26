@@ -7,22 +7,7 @@ import java.util.Comparator;
  * Metodos a implementar na serie 1
  */
 public class Arrays{
-    public static void main(String[] args) {
 
-        String[]a1 = {"192.168.1.1",
-                      "192.168.1.4",
-                      "80.68.11.31",
-                      "192.168.10.33",
-                      "192.168.11.3",
-                      "81.67.12.31"};
-
-        sortIPv4Addresses(a1,0,5);
-        for (int i = 0; i < a1.length; ++i) {
-            System.out.println(a1[i]);
-        }
-        //int great = greatestAfterRotate(a,0,5);
-        //System.out.println(great);
-    }
    public static int greatestAfterRotate(int[] v, int left, int right) {
         if (left > right) return -1;
         if (right - left <= 1) return (v[left] > v[right]) ? v[left] : v[right];
@@ -34,24 +19,6 @@ public class Arrays{
         }
 
     }
-/*
-    public static boolean isPermutation(int[] a1, int l1, int r1, int[] a2, int l2, int r2) {
-        int dim = r1 - l1 + 1;
-        int count = 0;
-        if(dim != r2 - l2 + 1) return false;
-        boolean[]aux=new boolean[dim];
-        for (int i = l1; i <= r1 ; i++) {
-            for (int j = l2; j <= r2; j++)
-                if (a1[i] == a2[j] && !aux[j - l2]) {
-                    aux[j - l2] = true;
-                    break;
-                }
-        }
-        for (int k = 0; k <aux.length ; k++)
-            if(aux[k])
-                ++count;
-        return count == dim;
-    }*/
 
     public static boolean isPermutation(int[] a1, int l1, int r1, int[] a2, int l2, int r2){
         int dim = r1 - l1 + 1;
