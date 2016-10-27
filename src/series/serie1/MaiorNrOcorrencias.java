@@ -23,7 +23,7 @@ public class MaiorNrOcorrencias {
 
     private static void writeToOutput(Word[] words) throws IOException {
         for (int i = 0; i < words.length; i++) {
-            writer.write(words[i].getWordName() + "  ocorre: " + words[i].getCount() + " vezes");
+            writer.write(words[i].getWordName() + "  ocorre:" + words[i].getCount() + " vezes");
             writer.newLine();
         }
         writer.close();
@@ -73,15 +73,14 @@ public class MaiorNrOcorrencias {
     private static void checkEndofFile(File f) throws IOException {
        if(f.getfWord()==null){
            f.getReader().close();
-           swap(files, 0, nf);
-           --nf;
+           swap(files, 0, --nf);
        }
         Heap.minHeapify(files,0,nf,cmp);
     }
 
     private static void swap(File[] fArray, int i, int nf) {
         File f = fArray[i];
-        fArray[i] = fArray[nf-1];
-        fArray[nf-1] = f;
+        fArray[i] = fArray[nf];
+        fArray[nf] = f;
     }
 }
