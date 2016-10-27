@@ -22,6 +22,21 @@ public class Heap {
         }
     }
 
+
+    public static <E> void insert (E[] heap, int heapSize, Comparator<E> c, E v){
+        increase(heap, heapSize, c, v);
+
+    }
+
+    public static <E> void increase(E[] heap, int i, Comparator<E> c, E v ) {
+        int p;
+        while(i>0 && c.compare(heap[p=parent(i)],v)<0){
+            heap[i]=heap[p];
+            i=p;
+        }
+        heap[i]=v;
+    }
+
     public static void minHeapify(int[] array, int pos, int size, Comparator<Integer> cmp) {
         int largest = pos;
         int l = left(pos), r = right(pos);

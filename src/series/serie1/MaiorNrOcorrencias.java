@@ -17,18 +17,13 @@ public class MaiorNrOcorrencias {
 
     public static void main(String[] args) throws IOException {
         init(args);
-        test1(files);
-        sortWords(words);
+        countWords(files);
         writeToOutput(words);
-    }
-
-    private static void sortWords(Word[] words) {
-        Heap.heapSort(words,words.length, wcmp);
     }
 
     private static void writeToOutput(Word[] words) throws IOException {
         for (int i = 0; i < words.length; i++) {
-            writer.write(words[i].getWordName());
+            writer.write(words[i].getWordName() + "  ocorre: " + words[i].getCount() + " vezes");
             writer.newLine();
         }
         writer.close();
@@ -50,62 +45,38 @@ public class MaiorNrOcorrencias {
         }
     }
 
-    private static void test1 (File [] f) throws IOException{
-        int wordCounter=1;
+    private static void countWords(File[] f) throws IOException {
+        int wordCounter=0;
         int widx=0;
-        Heap.buildMinHeap(f,f.length,cmp);
-        /*f[0].setNextWord();
-        String snextWord = f[0].getnextWord();
-        String scurrWord = f[0].getfWord();
-        */
-        Word w = new Word(f[0].getfWord(),wordCounter);
+        Heap.buildMinHeap(f,nf,cmp);
+        Word w= new Word(f[0].getfWord(),wordCounter);
+
         while(nf!=0){
-            String aux = f[0].getnextWord();
-            if(f[0].nextWord() !=null){
-                if(f[0].getfWord().equals(f[0].getnextWord())){
-                    w.increment();
-                    f[0].setWord(f[0].getnextWord());
-                    //f[0].nextWord();
-                }
-                else  {
-                    //if((w.getWordName().equals(aux)))
-                      //  w.increment();
-                    f[0].setWord(f[0].getnextWord());
-                    f[0].nextWord();
-                    //f[0].setWord(scurrWord);
-                   // f[0].setNextWord();
-                    Heap.minHeapify(f,0,nf,cmp);
-                    //f[0].nextWord();
-                   // f[0].setNextWord();
-                   // snextWord = f[0].getnextWord();
-                   // scurrWord = f[0].getfWord();
-                    if(!(w.getWordName().equals(f[0].getfWord()))) {
-                        words[widx++] = w;
-                        wordCounter=1;
-                        w=new Word(f[0].getfWord(),wordCounter);
-                    }
-                }
+
+            while(w.getWordName().equals(f[0].getfWord())){
+                w.increment();
+                f[0].setWord(f[0].getReader().readLine());
+                checkEndofFile(f[0]);
             }
-            else {
-                if((w.getWordName().equals(aux)))
-                    w.increment();
-                f[0].getReader().close();
-                swap(f, 0, nf);
-                --nf;
-                if(nf==0) {
-                    words[widx] = w;
-                    break;
-                }
-                Heap.minHeapify(f, 0, nf, cmp);
-                //snextWord = f[0].getnextWord();
-                //scurrWord = f[0].getfWord();
-                if(!(w.getWordName().equals(f[0].getfWord()))) {
-                    words[widx++] = w;
-                    wordCounter = 1;
-                    w = new Word(f[0].getfWord(), wordCounter);
-                }
+            if(widx==nrWords){
+                Heap.buildMinHeap(words,nrWords,wcmp);
+                if(words[0].getCount() < w.getCount())
+                    words[0]=w;
+                Heap.minHeapify(words,0,nrWords,wcmp);
             }
+            else words[widx++] = w;
+            w = new Word (f[0].getfWord(),0);
+
         }
+    }
+
+    private static void checkEndofFile(File f) throws IOException {
+       if(f.getfWord()==null){
+           f.getReader().close();
+           swap(files, 0, nf);
+           --nf;
+       }
+        Heap.minHeapify(files,0,nf,cmp);
     }
 
     private static void swap(File[] fArray, int i, int nf) {
