@@ -16,9 +16,24 @@ public class MaiorNrOcorrencias {
 
 
     public static void main(String[] args) throws IOException {
+        createFiles(400000, 3); //method to test the problem, creates files with given dimension
+        double start = System.currentTimeMillis();
         init(args);
         countWords(files);
         writeToOutput(words);
+        double end = System.currentTimeMillis();
+        System.out.println(end - start);
+    }
+
+    public static void createFiles(int size, int numberOfFiles) throws IOException {
+        for (int i = 1, aux = size; i <= numberOfFiles; i++, aux = size) {
+            BufferedWriter writer = new BufferedWriter(new FileWriter("test"+i+".txt"));
+            BufferedReader reader = new BufferedReader(new FileReader("f"+i+".txt"));
+            while (aux-- > 0) {
+                writer.write(reader.readLine());
+                writer.newLine();
+            } writer.close(); reader.close();
+        }
     }
 
     private static void writeToOutput(Word[] words) throws IOException {
