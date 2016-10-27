@@ -18,6 +18,13 @@ public class File {
 
     private String fWord;
 
+    public String nextWord() throws IOException {
+        this.nextWord = reader.readLine();
+        return nextWord;
+    }
+
+    private String nextWord;
+
     public String getFileName() {
         return fileName;
     }
@@ -31,11 +38,11 @@ public class File {
     }
 
     public String getfWord() { return fWord; }
-    public String nextWord() throws IOException {
-        String  w = fWord;
-        fWord= reader.readLine();
-        return w;
+
+    public String getnextWord(){
+        return nextWord;
     }
+
 
 
     public boolean hasNextLine() throws IOException { return reader.ready(); }

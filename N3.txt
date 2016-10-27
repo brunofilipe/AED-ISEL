@@ -1,9 +1,2 @@
 ac
 ad
-ad
-bc
-bd
-bd
-ee
-ef
-jj

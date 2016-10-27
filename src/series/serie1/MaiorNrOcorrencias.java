@@ -17,7 +17,7 @@ public class MaiorNrOcorrencias {
 
     public static void main(String[] args) throws IOException {
         init(args);
-        test(files);
+        test1(files);
         sortWords(words);
         writeToOutput(words);
     }
@@ -50,43 +50,67 @@ public class MaiorNrOcorrencias {
         }
     }
 
-    //TODO verificar se o words chegou ao fim e organizar o gajo pra poder inserir novas palavras
-    private static void test (File[]fArray) throws IOException {
+    private static void test1 (File [] f) throws IOException{
         int wordCounter=1;
-        int widx = 0;
-        Heap.buildMinHeap(fArray,fArray.length,cmp);
-        String s = fArray[0].nextWord();
-        if(fArray[0].getfWord() == null){
-            swap(fArray,0,nf);
-            --nf;
-            Heap.minHeapify(fArray,0,nf,cmp);
-        }
-        else Heap.minHeapify(fArray, 0,fArray.length, cmp );
-        while (nf != 0) {
-
-            if(fArray[0].getfWord().equals(s)){
-                ++wordCounter;
+        int widx=0;
+        Heap.buildMinHeap(f,f.length,cmp);
+        /*f[0].setNextWord();
+        String snextWord = f[0].getnextWord();
+        String scurrWord = f[0].getfWord();
+        */
+        Word w = new Word(f[0].getfWord(),wordCounter);
+        while(nf!=0){
+            String aux = f[0].getnextWord();
+            if(f[0].nextWord() !=null){
+                if(f[0].getfWord().equals(f[0].getnextWord())){
+                    w.increment();
+                    f[0].setWord(f[0].getnextWord());
+                    //f[0].nextWord();
+                }
+                else  {
+                    //if((w.getWordName().equals(aux)))
+                      //  w.increment();
+                    f[0].setWord(f[0].getnextWord());
+                    f[0].nextWord();
+                    //f[0].setWord(scurrWord);
+                   // f[0].setNextWord();
+                    Heap.minHeapify(f,0,nf,cmp);
+                    //f[0].nextWord();
+                   // f[0].setNextWord();
+                   // snextWord = f[0].getnextWord();
+                   // scurrWord = f[0].getfWord();
+                    if(!(w.getWordName().equals(f[0].getfWord()))) {
+                        words[widx++] = w;
+                        wordCounter=1;
+                        w=new Word(f[0].getfWord(),wordCounter);
+                    }
+                }
             }
             else {
-                Word w = new Word(fArray[0].getfWord(),wordCounter);
-                words[widx++] = w;
-                wordCounter=1;
-            }
-             s = fArray[0].nextWord();
-            if(fArray[0].getfWord() == null) {
-                swap(fArray, 0, nf);
+                if((w.getWordName().equals(aux)))
+                    w.increment();
+                f[0].getReader().close();
+                swap(f, 0, nf);
                 --nf;
-            }
-             Heap.minHeapify(fArray,0,nf, cmp );
+                if(nf==0) {
+                    words[widx] = w;
+                    break;
+                }
+                Heap.minHeapify(f, 0, nf, cmp);
+                //snextWord = f[0].getnextWord();
+                //scurrWord = f[0].getfWord();
+                if(!(w.getWordName().equals(f[0].getfWord()))) {
+                    words[widx++] = w;
+                    wordCounter = 1;
+                    w = new Word(f[0].getfWord(), wordCounter);
+                }
             }
         }
+    }
 
     private static void swap(File[] fArray, int i, int nf) {
         File f = fArray[i];
         fArray[i] = fArray[nf-1];
         fArray[nf-1] = f;
     }
-
-
-
 }
