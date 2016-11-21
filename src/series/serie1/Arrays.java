@@ -9,11 +9,11 @@ import java.util.Comparator;
 public class Arrays{
 
    public static int greatestAfterRotate(int[] v, int left, int right) {
-        if (left > right) return -1;
-        if (right - left <= 1) return (v[left] > v[right]) ? v[left] : v[right];
+        if (left > right) return -1;//0
+        if (right - left <= 1) return (v[left] > v[right]) ? v[left] : v[right];//O(1)
         else {
-            int mid = left + (right - left) / 2;
-            return v[left] > v[mid] ? greatestAfterRotate(v, left, mid) :
+            int mid = left + (right - left) / 2;//0
+            return v[left] > v[mid] ? greatestAfterRotate(v, left, mid) ://C(n/2)
                                       greatestAfterRotate(v, mid, right);
 
         }
@@ -47,13 +47,12 @@ public class Arrays{
     public static void sortIPv4Addresses(String[] v, int l, int r) {
         if(v.length < 2) return;
         int length = v[0].split("\\.").length;
+
         String[]a = v,save;
         String[]  b = new String[r + 1];
         for (int i = length -1; i>= l; i--) {
             countingSort(a,b, l, r, 256, i);
-            save = a;
-            a = b;
-            b = save;
+            save = a;a = b;b = save;
         }
         System.arraycopy(a,0,v,l,b.length);
     }

@@ -21,6 +21,20 @@ public class Heap {
             maxHeapify(array, largest, size, cmp);
         }
     }
+    public static void minHeapify(int[] array, int pos, int size, Comparator<Integer> cmp) {
+        int largest = pos;
+        int l = left(pos), r = right(pos);
+        if ((l < size) && (cmp.compare(array[largest], array[l]) > 0))
+            largest = l;
+        if ((r < size) && (cmp.compare(array[largest], array[r]) > 0))
+            largest = r;
+        if (largest != pos) {
+            int aux = array[pos];
+            array[pos] = array[largest];
+            array[largest] = aux;
+            minHeapify(array, largest, size, cmp);
+        }
+    }
 
     public static void increase(int[] heap, int i, int v ) {
         int p;
@@ -53,5 +67,45 @@ public class Heap {
             minHeapify(array, iPai, size, cmp);
             iPai--;
         }
+    }
+    public static  void buildMinHeap(int []array, int size, Comparator<Integer> cmp) {
+        int iPai = parent(size - 1);
+        while (iPai >= 0) {
+            minHeapify(array, iPai, size, cmp);
+            iPai--;
+        }
+    }
+    public static  void buildMaxHeap(int []array, int size, Comparator<Integer> cmp) {
+        int iPai = parent(size - 1);
+        while (iPai >= 0) {
+            maxHeapify(array, iPai, size, cmp);
+            iPai--;
+        }
+    }
+    public static void maxheapSort( int[] a,Comparator<Integer> cmpr ) {
+        buildMaxHeap(a, a.length,cmpr);
+        for ( int i = a.length-1; i > 0 ; --i){
+            swap( a, 0, i);
+            maxHeapify(a, 0, i,cmpr);
+        }
+    }
+    public static void minheapSort( int[] a,Comparator<Integer> cmpr ) {
+        buildMinHeap(a, a.length,cmpr);
+        for ( int i = a.length-1; i > 0 ; --i){
+            swap( a, 0, i);
+            minHeapify(a, 0, i,cmpr);
+        }
+    }
+    public static void swap(int[] a, int i1, int i2) {
+        int aux = a[i1];
+        a[i1] = a[i2];
+        a[i2] = aux;
+    }
+
+    public static void main(String[] args) {
+        int[]a = {5,2,9,6};
+        Comparator<Integer> cmpr = (c1,c2)->Math.abs(c1-c2);
+        minheapSort(a,cmpr);
+        for (int i = 0; i < a.length; i++) {System.out.println(a[i]);}
     }
 }

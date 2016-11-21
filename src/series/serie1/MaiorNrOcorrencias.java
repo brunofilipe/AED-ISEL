@@ -6,17 +6,22 @@ import java.util.Comparator;
 
 public class MaiorNrOcorrencias {
 
-    private static int nrWords;
-    private static File [] files;
-    private static Word[] words;
-    private static int nf ;
+    private static int nrWords;              //representa as K palavras
+    private static File [] files;            //array de Ficheiros
+    private static Word[] words;             //array de palavras e ocorrencias
+    private static int nf ;                  //numero de ficheiros legiveis
     private static BufferedWriter writer;
-    private static Comparator<File>cmp;
-    private static Comparator<Word>wcmp;
+    private static Comparator<File>cmp;      //comparador de ficheiros
+    private static Comparator<Word>wcmp;     //comparador de palavras
 
 
     public static void main(String[] args) throws IOException {
-        createFiles(400000, 3); //method to test the problem, creates files with given dimension
+        //10 palavras por ficheiro -141.0
+        //100 palavras por ficheiro - 159.0
+        //1000 palavras por ficheiro - 264.0
+        //10000 palavras por ficheiro - 341.0
+        //100 000 palavras por ficheiro - 356.0
+        //createFiles(10000, 3); //method to test the problem, creates files with given dimension
         double start = System.currentTimeMillis();
         init(args);
         countWords(files);
@@ -26,7 +31,7 @@ public class MaiorNrOcorrencias {
     }
 
     public static void createFiles(int size, int numberOfFiles) throws IOException {
-        for (int i = 1, aux = size; i <= numberOfFiles; i++, aux = size) {
+        for (int i = 2, aux = size; i <= numberOfFiles; i++, aux = size) {
             BufferedWriter writer = new BufferedWriter(new FileWriter("test"+i+".txt"));
             BufferedReader reader = new BufferedReader(new FileReader("f"+i+".txt"));
             while (aux-- > 0) {
@@ -51,12 +56,14 @@ public class MaiorNrOcorrencias {
         nrWords = Integer.parseInt(args[0]);
         files = new File[args.length - 2];
         words = new Word[nrWords];
-        nf = files.length;
+        //nf = files.length;
         writer = new BufferedWriter(new FileWriter(args[1]));
         int j = 0;
         for (int i = 2; i < args.length; i++) {
             files[j] = new File (args[i]);
+            if(files[j].getfWord()!=null) ++nf;
             ++j;
+
         }
     }
 
@@ -65,9 +72,7 @@ public class MaiorNrOcorrencias {
         int widx=0;
         Heap.buildMinHeap(f,nf,cmp);
         Word w= new Word(f[0].getfWord(),wordCounter);
-
         while(nf!=0){
-
             while(w.getWordName().equals(f[0].getfWord())){
                 w.increment();
                 f[0].setWord(f[0].getReader().readLine());

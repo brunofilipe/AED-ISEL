@@ -8,5 +8,5 @@ public class Node<E> {
 	public Node(){}
 	
 	public Node(E e){value=e;}
-	
+
 }
