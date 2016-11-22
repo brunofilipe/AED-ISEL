@@ -30,23 +30,45 @@ public class ListUtils {
 		b.value = aux;
 	}
 
-
 	public static Node<Node<String>> splitBySentence(Node<String> list) {
-        Node<Node<String>>sentinel = new Node<>();
+        Node <Node<String>> sentinel = new Node<>();
         sentinel.next = sentinel.previous = sentinel;
-        Node<String>curr = list.next;
-        sentinel.next.value = curr;
-        while (curr!=list){
-            if(curr.value.equals(".")){
-                insertSublist(sentinel,curr);
+        Node <Node<String>> curr = sentinel;
+        Node <String> subList = null;
+        while(true){
+            if(list.next.value == null){                                //verifica se já cheguei ao inicio da lista
+                return sentinel;
             }
-            curr = curr.next;
+            if(".".equals(list.next.value)){                           //caso seja "."
+                curr = curr.next;                                       //avanço curr
+                list = list.next;                                       //avanço na lista de palavras
+            }
+            else {
+                Node<String> extracted = extractHeadfromList(list);
+                if(curr == curr.next){
+                    insertOnNext(curr,new Node <> ());
+                    curr.next.value = extracted;
+                } else {
+                    subList.next = extracted;
+                }
+                subList = extracted;
+            }
         }
-        return sentinel;
     }
 
-    private static <E> void insertSublist(Node<Node<E>> sentinel, Node<E> subList) {
-        Node<Node<E>> n = new Node<>( subList.previous);
-        sentinel.previous = n;
+    private static void insertOnNext(Node<Node<String>> curr, Node<Node<String>> newNode) {
+        newNode.next = curr.next;
+        curr.next = newNode;
+        newNode.next.previous = newNode;
+        newNode.previous = curr;
+    }
+
+    private static Node<String> extractHeadfromList(Node<String> list) {
+        Node <String> aux  = list.next;
+        list.next = aux.next;
+        list.next.previous = aux.previous;
+        aux.next = null;
+        aux.previous = null;
+        return aux;
     }
 }
