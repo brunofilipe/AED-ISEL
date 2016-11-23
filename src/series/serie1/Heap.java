@@ -45,6 +45,15 @@ public class Heap {
         heap[i] = v;
     }
 
+    public static <E,P> void increase(E[] heap, int i, Comparator< E> c, E v ) {
+        int p;
+        while ( i > 0 && c.compare( heap[p = parent( i )], v) < 0 ) {
+            heap[i] = heap[p];
+            i = p;
+        }
+        heap[i] = v;
+    }
+
 
     public static <E> void minHeapify(E[] array, int pos, int size, Comparator<E> cmp) {
         int largest = pos;
@@ -58,6 +67,20 @@ public class Heap {
             array[pos] = array[largest];
             array[largest] = aux;
             minHeapify(array, largest, size, cmp);
+        }
+    }
+    public static <E> void maxHeapify(E[] array, int pos, int size, Comparator<E> cmp) {
+        int largest = pos;
+        int l = left(pos), r = right(pos);
+        if ((l < size) && (cmp.compare(array[largest], array[l]) > 0))
+            largest = l;
+        if ((r < size) && (cmp.compare(array[largest], array[r]) > 0))
+            largest = r;
+        if (largest != pos) {
+            E aux = array[pos];
+            array[pos] = array[largest];
+            array[largest] = aux;
+            maxHeapify(array, largest, size, cmp);
         }
     }
 
