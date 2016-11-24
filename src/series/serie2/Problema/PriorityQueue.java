@@ -19,7 +19,7 @@ public class PriorityQueue<E,P>{
 
 
     public PriorityQueue(int capacity,Comparator<P>cmp, KeyExtractor<E> keyE){
-        heap = (Pair<E,P>[])new Object[capacity];
+        heap = (Pair[])new Object[capacity];
         table = (Node[]) new Object[capacity];
         this.cmp = cmp;
         dimension=capacity;

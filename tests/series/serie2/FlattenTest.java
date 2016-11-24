@@ -28,6 +28,7 @@ public class FlattenTest extends IterablesTest {
 		// One sequence of one element with value 5
 		Iterable<Integer> s1= singleton( 5 );
 		seq.add( s1 );
+		Iterable<Integer> it = flatten(unmodifiable(seq));
 		assertIterableEquals( s1, flatten( unmodifiable(seq) ) );
 	}
 
