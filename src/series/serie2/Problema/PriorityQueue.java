@@ -7,36 +7,11 @@ import static series.serie1.Heap.right;
 
 public class PriorityQueue<E,P>{
 
-    public static class Pair<E, P> {
-        public E getElem() {
-            return elem;
-        }
-        E elem;
 
-        public P getPriority() {
-            return priority;
-        }
-
-        P priority;
-        public Pair(E elem,P priority){
-            this.elem = elem;
-            this.priority = priority;
-        }
-    }
-
-    public static class Node {
-        int key;
-        int index;
-        public Node(int key,int index) {
-            this.key = key;
-            this.index = index;
-        }
-    }
-
-    private Pair<E,P>[] heap;    // maxHeapify, increase
+    private Pair<E,P>[] heap;
     private int size = 0;
 
-    private Node [] table;       // getIndex(key), put( chave, index ),  remove(key)
+    private Node [] table;
     private int dimension;
     private KeyExtractor<E> keyExtractor;
     private Comparator<P>cmp;
@@ -44,10 +19,11 @@ public class PriorityQueue<E,P>{
 
 
     public PriorityQueue(int capacity,Comparator<P>cmp, KeyExtractor<E> keyE){
-        heap = (Pair<E,P>[])new Object[capacity];
+        heap = (Pair[])new Object[capacity];
         table = (Node[]) new Object[capacity];
         this.cmp = cmp;
         dimension=capacity;
+        this.keyExtractor = keyE;
     }
 
     public boolean isEmpty(){
@@ -115,7 +91,7 @@ public class PriorityQueue<E,P>{
     public void update(int key, P prio) {
         int i = getIndex(key);
         int idx = table[i].index;
-        heap[idx].priority=prio;
+        heap[idx].setPriority(prio);
         maxHeapify(idx,size);
     }
     public void remove(int key){

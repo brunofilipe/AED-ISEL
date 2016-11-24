@@ -82,7 +82,7 @@ public class AlternateEvenOddTest extends IterablesTest {
 		it.remove();
 	}
 	
-	@Test 
+	@Test
 	public void alternateEvenOdd_withEmptySequencesObtainFirst(){
 		Iterator<Integer> it = alternateEvenOdd(empty).iterator();	
 		exception.expect(NoSuchElementException.class);
