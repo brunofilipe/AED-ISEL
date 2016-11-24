@@ -1,21 +1,21 @@
 package series.serie2.Problema;
 
-/**
- * Created by Bruno on 23/11/2016.
- */
 public class Agency {
     private static int capacity;
-    private static PriorityQueue<>queue;
+    private static PriorityQueue<String,String>queue;
 
 
     public static void main(String[] args) {
-        if(args.length == 0) showOptions();
+        if(args.length == 0){
+            showOptions();
+            return;
+        }
         capacity = Integer.parseInt(args[0]);
         init(capacity);
     }
 
     private static void init(int capacity) {
-        queue = new PriorityQueue(capacity,null);
+       // queue = new PriorityQueue(capacity);
     }
 
     private static void showOptions() {
@@ -25,7 +25,7 @@ public class Agency {
                            "4.getNextCostumer       - " + "Obter o próximo cliente mais prioritário da fila de espera.\n" +
                            "5.changeService <k> <t> - " + "Alterar o serviço que um determinado cliente pretende obter da agência, dado o seu identificador de senha.\n" +
                            "6.waitingTime <k> <n>   - " + "Obter a informação do tempo estimado de espera para um dado cliente, indicando o seu identificador de senha.\n" +
-                                                            "Para esta funcionalidade é necessário identificar o número de funcionários que estão a realizar o atendimento ao cliente. .\n" );
+                                                              " Para esta funcionalidade é necessário identificar o número de funcionários que estão a realizar o atendimento ao cliente. .\n" );
 
     }
 }

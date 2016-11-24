@@ -4,8 +4,8 @@ import java.util.Comparator;
 
 public class Heap {
     public static int parent(int i) { return (i-1) >> 1; }
-    private static int left(int i) { return (i << 1) + 1; }
-    private static int right(int i) { return (i << 1) + 2; }
+    public static int left(int i) { return (i << 1) + 1; }
+    public static int right(int i) { return (i << 1) + 2; }
 
     public static void maxHeapify(int[] array, int pos, int size, Comparator<Integer> cmp) {
         int largest = pos;
@@ -45,7 +45,7 @@ public class Heap {
         heap[i] = v;
     }
 
-    public static <E,P> void increase(E[] heap, int i, Comparator< E> c, E v ) {
+    public static <E> void increase(E[] heap, int i, Comparator< E> c, E v ) {
         int p;
         while ( i > 0 && c.compare( heap[p = parent( i )], v) < 0 ) {
             heap[i] = heap[p];
