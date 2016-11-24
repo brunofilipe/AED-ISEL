@@ -181,7 +181,7 @@ public class ListUtilTest {
 		if (curr == null || curr == last)
 			return true;
 		while (curr.next != last) {
-			if (cmp.compare(curr.value, curr.next.value) > 0)
+			if (cmp.compare(curr.value, (E) curr.next.value) > 0)
 				return false;
 			curr = curr.next;
 		}

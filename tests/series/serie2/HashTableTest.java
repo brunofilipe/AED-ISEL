@@ -45,7 +45,7 @@ public class HashTableTest {
 	}
 	
 	public static <E> void insertList(Node<E>[] hashTable, Node<E> list){
-		int i = index(hashTable, list.next.value);
+		int i = index(hashTable, (E)list.next.value);
 		
 		list.previous.next = hashTable[i].next;
 		hashTable[i].next.previous = list.previous;
