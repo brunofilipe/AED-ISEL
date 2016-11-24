@@ -2,7 +2,7 @@ package series.serie2;
 
 public class Node<E> {
 	public Node<E> previous;
-	public Node<E> next;
+	public Node next;
 	public E value;
 	
 	public Node(){}

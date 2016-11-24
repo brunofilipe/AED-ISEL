@@ -12,15 +12,10 @@ public class Utils {
                 }
                 if (newHash[idx] == null) {
                     newHash[idx] = hashTable[i];
-                } else {
+                }
+                else {
                     if ( hashTable[i].next != hashTable[i]  ) {
-                        Node<E> oldlast = newHash[idx].previous;
-                        Node<E> newlast = hashTable[i].previous;
-                        Node<E> oldfirst = hashTable[i].next;
-                        oldfirst.previous = oldlast;
-                        oldlast.next = oldfirst;
-                        newHash[idx].previous = newlast;
-                        newlast.next = newHash[idx];
+                        insertInHash(hashTable[i], newHash[idx]);
                     }
                 }
             ++idx;
@@ -28,5 +23,13 @@ public class Utils {
         return newHash;
 	}
 
-
+    private static <E> void insertInHash(Node<E> toInsert, Node<E> table) {
+        Node<E> oldlast = table.previous;
+        Node<E> newlast = toInsert.previous;
+        Node<E> oldfirst = toInsert.next;
+        oldfirst.previous = oldlast;
+        oldlast.next = oldfirst;
+        table.previous = newlast;
+        newlast.next = table;
+    }
 }

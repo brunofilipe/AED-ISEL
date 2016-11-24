@@ -4,8 +4,18 @@ package series.serie2.Problema;
  * Created by Bruno on 23/11/2016.
  */
 public class Agency {
+    private static int capacity;
+    private static PriorityQueue<>queue;
+
+
     public static void main(String[] args) {
         if(args.length == 0) showOptions();
+        capacity = Integer.parseInt(args[0]);
+        init(capacity);
+    }
+
+    private static void init(int capacity) {
+        queue = new PriorityQueue(capacity,null);
     }
 
     private static void showOptions() {
