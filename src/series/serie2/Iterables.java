@@ -43,7 +43,7 @@ public class Iterables {
 
             @Override
             public void remove() {
-                throw new UnsupportedOperationException("alternateEvenoOdd: removeCostumer not supported");
+                throw new UnsupportedOperationException("alternateEvenoOdd: remove not supported");
             }
         };
 	}
@@ -83,7 +83,7 @@ public class Iterables {
             }
             @Override
             public void remove() {
-                throw new UnsupportedOperationException("flatten: removeCostumer not supported");
+                throw new UnsupportedOperationException("flatten: remove not supported");
             }
         };
 	}

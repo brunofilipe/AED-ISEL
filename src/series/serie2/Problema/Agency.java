@@ -1,6 +1,7 @@
 package series.serie2.Problema;
 
 import java.util.Comparator;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Agency implements KeyExtractor<Client> {
@@ -11,14 +12,9 @@ public class Agency implements KeyExtractor<Client> {
                                 Agency::removeNextCostumer, Agency::getNextCostumer,Agency::changeService,Agency::waitingTime};
     private static final String[]COMMAND_KEY = {"newCostumer","removeCostumer", "removeNextCostumer","getNextCostumer",
                                                 "changeService","waitingTime"  };
-    private static Comparator<Service>cmp;
+    private static Comparator<Client>cmp;
     private static Scanner scan;
     private static int numberOfEmployees;
-
-    @Override
-    public int getKey(Client c) {
-        return c.getNs();
-    }
 
     public static void main(String[] args) {
         if(args.length == 0){showOptions();return;}
@@ -28,11 +24,14 @@ public class Agency implements KeyExtractor<Client> {
     }
 
     private static void init() {
-        cmp = (cmp1, cmp2) -> Math.abs(cmp1.getTime()-cmp2.getTime());
+        cmp= (o1, o2) -> {
+           if(o1.getService().getTime()==o2.getService().getTime())
+               return Math.abs(o1.getNs()-o2.getNs());
+            return Math.abs(o1.getService().getTime() - o2.getService().getTime());
+        };
         queue = new PriorityQueue(cmp,new Agency());
         scan = new Scanner(System.in);
     }
-
 
     private static void run() {
         String command;
@@ -43,6 +42,11 @@ public class Agency implements KeyExtractor<Client> {
         }while (!command.equals("exit"));
     }
 
+    @Override
+    public int getKey(Client c) {
+        return c.getNs();
+    }
+
     private static void checkCommand(String next) {
         for (int i = 0; i < COMMAND_KEY.length; i++) {
             if(next.equals(COMMAND_KEY[i])){
@@ -50,19 +54,19 @@ public class Agency implements KeyExtractor<Client> {
             }
         }
     }
+    private static Random rmd = new Random();
 
     private static void newCostumer() {
-        System.out.println("Insert client  ID ");
+        System.out.println("Insert client ID ");
         int id = scan.nextInt();
-        Client client = new Client(id);
         System.out.println("Insert which service you want ");
         String name = scan.next();
         System.out.println("Insert how long the service takes ");
         int time = scan.nextInt();
         Service service = new Service(name,time);
+        Client client = new Client(id,rmd.nextInt(20),service);
         queue.add(client,service);
     }
-
 
     private static void removeCostumer() {
         String answ;
@@ -76,6 +80,7 @@ public class Agency implements KeyExtractor<Client> {
             queue.remove(key);
         }
     }
+
     private static void removeNextCostumer() {
         String answ;
         do{
@@ -86,13 +91,14 @@ public class Agency implements KeyExtractor<Client> {
            int id = queue.poll().getId();
             System.out.println("Id of the removed client is" + id);
         }
-
     }
+
     private static void getNextCostumer() {
         System.out.println("This is your next Client!");
         int id = queue.pick().getId();
         System.out.println("ID: " + id);
     }
+
     private static void changeService() {
         String answ;
             do{
@@ -117,11 +123,10 @@ public class Agency implements KeyExtractor<Client> {
                 queue.update(key,serv);
             }
     }
+
     private static void waitingTime() {
 
     }
-
-
 
     private static void showOptions() {
         System.out.println("1.newCostumer <c> <t>   - " + "Adicionar novos clientes à fila de espera.\n" +
@@ -131,19 +136,5 @@ public class Agency implements KeyExtractor<Client> {
                 "5.changeService <k> <t> - " + "Alterar o serviço que um determinado cliente pretende obter da agência, dado o seu identificador de senha.\n" +
                 "6.waitingTime <k> <n>   - " + "Obter a informação do tempo estimado de espera para um dado cliente, indicando o seu identificador de senha.\n" +
                 " Para esta funcionalidade é necessário identificar o número de funcionários que estão a realizar o atendimento ao cliente. .\n" );
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

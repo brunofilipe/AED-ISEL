@@ -1,6 +1,5 @@
 package series.serie2.Problema;
 import java.util.Comparator;
-import java.util.NoSuchElementException;
 
 import static series.serie1.Heap.*;
 
@@ -30,31 +29,28 @@ public class PriorityQueue<E,P>{
             this.priority = priority;
         }
     }
-
     public static class Node {
         private int key;
         public Node next;
-        public int getIndex() {
-            return index;
-        }
-
-        public int getKey() {
-            return key;
-        }
-
         private int index;
         public Node(int key,int index) {
             this.key = key;
             this.index = index;
         }
+
+        public int getIndex() {
+            return index;
+        }
+        public int getKey() {
+            return key;
+        }
     }
 
     private final int INIT_HASH_DIMENSION = 10;
     private Pair<E,P>[] heap;
-    private int size = 0;
-    private int sizeNode = 0;
+    private int sizeHeap=0;
+    private int sizeNode=0;
     private Node [] table;
-    private int dimension;
     private KeyExtractor<E> keyExtractor;
     private Comparator<P>cmp;
 
@@ -68,34 +64,69 @@ public class PriorityQueue<E,P>{
 
     public void add(E elem, P prio) {
         Pair<E, P>  pair = new Pair<>(elem,prio);
-        increase( size, pair);
-        ++size;
+        increase(sizeHeap, pair);
+        ++sizeHeap;
     }
 
-    private void put(int key, int index) {
-        Node no;
+    public E pick() {
+        return heap[0].getElem();
+    }
+
+    public E poll() {
+        E v = pick();
+        remove (keyExtractor.getKey(v));
+        return v;
+    }
+
+    public void remove(int key){
         int i = getIndex(key);
-        no = getNode( table[i],key,i );
-        if ( no != null ) no.index= index;
-        else {
-            if ( sizeNode == table.length ) expand();
-            i = getIndex(key);
-            no = new Node(key,index);
-            no.next = table[i];
-            table[i] = no;
-            ++sizeNode;
+        Node node = getNode( table[i],key,i); // removeNode return o old index
+        if(node==null)return;
+        int idx=node.getIndex();
+        heap[idx]=heap[--sizeHeap];
+        put(key,idx);
+        heap[sizeHeap] = null;
+        maxHeapify(idx, sizeHeap);
+        removeNode(node, i);
+    }
+
+    private void removeNode(Node node, int i) {
+        Node prev = null;
+        Node curr=table[i];
+
+        while ( curr != null  ) {
+            if ( node.getIndex() == curr.index && node.getKey()== curr.key ){
+                --sizeNode;
+            }
+            if(prev == null){
+                table[i] =curr.next;
+            }
+            else {
+                prev.next = curr.next;
+            }
+            prev = curr;
+            curr = curr.next;
         }
     }
+
+    public void update(int key, P prio) {
+        int i = getIndex(key);
+        int idx = table[i].getIndex(); // getNode
+        Node n = getNode(table[i],key,idx);
+        heap[idx].setPriority(prio);
+        maxHeapify(idx, sizeHeap);
+    }
+
     private Node getNode(Node curr,int key,int idx) {
         while ( curr != null ) {
-            if ( idx == curr.index && key== curr.key )
+            if ( key== curr.key )
                 return curr;
             curr = curr.next;
         }
         return null;
     }
 
-    private void expand() {
+    private void expandTable() {
         int newDim = table.length << 1;
         Node[] oltT = table;
         table = new Node[newDim];
@@ -109,12 +140,10 @@ public class PriorityQueue<E,P>{
                 table[index] = curr;
             }
         }
+
     }
 
-
-
     private int getIndex(int key) {
-
         return key%table.length;
     }
 
@@ -127,13 +156,28 @@ public class PriorityQueue<E,P>{
         }
         heap[i] = v;
         put(keyExtractor.getKey(v.getElem()), i);
-
-
     }
 
+    private void put(int key, int index) {
+        Node no;
+        int i = getIndex(key);
+        no = getNode( table[i],key,i );
+        if ( no != null ) no.index= index;
+        else {
+            if ( sizeNode == table.length ) expandTable();
+            i = getIndex(key);
+            no = new Node(key,index);
+            no.next = table[i];
+            table[i] = no;
+            ++sizeNode;
+        }
+    }
     public   void maxHeapify( int pos, int size) {
         int largest = pos;
         int l = left(pos), r = right(pos);
+        while (heap[r] == null){
+            --r;
+        }
         if ((l < size) && (cmp.compare(heap[largest].getPriority(), heap[r].getPriority()) > 0))
             largest = l;
         if ((r < size) && (cmp.compare(heap[largest].getPriority(), heap[r].getPriority()) > 0))
@@ -141,38 +185,10 @@ public class PriorityQueue<E,P>{
         if (largest != pos) {
             Pair aux = heap[pos];
             heap[pos] = heap[largest];
-            //put
+            put(keyExtractor.getKey(heap[pos].getElem()),pos);
             heap[largest] = aux;
-            //put
+            put(keyExtractor.getKey(heap[largest].getElem()),largest);
             maxHeapify( largest, size);
         }
-    }
-
-    public E pick() {
-        return heap[0].getElem();
-    }
-
-    public E poll() {
-        E v = pick();
-        remove ( keyExtractor.getKey( v ) );
-        return v;
-    }
-
-    public void update(int key, P prio) {
-        int i = getIndex(key);
-        int idx = table[i].getIndex(); // getNode
-        heap[idx].setPriority(prio);
-        maxHeapify(idx,size);
-    }
-    public void remove(int key){
-        int i = getIndex(key);
-        //Node n = getNode( table[i]); // removeNode return o old index
-        int idx=0;
-        Pair p = heap[idx];
-        heap[idx]=heap[--size];
-        //put
-        heap[size] = null;
-        maxHeapify(idx,size);
-        //removenode table[i]=null;
     }
 }
