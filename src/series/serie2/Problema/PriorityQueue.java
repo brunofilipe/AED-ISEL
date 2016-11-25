@@ -166,8 +166,8 @@ public class PriorityQueue<E,P>{
     }
     public void remove(int key){
         int i = getIndex(key);
-        Node n = getNode( table[i]); // removeNode return o old index
-        int idx= n.getIndex();
+        //Node n = getNode( table[i]); // removeNode return o old index
+        int idx=0;
         Pair p = heap[idx];
         heap[idx]=heap[--size];
         //put
