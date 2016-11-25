@@ -40,12 +40,12 @@ public class ListUtils {
                 return sentinel;
             }
             if(".".equals(list.next.value)){                           //caso seja "."
-                curr = curr.next;                                       //avanço curr
+                curr = curr.next;                                       //avanço no nós principais
                 list = list.next;                                       //avanço na lista de palavras
             }
             else {
-                Node<String> extracted = extractHeadfromList(list);
-                if(curr == curr.next){
+                Node<String> extracted = extractHeadfromList(list);     //removo da lista de palavras e reaproveito
+                if(curr == curr.next){                                  //verifico se estou no mesmo nó
                     insertOnNext(curr,new Node <> ());
                     curr.next.value = extracted;
                 } else {
