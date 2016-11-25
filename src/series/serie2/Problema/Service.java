@@ -13,8 +13,6 @@ public class Service {
         this.time = time;
     }
 
-
-
     public String getName() {
         return name;
     }

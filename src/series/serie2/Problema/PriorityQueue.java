@@ -19,8 +19,8 @@ public class PriorityQueue<E,P>{
 
 
     public PriorityQueue(int capacity,Comparator<P>cmp, KeyExtractor<E> keyE){
-        heap = (Pair[])new Object[capacity];
-        table = (Node[]) new Object[capacity];
+        heap = new Pair[capacity];
+        table = new Node[capacity];
         this.cmp = cmp;
         dimension=capacity;
         this.keyExtractor = keyE;
@@ -94,7 +94,7 @@ public class PriorityQueue<E,P>{
         heap[idx].setPriority(prio);
         maxHeapify(idx,size);
     }
-    public void remove(int key){
+    public void removeCostumer(int key){
         int i = getIndex(key);
         int idx= table[i].index;
         Pair p = heap[idx];
@@ -102,5 +102,16 @@ public class PriorityQueue<E,P>{
         heap[size] = p;
         maxHeapify(idx,size);
         table[i]=null;
+    }
+
+    public void removeNextCostumer() {
+        Pair p = heap[0];
+        heap[0]=heap[--size];
+        heap[size] = p;
+        maxHeapify(0,size);
+        for (int i = 0; i <dimension ; i++) {
+            if(table[i].index==0)
+                table[0]=null;
+        }
     }
 }
