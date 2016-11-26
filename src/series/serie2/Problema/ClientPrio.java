@@ -1,8 +1,6 @@
 package series.serie2.Problema;
 
-/**
- * Created by Bruno on 26/11/2016.
- */
+
 public class ClientPrio {
     private int ns;
     private Service service;

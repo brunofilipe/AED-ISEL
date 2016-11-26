@@ -114,8 +114,7 @@ public class PriorityQueue<E,P>{
         int i = getIndex(key);
         int idx = table[i].getIndex();
         heap[idx].setPriority(prio);
-        minHeapify(idx, sizeHeap);
-        int x = 1;
+        minHeapify(0, sizeHeap);
     }
 
     private Node getNode(Node curr,int key) {
