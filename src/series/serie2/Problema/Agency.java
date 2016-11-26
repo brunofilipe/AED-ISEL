@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Agency implements KeyExtractor<ClientPrio> {
+public class Agency implements KeyExtractor<Client> {
 
 
     private static PriorityQueue<Client,ClientPrio>queue;
@@ -20,10 +20,12 @@ public class Agency implements KeyExtractor<ClientPrio> {
         if(args.length == 0){showOptions();return;}
         numberOfEmployees =Integer.parseInt(args[0]);
         init();
-        Client c1 = new Client(123);
+        Client c1 = new Client(123,2);
         queue.add(c1,new ClientPrio(2,new Service("cartoes",5)));
-        Client c2 = new Client(321);
-        queue.add(c2,new ClientPrio(3,new Service("cartoes",5)));
+        Client c2 = new Client(321,3);
+        queue.add(c2,new ClientPrio(3,new Service("depositos",2)));
+        Client c3 = new Client(321,5);
+        queue.add(c2,new ClientPrio(5,new Service("levantamentos",1)));
         run();
     }
 
@@ -47,7 +49,7 @@ public class Agency implements KeyExtractor<ClientPrio> {
     }
 
     @Override
-    public int getKey(ClientPrio c) {
+    public int getKey(Client c) {
         return c.getNs();
     }
 
@@ -69,8 +71,8 @@ public class Agency implements KeyExtractor<ClientPrio> {
         System.out.println("Insert how long the service takes ");
         int time = scan.nextInt();
         Service service = new Service(name,time);
-        Client client = new Client(id);
-        queue.add(client,new ClientPrio(rmd.nextInt(20),service));
+        Client client = new Client(id,rmd.nextInt(20));
+        queue.add(client,new ClientPrio(client.getNs(),service));
     }
 
     private static void removeCostumer() {
