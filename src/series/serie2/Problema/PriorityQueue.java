@@ -87,7 +87,7 @@ public class PriorityQueue<E,P>{
         heap[idx]=heap[--sizeHeap];
         put(key,idx);
         heap[sizeHeap] = null;
-        minHeapify(idx, sizeHeap);
+        minHeapify(0, sizeHeap+1 );
         removeNode(node, i);
     }
 
