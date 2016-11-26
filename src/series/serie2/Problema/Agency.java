@@ -7,12 +7,12 @@ import java.util.Scanner;
 public class Agency implements KeyExtractor<Client> {
 
 
-    private static PriorityQueue<Client,ClientPrio>queue;
+    private static PriorityQueue<Client,Client>queue;
     private static final Runnable[] COMMAND_LIST = new Runnable[]{Agency::newCostumer, Agency::removeCostumer,
                                 Agency::removeNextCostumer, Agency::getNextCostumer,Agency::changeService,Agency::waitingTime};
     private static final String[]COMMAND_KEY = {"newCostumer","removeCostumer", "removeNextCostumer","getNextCostumer",
                                                 "changeService","waitingTime"  };
-    private static Comparator<ClientPrio>cmp;
+    private static Comparator<Client>cmp;
     private static Scanner scan;
     private static int numberOfEmployees;
 
@@ -20,18 +20,14 @@ public class Agency implements KeyExtractor<Client> {
         if(args.length == 0){showOptions();return;}
         numberOfEmployees =Integer.parseInt(args[0]);
         init();
-        Client c1 = new Client(123,2);
-        queue.add(c1,new ClientPrio(2,new Service("cartoes",5)));
-        Client c2 = new Client(321,3);
-        queue.add(c2,new ClientPrio(3,new Service("cartoes",5)));
         run();
     }
 
     private static void init() {
         cmp= (o1, o2) -> {
            if(o1.getService().getTime()==o2.getService().getTime())
-               return (o1.getNs()-o2.getNs());
-            return (o1.getService().getTime() - o2.getService().getTime());
+               return o1.getNs()-o2.getNs();
+            return o1.getService().getTime() - o2.getService().getTime();
         };
         queue = new PriorityQueue(cmp,new Agency());
         scan = new Scanner(System.in);
@@ -55,7 +51,6 @@ public class Agency implements KeyExtractor<Client> {
         for (int i = 0; i < COMMAND_KEY.length; i++) {
             if(next.equals(COMMAND_KEY[i])){
                 COMMAND_LIST[i].run();
-                break;
             }
         }
     }
@@ -69,8 +64,8 @@ public class Agency implements KeyExtractor<Client> {
         System.out.println("Insert how long the service takes ");
         int time = scan.nextInt();
         Service service = new Service(name,time);
-        Client client = new Client(id,rmd.nextInt(20));
-        queue.add(client,new ClientPrio(client.getNs(),service));
+        Client client = new Client(id,rmd.nextInt(20),service);
+        queue.add(client,client);
     }
 
     private static void removeCostumer() {
@@ -111,19 +106,21 @@ public class Agency implements KeyExtractor<Client> {
                 answ = scan.next();
             }while(!answ.equals("Y") && !answ.equals("N"));
             if(answ.equals("Y")) {
-                System.out.println("Insert the Client key...");
+                System.out.println("Insert new the Client key...");
                 int key = scan.nextInt();
                 System.out.println("Now insert the Service you want to Change To...");
-                System.out.println("Option 1 - \n"+
-                                   "Option 2 - \n"+
-                                   "Option 3 - \n"+
-                                   "Option 4 - \n");
+                System.out.println("Option 1 - newCostumer\n"+
+                                   "Option 2 - removeCostumer\n"+
+                                   "Option 3 - removeNextCostumer\n"+
+                                   "Option 4 - getNextCostumer\n"+
+                                   "Option 5 - changeService\n"+
+                                   "Option 6 - waitingTime\n");
 
                 String name = scan.next();
                 System.out.println("How long does it take");
                 int time = scan.nextInt();
                 Service serv = new Service(name,time);
-                queue.update(key,new ClientPrio(key,serv));
+                queue.update(key,new Client(-1,key,serv));
             }
     }
 

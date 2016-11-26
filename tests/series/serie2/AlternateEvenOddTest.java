@@ -78,7 +78,7 @@ public class AlternateEvenOddTest extends IterablesTest {
 		Iterator<Integer> it = alternateEvenOdd(seq).iterator();	
 		it.next();
 		exception.expect(UnsupportedOperationException.class);
-		exception.expectMessage("alternateEvenoOdd: remove not supported");
+		exception.expectMessage("alternateEvenoOdd: removeCostumer not supported");
 		it.remove();
 	}
 	

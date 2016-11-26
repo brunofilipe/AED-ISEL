@@ -15,7 +15,6 @@ public class PriorityQueue<E,P>{
             this.priority = priority;
         }
 
-
         public E getElem() {
             return elem;
         }
@@ -65,7 +64,7 @@ public class PriorityQueue<E,P>{
     public void add(E elem, P prio) {
         Pair<E, P>  pair = new Pair<>(elem,prio);
         increase(sizeHeap, pair);
-        minHeapify(0,sizeHeap+1);
+        minHeapify(0,sizeHeap);
         ++sizeHeap;
     }
 
@@ -114,7 +113,11 @@ public class PriorityQueue<E,P>{
         int i = getIndex(key);
         int idx = table[i].getIndex();
         heap[idx].setPriority(prio);
-        minHeapify(0, sizeHeap);
+
+        Node n = getNode(table[i],key);
+
+
+        minHeapify(idx, sizeHeap);
     }
 
     private Node getNode(Node curr,int key) {
@@ -140,6 +143,7 @@ public class PriorityQueue<E,P>{
                 table[index] = curr;
             }
         }
+
     }
 
     private int getIndex(int key) {
@@ -177,9 +181,9 @@ public class PriorityQueue<E,P>{
         while (heap[r] == null){
             --r;
         }
-        if ((l < size) && (cmp.compare(heap[largest].getPriority(), heap[r].getPriority()) > 0))
+        if ((l <= size) && (cmp.compare(heap[largest].getPriority(), heap[r].getPriority()) > 0))
             largest = l;
-        if ((r < size) && (cmp.compare(heap[largest].getPriority(), heap[r].getPriority()) > 0))
+        if ((r <= size) && (cmp.compare(heap[largest].getPriority(), heap[r].getPriority()) > 0))
             largest = r;
         if (largest != pos) {
             Pair aux = heap[pos];
