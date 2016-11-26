@@ -65,6 +65,7 @@ public class PriorityQueue<E,P>{
     public void add(E elem, P prio) {
         Pair<E, P>  pair = new Pair<>(elem,prio);
         increase(sizeHeap, pair);
+        minHeapify(0,sizeHeap+1);
         ++sizeHeap;
     }
 
@@ -80,13 +81,13 @@ public class PriorityQueue<E,P>{
 
     public void remove(int key){
         int i = getIndex(key);
-        Node node = getNode( table[i],key,i); // removeNode return o old index
+        Node node = getNode( table[i],key); // removeNode return o old index
         if(node==null)return;
         int idx=node.getIndex();
         heap[idx]=heap[--sizeHeap];
         put(key,idx);
         heap[sizeHeap] = null;
-        maxHeapify(idx, sizeHeap);
+        minHeapify(idx, sizeHeap);
         removeNode(node, i);
     }
 
@@ -111,13 +112,13 @@ public class PriorityQueue<E,P>{
 
     public void update(int key, P prio) {
         int i = getIndex(key);
-        int idx = table[i].getIndex(); // getNode
-        Node n = getNode(table[i],key,idx);
+        int idx = table[i].getIndex();
         heap[idx].setPriority(prio);
-        maxHeapify(idx, sizeHeap);
+        minHeapify(idx, sizeHeap);
+        int x = 1;
     }
 
-    private Node getNode(Node curr,int key,int idx) {
+    private Node getNode(Node curr,int key) {
         while ( curr != null ) {
             if ( key== curr.key )
                 return curr;
@@ -140,7 +141,6 @@ public class PriorityQueue<E,P>{
                 table[index] = curr;
             }
         }
-
     }
 
     private int getIndex(int key) {
@@ -161,7 +161,7 @@ public class PriorityQueue<E,P>{
     private void put(int key, int index) {
         Node no;
         int i = getIndex(key);
-        no = getNode( table[i],key,i );
+        no = getNode( table[i],key);
         if ( no != null ) no.index= index;
         else {
             if ( sizeNode == table.length ) expandTable();
@@ -172,7 +172,7 @@ public class PriorityQueue<E,P>{
             ++sizeNode;
         }
     }
-    public   void maxHeapify( int pos, int size) {
+    public void minHeapify(int pos, int size) {
         int largest = pos;
         int l = left(pos), r = right(pos);
         while (heap[r] == null){
@@ -188,7 +188,7 @@ public class PriorityQueue<E,P>{
             put(keyExtractor.getKey(heap[pos].getElem()),pos);
             heap[largest] = aux;
             put(keyExtractor.getKey(heap[largest].getElem()),largest);
-            maxHeapify( largest, size);
+            minHeapify( largest, size);
         }
     }
 }
