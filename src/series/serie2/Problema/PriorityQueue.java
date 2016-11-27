@@ -1,193 +1,140 @@
 package series.serie2.Problema;
 import java.util.Comparator;
 
-import static series.serie1.Heap.*;
 
 
 public class PriorityQueue<E,P>{
 
-    public static class Pair<E, P> {
-
-        private E elem;
-        private P priority;
-
-        public void setPriority(P priority) {
-            this.priority = priority;
-        }
-
-
-        public E getElem() {
-            return elem;
-        }
-
-        public P getPriority() {
-            return priority;
-        }
-
-        public Pair(E elem,P priority){
-            this.elem = elem;
-            this.priority = priority;
-        }
-    }
-    public static class Node {
-        private int key;
-        public Node next;
-        private int index;
-        public Node(int key,int index) {
+    private static class Node<E, P> {
+        public Node(E e, P p, int key) {
+            this.data = e;
+            this.priority = p;
             this.key = key;
-            this.index = index;
         }
-
-        public int getIndex() {
-            return index;
-        }
-        public int getKey() {
-            return key;
-        }
+        int key;
+        E data;
+        P priority;
     }
 
-    private final int INIT_HASH_DIMENSION = 10;
-    private Pair<E,P>[] heap;
-    private int sizeHeap=0;
-    private int sizeNode=0;
-    private Node [] table;
-    private KeyExtractor<E> keyExtractor;
+    private HashTable<Integer, Integer> table;
+    private Node<E, P>[] heap;
+    private int count;
     private Comparator<P>cmp;
+    private KeyExtractor<E> keyExtractor;
 
-
-    public PriorityQueue(Comparator<P>cmp, KeyExtractor<E> keyE){
-        heap = new Pair[INIT_HASH_DIMENSION];
-        table = new Node[INIT_HASH_DIMENSION];
+    public PriorityQueue(int size,Comparator<P>cmp,KeyExtractor<E>keyExtractor) {
+        this.table = new HashTable<Integer, Integer> (size);
+        this.heap = (Node<E, P>[])new Node[size];
+        this.count = 0;
         this.cmp = cmp;
-        this.keyExtractor = keyE;
+        this.keyExtractor = keyExtractor;
     }
 
-    public void add(E elem, P prio) {
-        Pair<E, P>  pair = new Pair<>(elem,prio);
-        increase(sizeHeap, pair);
-        minHeapify(0,sizeHeap+1);
-        ++sizeHeap;
+    public boolean isEmpty() {
+        return count == 0;
+    }
+
+    public boolean isFull() {
+        return this.count == this.heap.length;
+    }
+
+
+    public void add(E e, P p) {
+        if(e == null || p == null || keyExtractor == null || isFull()) return;
+        int hash = keyExtractor.getKey(e);
+        int index = bubbleUp(this.count, p);
+        heap[index] = new Node<E,P>(e, p, hash);
+        this.table.put(hash, index);
+        this.count++;
     }
 
     public E pick() {
-        return heap[0].getElem();
+        if(isEmpty()) return null;
+        return heap[0].data;
     }
 
     public E poll() {
-        E v = pick();
-        remove (keyExtractor.getKey(v));
-        return v;
-    }
+        if(isEmpty()) return null;
 
-    public void remove(int key){
-        int i = getIndex(key);
-        Node node = getNode( table[i],key); // removeNode return o old index
-        if(node==null)return;
-        int idx=node.getIndex();
-        heap[idx]=heap[--sizeHeap];
-        put(key,idx);
-        heap[sizeHeap] = null;
-        minHeapify(0, sizeHeap+1 );
-        removeNode(node, i);
-    }
+        E max = heap[0].data;
+        this.table.remove(heap[0].key);
 
-    private void removeNode(Node node, int i) {
-        Node prev = null;
-        Node curr=table[i];
+        int index = bubbleDown(0);
 
-        while ( curr != null  ) {
-            if ( node.getIndex() == curr.index && node.getKey()== curr.key ){
-                --sizeNode;
-            }
-            if(prev == null){
-                table[i] =curr.next;
-            }
-            else {
-                prev.next = curr.next;
-            }
-            prev = curr;
-            curr = curr.next;
-        }
+        this.count--;
+        switchHeap(index, this.count);
+        heap[this.count] = null;
+        return max;
     }
 
     public void update(int key, P prio) {
-        int i = getIndex(key);
-        int idx = table[i].getIndex();
-        heap[idx].setPriority(prio);
-        minHeapify(0, sizeHeap);
+        int heapIdx = this.table.get(key);
+        this.table.remove(key);
+
+        int result = cmp.compare(heap[heapIdx].priority,prio);
+        heap[heapIdx].priority = prio;
+
+        Node elem = heap[heapIdx];
+
+        int i;
+        if(result < 0) //prio is bigger
+            i = bubbleUp(heapIdx, prio);
+        else
+            i = bubbleDown(heapIdx);
+
+        heap[i] = elem;
+        this.table.put(elem.key, i);
     }
 
-    private Node getNode(Node curr,int key) {
-        while ( curr != null ) {
-            if ( key== curr.key )
-                return curr;
-            curr = curr.next;
-        }
-        return null;
+    public void remove(int key) {
+        int heapIdx = this.table.get(key);
+        this.table.remove(key);
+        this.count--;
+
+        switchHeap(heapIdx, this.count);
+        heap[this.count] = null;
+
+        bubbleDown(heapIdx);
     }
 
-    private void expandTable() {
-        int newDim = table.length << 1;
-        Node[] oltT = table;
-        table = new Node[newDim];
-        for ( int i = 0; i < oltT.length; ++ i ) {
-            Node curr;
-            while ( oltT[i] != null ) {
-                curr = oltT[i];
-                oltT[i] = oltT[i].next;
-                int index = getIndex( curr.key );
-                curr.next = table[index];
-                table[index] = curr;
-            }
-        }
+    public P pickKey() {
+        if(isEmpty()) return null;
+
+        return heap[0].priority;
     }
 
-    private int getIndex(int key) {
-        return key%table.length;
+    private int bubbleUp(int start, P p) {
+        int i;
+        for(i = start; i > 0 && cmp.compare(heap[(i-1)/2].priority,p) < 0; i = (i-1)/2) //bubble up
+            switchHeap(i, (i-1)/2);
+
+        return i;
     }
 
-    private void increase( int i, Pair<E,P>  v ) {
-        int p;
-        while ( i > 0 && cmp.compare( heap[p = parent( i )].getPriority(), v.getPriority()) < 0 ) {
-            heap[i] = heap[p];
-            put(keyExtractor.getKey(heap[p].getElem()), i);
-            i = p;
+    private int bubbleDown(int start) {
+        int i, son;
+
+        for(i = start; i*2+1 <= this.count-1; i = son) {
+            son = i*2+1;
+            if(son < this.count-1 && cmp.compare(heap[son].priority,heap[son+1].priority) < 0) son++;
+
+            if(cmp.compare(heap[son].priority,heap[this.count-1].priority) > 0)
+                switchHeap(i, son);
+            else
+                break;
         }
-        heap[i] = v;
-        put(keyExtractor.getKey(v.getElem()), i);
+
+        return i;
     }
 
-    private void put(int key, int index) {
-        Node no;
-        int i = getIndex(key);
-        no = getNode( table[i],key);
-        if ( no != null ) no.index= index;
-        else {
-            if ( sizeNode == table.length ) expandTable();
-            i = getIndex(key);
-            no = new Node(key,index);
-            no.next = table[i];
-            table[i] = no;
-            ++sizeNode;
-        }
+    private void switchHeap(int i, int i2) {
+        heap[i] = heap[i2];
+        this.table.put(heap[i2].key, i);
     }
-    public void minHeapify(int pos, int size) {
-        int largest = pos;
-        int l = left(pos), r = right(pos);
-        while (heap[r] == null){
-            --r;
-        }
-        if ((l < size) && (cmp.compare(heap[largest].getPriority(), heap[r].getPriority()) > 0))
-            largest = l;
-        if ((r < size) && (cmp.compare(heap[largest].getPriority(), heap[r].getPriority()) > 0))
-            largest = r;
-        if (largest != pos) {
-            Pair aux = heap[pos];
-            heap[pos] = heap[largest];
-            put(keyExtractor.getKey(heap[pos].getElem()),pos);
-            heap[largest] = aux;
-            put(keyExtractor.getKey(heap[largest].getElem()),largest);
-            minHeapify( largest, size);
-        }
-    }
+
+    public static int parent(int i) { return (i-1) >> 1; }
+    public static int left(int i) { return (i << 1) + 1; }
+    public static int right(int i) { return (i << 1) + 2; }
+
+
 }
