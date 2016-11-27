@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Agency implements KeyExtractor<Client> {
 
-
+    private static int key;
     private static PriorityQueue<Client,ClientPrio>queue;
     private static final Runnable[] COMMAND_LIST = new Runnable[]{Agency::newCostumer, Agency::removeCostumer,
                                 Agency::removeNextCostumer, Agency::getNextCostumer,Agency::changeService,Agency::waitingTime};
@@ -15,17 +15,31 @@ public class Agency implements KeyExtractor<Client> {
     private static Comparator<ClientPrio>cmp;
     private static Scanner scan;
     private static int numberOfEmployees;
+    private static Random rmd = new Random();
+
 
     public static void main(String[] args) {
         if(args.length == 0){showOptions();return;}
         numberOfEmployees =Integer.parseInt(args[0]);
         init();
-        Client c1 = new Client(123,2);
-        queue.add(c1,new ClientPrio(2,new Service("cartoes",5)));
-        Client c2 = new Client(321,3);
-        queue.add(c2,new ClientPrio(3,new Service("depositos",2)));
-        Client c3 = new Client(321,5);
-        queue.add(c2,new ClientPrio(5,new Service("levantamentos",1)));
+        Client c1 = new Client(123,key);
+        queue.add(c1,new ClientPrio(key,new Service("cartoes",5)));
+        ++key;
+        Client c2 = new Client(321,key);
+        queue.add(c2,new ClientPrio(key,new Service("depositos",2)));
+        ++key;
+        Client c3 = new Client(231,key);
+        queue.add(c3,new ClientPrio(key,new Service("levantamentos",1)));
+        ++key;
+       /* Client c4 = new Client(999,key);
+        queue.add(c4,new ClientPrio(key,new Service("levantamentos",1)));
+        ++key;
+        Client c5 = new Client(1000,key);
+        queue.add(c5,new ClientPrio(key,new Service("levantamentos",1)));
+        ++key;
+        Client c6 = new Client(1001,key);
+        queue.add(c6,new ClientPrio(key,new Service("depositos",2)));
+        ++key;*/
         run();
     }
 
@@ -36,6 +50,7 @@ public class Agency implements KeyExtractor<Client> {
             return (o1.getService().getTime() - o2.getService().getTime());
         };
         queue = new PriorityQueue(cmp,new Agency());
+        key = rmd.nextInt(20);
         scan = new Scanner(System.in);
     }
 
@@ -61,7 +76,6 @@ public class Agency implements KeyExtractor<Client> {
             }
         }
     }
-    private static Random rmd = new Random();
 
     private static void newCostumer() {
         System.out.println("Insert client ID ");
