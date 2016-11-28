@@ -18,38 +18,34 @@ public class Agency implements KeyExtractor<Client> {
     private static Random rmd = new Random();
 
 
+    //TODO criar uma estrutura de clientes sempre que se adiciona
+    //TODO no waiting Time percorrer a estrutura e somar os tempos
+    //TODO adicionar tambem o numero de funcionários envolvidos no processo
+
     public static void main(String[] args) {
         if(args.length == 0){showOptions();return;}
         numberOfEmployees =Integer.parseInt(args[0]);
         init();
-        Client c1 = new Client(123,key);
-        queue.add(c1,new ClientPrio(key,new Service("cartoes",5)));
+        Client c1 = new Client(123,0);
+        queue.add(c1,new ClientPrio(0,new Service("cartoes",5),0));
         ++key;
-        Client c2 = new Client(321,key);
-        queue.add(c2,new ClientPrio(key,new Service("depositos",2)));
+        Client c2 = new Client(321,1);
+        queue.add(c2,new ClientPrio(1,new Service("depositos",2),0));
         ++key;
-        Client c3 = new Client(231,key);
-        queue.add(c3,new ClientPrio(key,new Service("levantamentos",1)));
-        ++key;
-       /* Client c4 = new Client(999,key);
-        queue.add(c4,new ClientPrio(key,new Service("levantamentos",1)));
-        ++key;
-        Client c5 = new Client(1000,key);
-        queue.add(c5,new ClientPrio(key,new Service("levantamentos",1)));
-        ++key;
-        Client c6 = new Client(1001,key);
-        queue.add(c6,new ClientPrio(key,new Service("depositos",2)));
-        ++key;*/
+        Client c3 = new Client(231,2);
+        queue.add(c3,new ClientPrio(2,new Service("levantamentos",1),0));
+        Client c4 = new Client(444,key);
+        queue.add(c4,new ClientPrio(3,new Service("levantamentos",1),0));
         run();
     }
 
     private static void init() {
         cmp= (o1, o2) -> {
            if(o1.getService().getTime()==o2.getService().getTime())
-               return (o1.getNs()-o2.getNs());
-            return (o1.getService().getTime() - o2.getService().getTime());
+               return (o2.getNs()-o1.getNs());
+            return (o2.getService().getTime() - o1.getService().getTime());
         };
-        queue = new PriorityQueue(cmp,new Agency());
+        queue = new PriorityQueue(10,cmp,new Agency());
         key = rmd.nextInt(20);
         scan = new Scanner(System.in);
     }
@@ -85,8 +81,10 @@ public class Agency implements KeyExtractor<Client> {
         System.out.println("Insert how long the service takes ");
         int time = scan.nextInt();
         Service service = new Service(name,time);
-        Client client = new Client(id,rmd.nextInt(20));
-        queue.add(client,new ClientPrio(client.getNs(),service));
+        double enter = System.currentTimeMillis();
+        Client client = new Client(id,key);
+        queue.add(client,new ClientPrio(client.getNs(),service,enter));
+        ++key;
     }
 
     private static void removeCostumer() {
@@ -130,23 +128,18 @@ public class Agency implements KeyExtractor<Client> {
                 System.out.println("Insert the Client key...");
                 int key = scan.nextInt();
                 System.out.println("Now insert the Service you want to Change To...");
-                System.out.println("Option 1 - \n"+
-                                   "Option 2 - \n"+
-                                   "Option 3 - \n"+
-                                   "Option 4 - \n");
-
                 String name = scan.next();
                 System.out.println("How long does it take");
                 int time = scan.nextInt();
                 Service serv = new Service(name,time);
-                queue.update(key,new ClientPrio(key,serv));
+                double enter = System.currentTimeMillis();
+                queue.update(key,new ClientPrio(key,serv, enter));
             }
     }
-
     private static void waitingTime() {
-
+        System.out.println("Insert the Client key...");
+        int key = scan.nextInt();
     }
-
     private static void showOptions() {
         System.out.println("1.newCostumer <c> <t>   - " + "Adicionar novos clientes à fila de espera.\n" +
                 "2.removeCostumer <k>    - " + "Remover clientes da fila de espera, dado o seu identificador de senha.\n" +
@@ -156,4 +149,5 @@ public class Agency implements KeyExtractor<Client> {
                 "6.waitingTime <k> <n>   - " + "Obter a informação do tempo estimado de espera para um dado cliente, indicando o seu identificador de senha.\n" +
                 " Para esta funcionalidade é necessário identificar o número de funcionários que estão a realizar o atendimento ao cliente. .\n" );
     }
+
 }
