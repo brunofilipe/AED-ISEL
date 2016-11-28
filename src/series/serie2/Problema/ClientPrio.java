@@ -5,7 +5,7 @@ public class ClientPrio {
     private int ns;
     private Service service;
 
-    public ClientPrio(int ns, Service service, double entry) {
+    public ClientPrio(int ns, Service service) {
         this.ns = ns;
         this.service = service;
     }

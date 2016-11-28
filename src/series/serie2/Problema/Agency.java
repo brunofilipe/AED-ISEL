@@ -17,25 +17,10 @@ public class Agency implements KeyExtractor<Client> {
     private static int numberOfEmployees;
     private static Random rmd = new Random();
 
-
-    //TODO criar uma estrutura de clientes sempre que se adiciona
-    //TODO no waiting Time percorrer a estrutura e somar os tempos
-    //TODO adicionar tambem o numero de funcionários envolvidos no processo
-
     public static void main(String[] args) {
         if(args.length == 0){showOptions();return;}
         numberOfEmployees =Integer.parseInt(args[0]);
         init();
-        Client c1 = new Client(123,0);
-        queue.add(c1,new ClientPrio(0,new Service("cartoes",5),0));
-        ++key;
-        Client c2 = new Client(321,1);
-        queue.add(c2,new ClientPrio(1,new Service("depositos",2),0));
-        ++key;
-        Client c3 = new Client(231,2);
-        queue.add(c3,new ClientPrio(2,new Service("levantamentos",1),0));
-        Client c4 = new Client(444,key);
-        queue.add(c4,new ClientPrio(3,new Service("levantamentos",1),0));
         run();
     }
 
@@ -76,14 +61,16 @@ public class Agency implements KeyExtractor<Client> {
     private static void newCostumer() {
         System.out.println("Insert client ID ");
         int id = scan.nextInt();
-        System.out.println("Insert which service you want ");
-        String name = scan.next();
-        System.out.println("Insert how long the service takes ");
-        int time = scan.nextInt();
-        Service service = new Service(name,time);
-        double enter = System.currentTimeMillis();
+        System.out.println("Insert the service number you want: ");
+        System.out.println("1. Depósitos/Levantamentos (DL) – 2 mn;\n" +
+                           "2. Cartões (CA) – 5 mn;\n" +
+                           "3. Créditos (CR) – 10 mn;\n" +
+                           "4. Operações Financeiras (OF) – 20 mn.\n");
+        int i = scan.nextInt();
+        Service [] s = Service.values();
         Client client = new Client(id,key);
-        queue.add(client,new ClientPrio(client.getNs(),service,enter));
+        queue.add(client,new ClientPrio(client.getNs(),s[i-1]));
+        System.out.println("Your key is: " + key);
         ++key;
     }
 
@@ -97,7 +84,9 @@ public class Agency implements KeyExtractor<Client> {
             System.out.println("Insert key to Remove");
             int key = scan.nextInt();
             queue.remove(key);
+            System.out.println("Client with the key: " + key + " removed!");
         }
+
     }
 
     private static void removeNextCostumer() {
@@ -108,7 +97,7 @@ public class Agency implements KeyExtractor<Client> {
         }while(!answ.equals("Y") && !answ.equals("N"));
         if(answ.equals("Y")) {
            int id = queue.poll().getId();
-            System.out.println("Id of the removed client is" + id);
+            System.out.println("The Id of the removed client is " + id);
         }
     }
 
@@ -128,18 +117,47 @@ public class Agency implements KeyExtractor<Client> {
                 System.out.println("Insert the Client key...");
                 int key = scan.nextInt();
                 System.out.println("Now insert the Service you want to Change To...");
-                String name = scan.next();
-                System.out.println("How long does it take");
-                int time = scan.nextInt();
-                Service serv = new Service(name,time);
-                double enter = System.currentTimeMillis();
-                queue.update(key,new ClientPrio(key,serv, enter));
+                System.out.println("1. Depósitos/Levantamentos (DL) – 2 mn;\n" +
+                        "2. Cartões (CA) – 5 mn;\n" +
+                        "3. Créditos (CR) – 10 mn;\n" +
+                        "4. Operações Financeiras (OF) – 20 mn.\n");
+                int i = scan.nextInt();
+                Service [] s = Service.values();
+                queue.update(key,new ClientPrio(key,s[i-1]));
             }
     }
     private static void waitingTime() {
-        System.out.println("Insert the Client key...");
-        int key = scan.nextInt();
+        int[] bancadas = new int[numberOfEmployees];
+        int iHeap = 0;
+        ClientPrio c = queue.getPriority(iHeap);
+        while ( c.getNs() != key){
+            int currTime = c.getService().getTime();
+            bancadas[0] += currTime;
+            minHeapify(bancadas, numberOfEmployees, 0);
+            c = queue.getPriority(++iHeap);
+        }
     }
+
+    public static void minHeapify(int[] heap, int heapSize, int i) {
+        int l = left(i);
+        int r = right( i );
+        int largest = ( l >= heapSize || heap[ l ] > heap[i] ) ? i : l;
+        if ( r < heapSize && heap[ largest ] > heap[ r ] ) largest = r;
+        if ( largest != i ) {
+            swap( heap, i, largest );
+            minHeapify( heap, heapSize, largest);
+        }
+    }
+
+    private static void swap(int[] a, int i1, int i2) {
+        int aux = a[i1];
+        a[i1] = a[i2];
+        a[i2] = aux;
+    }
+
+    public static int left(int i) { return (i << 1) + 1; }
+    public static int right(int i) { return (i << 1) + 2; }
+
     private static void showOptions() {
         System.out.println("1.newCostumer <c> <t>   - " + "Adicionar novos clientes à fila de espera.\n" +
                 "2.removeCostumer <k>    - " + "Remover clientes da fila de espera, dado o seu identificador de senha.\n" +

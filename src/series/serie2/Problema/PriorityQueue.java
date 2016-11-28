@@ -5,8 +5,8 @@ import java.util.Comparator;
 
 public class PriorityQueue<E,P>{
 
-    private static class Node<E, P> {
-        public Node(E e, P p, int key) {
+    private static class Pair<E, P> {
+        public Pair(E e, P p, int key) {
             this.data = e;
             this.priority = p;
             this.key = key;
@@ -17,17 +17,25 @@ public class PriorityQueue<E,P>{
     }
 
     private HashTable<Integer, Integer> table;
-    private Node<E, P>[] heap;
+    private Pair<E, P>[] heap;
     private int count;
     private Comparator<P>cmp;
     private KeyExtractor<E> keyExtractor;
 
     public PriorityQueue(int size,Comparator<P>cmp,KeyExtractor<E>keyExtractor) {
-        this.table = new HashTable<Integer, Integer> (size);
-        this.heap = (Node<E, P>[])new Node[size];
+        this.table = new HashTable<> (size, 2);             //loadFactor = 2 para nao ultrapassar o size
+        this.heap = (Pair<E, P>[])new Pair[size];
         this.count = 0;
         this.cmp = cmp;
         this.keyExtractor = keyExtractor;
+    }
+
+    public HashTable<Integer,Integer> getTable() {
+        return table;
+    }
+
+    public P getPriority(int idx){
+        return heap[idx].priority;
     }
 
     public boolean isEmpty() {
@@ -38,12 +46,11 @@ public class PriorityQueue<E,P>{
         return this.count == this.heap.length;
     }
 
-
     public void add(E e, P p) {
         if(e == null || p == null || keyExtractor == null || isFull()) return;
         int hash = keyExtractor.getKey(e);
-        int index = bubbleUp(this.count, p);
-        heap[index] = new Node<E,P>(e, p, hash);
+        int index = increase(this.count, p);
+        heap[index] = new Pair<>(e, p, hash);
         this.table.put(hash, index);
         this.count++;
     }
@@ -54,12 +61,10 @@ public class PriorityQueue<E,P>{
     }
 
     public E poll() {
-        if(isEmpty()) return null;
-
-        E max = heap[0].data;
+        E max = pick();
         this.table.remove(heap[0].key);
 
-        int index = bubbleDown(0);
+        int index = decrease(0);
 
         this.count--;
         switchHeap(index, this.count);
@@ -74,13 +79,13 @@ public class PriorityQueue<E,P>{
         int result = cmp.compare(heap[heapIdx].priority,prio);
         heap[heapIdx].priority = prio;
 
-        Node elem = heap[heapIdx];
+        Pair elem = heap[heapIdx];
 
         int i;
         if(result < 0) //prio is bigger
-            i = bubbleUp(heapIdx, prio);
+            i = increase(heapIdx, prio);
         else
-            i = bubbleDown(heapIdx);
+            i = decrease(heapIdx);
 
         heap[i] = elem;
         this.table.put(elem.key, i);
@@ -94,37 +99,37 @@ public class PriorityQueue<E,P>{
         switchHeap(heapIdx, this.count);
         heap[this.count] = null;
 
-        bubbleDown(heapIdx);
+        decrease(heapIdx);
     }
 
-    public P pickKey() {
-        if(isEmpty()) return null;
-
-        return heap[0].priority;
-    }
-
-    private int bubbleUp(int start, P p) {
+    private int increase(int start, P p) {
         int i;
-        for(i = start; i > 0 && cmp.compare(heap[(i-1)/2].priority,p) < 0; i = (i-1)/2) //bubble up
-            switchHeap(i, (i-1)/2);
+        for(i = start; i > 0 && cmp.compare(heap[parent(i)].priority,p) < 0; i = parent(i)) //bubble up
+            switchHeap(i, parent(i));
 
         return i;
     }
 
-    private int bubbleDown(int start) {
+    private int decrease(int start) {
         int i, son;
 
-        for(i = start; i*2+1 <= this.count-1; i = son) {
-            son = i*2+1;
+        for(i = start;left(i) <= this.count-1; i = son) {
+            son = left(i);
             if(son < this.count-1 && cmp.compare(heap[son].priority,heap[son+1].priority) < 0) son++;
 
-            if(cmp.compare(heap[son].priority,heap[this.count-1].priority) > 0)
-                switchHeap(i, son);
+            if(cmp.compare(heap[son].priority,heap[this.count-1].priority) > 0) swap(i,son);
+                //switchHeap(i, son);
             else
                 break;
         }
 
         return i;
+    }
+
+    private void swap(int i, int son) {
+         Pair aux = heap[i];
+         heap[i] = heap[son];
+         heap[son] = aux;
     }
 
     private void switchHeap(int i, int i2) {
