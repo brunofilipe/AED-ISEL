@@ -129,16 +129,17 @@ public class Agency implements KeyExtractor<Client> {
     private static void waitingTime() {
         System.out.println("Insert the Client key...");
         int key = scan.nextInt();
-        int[] bancadas = new int[numberOfEmployees];
-        int iHeap = 0;
-        ClientPrio c = queue.getPriority(iHeap);
+        int[] func = new int[numberOfEmployees];
+        int idx = 0;
+        queue.sortHeap();
+        ClientPrio c = queue.getPriority(idx);
         while ( c.getNs() != key){
-            int currTime = c.getService().getTime();
-            bancadas[0] += currTime;
-            Utils.minHeapify(bancadas, numberOfEmployees, 0);
-            c = queue.getPriority(++iHeap);
+            int time = c.getService().getTime();
+            func[0] += time;
+            Utils.minHeapify(func, numberOfEmployees, 0);
+            c = queue.getPriority(++idx);
         }
-        System.out.println(bancadas[0]);
+        System.out.println("The client with the key: "+key+ " has to wait " + func[0] + " min!");
     }
 
 

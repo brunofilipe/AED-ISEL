@@ -118,11 +118,10 @@ public class PriorityQueue<E,P>{
             if(son < this.count-1 && cmp.compare(heap[son].priority,heap[son+1].priority) < 0) son++;
 
             if(cmp.compare(heap[son].priority,heap[this.count-1].priority) > 0) swap(i,son);
-                //switchHeap(i, son);
+
             else
                 break;
         }
-
         return i;
     }
 
@@ -137,7 +136,13 @@ public class PriorityQueue<E,P>{
         table.put(heap[i2].key, i);
     }
 
-
-
-
+    public void sortHeap(){
+        for (int j = 0 ; j < count; ++j) {
+            Pair<E,P> key = heap[j];
+            int i = j-1;
+            for ( ; i >= 0 && cmp.compare(heap[i].priority, key.priority) < 0; -- i)
+                heap[i+1] = heap[i];
+            heap[i+1] = key;
+        }
+    }
 }

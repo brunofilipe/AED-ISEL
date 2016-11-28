@@ -1,8 +1,6 @@
 package series.serie2.Problema;
 
-/**
- * Created by Bruno on 28/11/2016.
- */
+
 public class Utils {
     public static int parent(int i) { return (i-1) >> 1; }
     public static int left(int i) { return (i << 1) + 1; }
