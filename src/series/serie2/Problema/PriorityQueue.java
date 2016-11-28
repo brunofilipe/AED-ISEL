@@ -104,8 +104,8 @@ public class PriorityQueue<E,P>{
 
     private int increase(int start, P p) {
         int i;
-        for(i = start; i > 0 && cmp.compare(heap[parent(i)].priority,p) < 0; i = parent(i)) //bubble up
-            switchHeap(i, parent(i));
+        for(i = start; i > 0 && cmp.compare(heap[Utils.parent(i)].priority,p) < 0; i = Utils.parent(i)) //bubble up
+            switchHeap(i, Utils.parent(i));
 
         return i;
     }
@@ -113,8 +113,8 @@ public class PriorityQueue<E,P>{
     private int decrease(int start) {
         int i, son;
 
-        for(i = start;left(i) <= this.count-1; i = son) {
-            son = left(i);
+        for(i = start;Utils.left(i) <= this.count-1; i = son) {
+            son = Utils.left(i);
             if(son < this.count-1 && cmp.compare(heap[son].priority,heap[son+1].priority) < 0) son++;
 
             if(cmp.compare(heap[son].priority,heap[this.count-1].priority) > 0) swap(i,son);
@@ -134,12 +134,10 @@ public class PriorityQueue<E,P>{
 
     private void switchHeap(int i, int i2) {
         heap[i] = heap[i2];
-        this.table.put(heap[i2].key, i);
+        table.put(heap[i2].key, i);
     }
 
-    public static int parent(int i) { return (i-1) >> 1; }
-    public static int left(int i) { return (i << 1) + 1; }
-    public static int right(int i) { return (i << 1) + 2; }
+
 
 
 }

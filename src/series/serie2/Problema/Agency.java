@@ -127,36 +127,20 @@ public class Agency implements KeyExtractor<Client> {
             }
     }
     private static void waitingTime() {
+        System.out.println("Insert the Client key...");
+        int key = scan.nextInt();
         int[] bancadas = new int[numberOfEmployees];
         int iHeap = 0;
         ClientPrio c = queue.getPriority(iHeap);
         while ( c.getNs() != key){
             int currTime = c.getService().getTime();
             bancadas[0] += currTime;
-            minHeapify(bancadas, numberOfEmployees, 0);
+            Utils.minHeapify(bancadas, numberOfEmployees, 0);
             c = queue.getPriority(++iHeap);
         }
+        System.out.println(bancadas[0]);
     }
 
-    public static void minHeapify(int[] heap, int heapSize, int i) {
-        int l = left(i);
-        int r = right( i );
-        int largest = ( l >= heapSize || heap[ l ] > heap[i] ) ? i : l;
-        if ( r < heapSize && heap[ largest ] > heap[ r ] ) largest = r;
-        if ( largest != i ) {
-            swap( heap, i, largest );
-            minHeapify( heap, heapSize, largest);
-        }
-    }
-
-    private static void swap(int[] a, int i1, int i2) {
-        int aux = a[i1];
-        a[i1] = a[i2];
-        a[i2] = aux;
-    }
-
-    public static int left(int i) { return (i << 1) + 1; }
-    public static int right(int i) { return (i << 1) + 2; }
 
     private static void showOptions() {
         System.out.println("1.newCostumer <c> <t>   - " + "Adicionar novos clientes à fila de espera.\n" +
