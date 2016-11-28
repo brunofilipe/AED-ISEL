@@ -1,4 +1,5 @@
 package series.serie1;
+
 import java.util.Comparator;
 
 
@@ -55,7 +56,7 @@ public class Heap {
     }
 
 
-    public static <E> void minHeapify(E[] array, int pos, int size, Comparator<E> cmp) {
+    public static <E> void minHeapify(E[] array, int pos, Comparator<E>cmp, int size) {
         int largest = pos;
         int l = left(pos), r = right(pos);
         if ((l < size) && (cmp.compare(array[largest], array[l]) > 0))
@@ -66,8 +67,9 @@ public class Heap {
             E aux = array[pos];
             array[pos] = array[largest];
             array[largest] = aux;
-            minHeapify(array, largest, size, cmp);
+            minHeapify(array, largest, cmp, size);
         }
+
     }
     public static <E> void maxHeapify(E[] array, int pos, int size, Comparator<E> cmp) {
         int largest = pos;
@@ -87,7 +89,7 @@ public class Heap {
     public static <E> void buildMinHeap(E[] array, int size, Comparator<E> cmp) {
         int iPai = parent(size - 1);
         while (iPai >= 0) {
-            minHeapify(array, iPai, size, cmp);
+            minHeapify(array, iPai, cmp,size);
             iPai--;
         }
     }

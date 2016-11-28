@@ -82,7 +82,7 @@ public class MaiorNrOcorrencias {
                 Heap.buildMinHeap(words,nrWords,wcmp);
                 if(words[0].getCount() < w.getCount())
                     words[0]=w;
-                Heap.minHeapify(words,0,nrWords,wcmp);
+                Heap.minHeapify(words,0,wcmp,nrWords);
             }
             else words[widx++] = w;
             w = new Word (f[0].getfWord(),0);
@@ -95,7 +95,7 @@ public class MaiorNrOcorrencias {
            f.getReader().close();
            swap(files, 0, --nf);
        }
-        Heap.minHeapify(files,0,nf,cmp);
+        Heap.minHeapify(files,0,cmp,nf);
     }
 
     private static void swap(File[] fArray, int i, int nf) {
