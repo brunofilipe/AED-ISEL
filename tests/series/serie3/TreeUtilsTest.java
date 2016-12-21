@@ -5,6 +5,7 @@ import org.junit.Before;
 
 import java.util.Comparator;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -35,6 +36,17 @@ public class TreeUtilsTest {
     }
 
     /* testing createBstFromRange */
+
+    @Test
+    public void test_createBSTFromRange_null(){
+        assertEquals(createBSTFromRange(1,0),null);
+    }
+
+    @Test
+    public void test_createBSTFromRange_isBST_(){
+        TreeNode root = createBSTFromRange(1,7);
+        assertTrue(isBST(root,cmp));
+    }
 
 
     /*testing isBst*/
