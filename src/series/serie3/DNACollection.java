@@ -5,34 +5,39 @@ package series.serie3;
  */
 public class DNACollection {
 
-    String [] collection;
+    TreeNode <Fragment> [] collection;
 
     public DNACollection(int length){
-        //collection = new String [] {"A","C","T","G"};
-        collection = new String [length] ;
+        collection = new TreeNode [length] ;
     }
 
     public void add(String fragment){
-        switch (fragment.charAt(0)){
+       String aux = fragment.substring(1);
+        switch (fragment.charAt(0)) {
             case 'A':
-                checkIfNull(0,fragment);
+                checkIfNull(0, fragment);
                 break;
             case 'C':
-                checkIfNull(1,fragment);
+                checkIfNull(1, fragment);
                 break;
             case 'T':
-                checkIfNull(2,fragment);
+                checkIfNull(2, fragment);
                 break;
             case 'G':
-                checkIfNull(3,fragment);
+                checkIfNull(3, fragment);
                 break;
         }
     }
 
+
     private void checkIfNull(int i, String fragment) {
-        if(collection[i] != null)
-            collection[i]+= fragment;
-        collection[i] = fragment;
+        while(collection[i].item != null){
+            if (collection[i].item.child == null)
+               // collection[i].item.child = new Fragment();
+            collection[i].item = collection[i].item.child;
+        }
+        if(collection[i].item == null)
+            collection[i].item = new Fragment(fragment);
     }
 
     public int prefixCount(String p){return 0;}
@@ -42,6 +47,9 @@ public class DNACollection {
 class Main{
     public static void main(String[] args) {
         DNACollection dna = new DNACollection(4);
+        String abc = "abc";
+        String aux= abc.substring(1);
+        System.out.println(aux);
         dna.add("A");
         dna.add("AC");
         dna.add("TG");
