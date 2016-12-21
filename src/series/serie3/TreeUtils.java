@@ -14,10 +14,17 @@ public class TreeUtils {
         return contains(root.left, min, max, cmp);
     }
 /************************************************************************/
-   public static TreeNode<Integer> createBSTFromRange(int start, int end){
-        throw new UnsupportedOperationException();
+   public static TreeNode<Integer> createBSTFromRange(int start, int end) {
+       if (start > end)
+           return null;
+
+       int aux = (start + end) / 2;
+       TreeNode<Integer> root = new TreeNode(aux);
+       root.left = createBSTFromRange(start, aux - 1);
+       root.right = createBSTFromRange(aux + 1, end);
+       return root;
    }
-/************************************************************************/
+    /************************************************************************/
 //TODO : quando chega ao fim de cada ramo da arvore, ver como sair
     public static <E> boolean isBST(TreeNode<E> root, Comparator<E> cmp){
         if(root==null)return false;

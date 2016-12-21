@@ -38,6 +38,10 @@ public class TreeUtilsTest {
 
 
     /*testing isBst*/
+
+    @Test
+    public void test_isBst_null(){assertFalse(isBST(rootNull,cmp));}
+
     @Test
     public void test_isBst_true(){assertTrue(isBST(root,cmp));}
 
