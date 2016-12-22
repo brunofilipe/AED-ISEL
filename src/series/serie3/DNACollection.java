@@ -31,8 +31,30 @@ public class DNACollection {
     }
 
     public int prefixCount(String p) {
+        int count = 0;
         int idx = map.get(p.charAt(0));
-        return 0;
+        if (collection[idx] != null){
+            count = toEnd(collection,idx);
+        }
+
+        return count;
+    }
+
+    private int toEnd(Fragment[] fragment,int idx) {
+
+        if(isEmpty(fragment[idx].child)) return toEnd(fragment,++idx);
+        int i = 0;
+        while (fragment[idx].child[i]== null){
+            ++i;
+        }
+        return toEnd(fragment[idx].child,idx);
+    }
+
+    private boolean isEmpty(Fragment[]fragments){
+        for (Fragment fragment : fragments) {
+            if (fragment != null) return false;
+        }
+        return true;
     }
 
 
@@ -41,12 +63,13 @@ class Main{
     public static void main(String[] args) {
         DNACollection dna = new DNACollection(4);
         dna.add("A");
-        dna.add("AC");
-        dna.add("ACG");
-        dna.add("TG");
-        dna.add("CG");
+        dna.add("C");
+        dna.add("T");
         dna.add("G");
-
+        dna.add("AA");
+        dna.add("ACG");
+        dna.add("ACT");
+        dna.prefixCount("A");
     }
 }
 
