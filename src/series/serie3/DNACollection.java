@@ -1,63 +1,52 @@
 package series.serie3;
 
-/**
- * Created by João Gameiro on 21/12/2016.
- */
+
+import series.serie2.Problema.HashTable;
+
 public class DNACollection {
 
-    TreeNode <Fragment> [] collection;
-
+    Fragment[] collection;
+    HashTable<Character,Integer> map;
     public DNACollection(int length){
-        collection = new TreeNode [length] ;
+        map = new HashTable<>(4,2);
+        map.put('A',0);
+        map.put('C',1);
+        map.put('T',2);
+        map.put('G',3);
+        collection = new Fragment[length] ;
     }
 
     public void add(String fragment){
-       String aux = fragment.substring(1);
-        switch (fragment.charAt(0)) {
-            case 'A':
-                checkIfNull(0, fragment);
-                break;
-            case 'C':
-                checkIfNull(1, fragment);
-                break;
-            case 'T':
-                checkIfNull(2, fragment);
-                break;
-            case 'G':
-                checkIfNull(3, fragment);
-                break;
-        }
+        int charIdx = 0;
+        put(collection,charIdx,fragment);
     }
 
-
-    private void checkIfNull(int i, String fragment) {
-        while(collection[i].item != null){
-            if (collection[i].item.child == null)
-               // collection[i].item.child = new Fragment();
-            collection[i].item = collection[i].item.child;
+    private void put(Fragment []fragment, int charIdx, String p) {
+        if (charIdx>=p.length())return;
+        int idx = map.get(p.charAt(charIdx));
+        if(fragment[idx] == null){
+            fragment[idx] = new Fragment(p.charAt(charIdx));
         }
-        if(collection[i].item == null)
-            collection[i].item = new Fragment(fragment);
+        put(fragment[idx].child,++charIdx,p);
     }
 
-    public int prefixCount(String p){return 0;}
+    public int prefixCount(String p) {
+        int idx = map.get(p.charAt(0));
+        return 0;
+    }
 
 
 }
 class Main{
     public static void main(String[] args) {
         DNACollection dna = new DNACollection(4);
-        String abc = "abc";
-        String aux= abc.substring(1);
-        System.out.println(aux);
         dna.add("A");
         dna.add("AC");
+        dna.add("ACG");
         dna.add("TG");
         dna.add("CG");
         dna.add("G");
-        for (int i = 0; i <4 ; i++) {
-            System.out.println(dna.collection[i]);
-        }
+
     }
 }
 
