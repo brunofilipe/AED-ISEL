@@ -18,23 +18,33 @@ public class DNACollection {
 
     public void add(String fragment){
         int charIdx = 0;
-        put(collection,charIdx,fragment);
+        //int idx = map.get(fragment.charAt(charIdx));
+        put(collection,fragment,charIdx);
     }
 
-    private void put(Fragment []fragment, int charIdx, String p) {
+    private void put(Fragment []fragment, String p ,int charIdx ) {
+
         if (charIdx>=p.length())return;
+
         int idx = map.get(p.charAt(charIdx));
         if(fragment[idx] == null){
             fragment[idx] = new Fragment(p.charAt(charIdx));
+        }else {
+            if(p.length()-charIdx>1)
+                fragment[idx].isTerminal=false;
         }
-        put(fragment[idx].child,++charIdx,p);
+        if(p.length()-charIdx == 1 && isEmpty(fragment[idx].child))
+            fragment[idx].isTerminal = true;
+
+        put(fragment[idx].child,p,++charIdx);
     }
 
     public int prefixCount(String p) {
         int count = 0;
         int idx = map.get(p.charAt(0));
         if (collection[idx] != null){
-            count = toEnd(collection,idx);
+            count = collection[idx].getCounter();
+            //toEnd(collection,idx);
         }
 
         return count;
@@ -42,12 +52,7 @@ public class DNACollection {
 
     private int toEnd(Fragment[] fragment,int idx) {
 
-        if(isEmpty(fragment[idx].child)) return toEnd(fragment,++idx);
-        int i = 0;
-        while (fragment[idx].child[i]== null){
-            ++i;
-        }
-        return toEnd(fragment[idx].child,idx);
+        return 0;
     }
 
     private boolean isEmpty(Fragment[]fragments){
@@ -62,14 +67,16 @@ public class DNACollection {
 class Main{
     public static void main(String[] args) {
         DNACollection dna = new DNACollection(4);
-        dna.add("A");
-        dna.add("C");
-        dna.add("T");
-        dna.add("G");
-        dna.add("AA");
+        dna.add("AC");
         dna.add("ACG");
+
         dna.add("ACT");
-        dna.prefixCount("A");
+        dna.add("ACA");
+        dna.add("AAG");
+
+
+        int a = dna.prefixCount("A");
+
     }
 }
 
