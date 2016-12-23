@@ -18,7 +18,6 @@ public class DNACollection {
 
     public void add(String fragment){
         int charIdx = 0;
-        //int idx = map.get(fragment.charAt(charIdx));
         put(collection,fragment,charIdx);
     }
 
@@ -40,19 +39,19 @@ public class DNACollection {
     }
 
     public int prefixCount(String p) {
-        int count = 0;
-        int idx = map.get(p.charAt(0));
-        if (collection[idx] != null){
-            count = collection[idx].getCounter();
-            //toEnd(collection,idx);
-        }
 
-        return count;
+        int idx = map.get(p.charAt(0));
+        checkTerminals(collection[idx]);
+        return 0;
     }
 
-    private int toEnd(Fragment[] fragment,int idx) {
+    public void checkTerminals(Fragment f){
+        int count=0;
+        if(f == null)
+            return;
+        if(f.isTerminal)
+            ++count;
 
-        return 0;
     }
 
     private boolean isEmpty(Fragment[]fragments){
@@ -69,7 +68,6 @@ class Main{
         DNACollection dna = new DNACollection(4);
         dna.add("AC");
         dna.add("ACG");
-
         dna.add("ACT");
         dna.add("ACA");
         dna.add("AAG");
