@@ -41,18 +41,29 @@ public class DNACollection {
     public int prefixCount(String p) {
 
         int idx = map.get(p.charAt(0));
-        checkTerminals(collection[idx]);
-        return 0;
-    }
-
-    public void checkTerminals(Fragment f){
-        int count=0;
-        if(f == null)
-            return;
-        if(f.isTerminal)
-            ++count;
+        return checkTerminals(collection,idx,0);
 
     }
+
+    public int checkTerminals(Fragment []f, int pos,int i) {
+        if(i==f.length)i=0;
+        if (pos == f.length) return 0;
+        while (f[pos]==null)
+            ++pos;
+        if(isEmpty(f[pos].child)) return checkTerminals(f, ++pos,i) + 1 ;
+        while (f[pos].child[i] == null) {
+            ++i;
+            if(i==f.length)
+                return checkTerminals(f,++pos,0);
+        }
+        if(f[pos].child[i].isTerminal) {
+            if (i == f.length - 1)
+                return checkTerminals(f, ++pos,0) + 1;
+            else return checkTerminals(f,pos,++i)+1;
+        }
+        return checkTerminals(f[pos].child,pos,i);
+    }
+
 
     private boolean isEmpty(Fragment[]fragments){
         for (Fragment fragment : fragments) {
@@ -71,10 +82,12 @@ class Main{
         dna.add("ACT");
         dna.add("ACA");
         dna.add("AAG");
+        dna.add("AGA");
+        dna.add("AT");
 
 
         int a = dna.prefixCount("A");
-
+        System.out.println(a);
     }
 }
 
