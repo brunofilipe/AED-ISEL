@@ -24,8 +24,7 @@ public class TreeUtilsTest {
     }
 /*testing contains*/
     @Test
-    public void test_contains_null() {
-        assertFalse(contains(rootNull,2,5,cmp)); }
+    public void test_contains_null() {assertFalse(contains(rootNull,2,5,cmp)); }
 
     @Test
     public void test_contains_exists(){assertTrue(contains(root,1,3,cmp)); }

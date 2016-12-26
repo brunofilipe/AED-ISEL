@@ -3,7 +3,7 @@ package series.serie3;
 import java.util.Comparator;
 
 public class TreeUtils {
-    /*O(log n)*/
+
     public static <E> boolean contains(TreeNode<E> root, E min, E max, Comparator<E> cmp){
         if (root==null)return false;
         E value = root.item;
@@ -15,9 +15,7 @@ public class TreeUtils {
     }
 /************************************************************************/
    public static TreeNode<Integer> createBSTFromRange(int start, int end) {
-       if (start > end)
-           return null;
-
+       if (start > end) return null;
        int aux = (start + end) / 2;
        TreeNode<Integer> root = new TreeNode(aux);
        root.left = createBSTFromRange(start, aux - 1);
@@ -25,7 +23,6 @@ public class TreeUtils {
        return root;
    }
     /************************************************************************/
-//TODO : quando chega ao fim de cada ramo da arvore, ver como sair
     public static <E> boolean isBST(TreeNode<E> root, Comparator<E> cmp){
         if(root==null)return false;
         if(root.left == null || root.right == null) return true;
@@ -34,6 +31,4 @@ public class TreeUtils {
         boolean rightside = isBST(root.right,cmp);
         return leftside && rightside;
     }
-
-
 }
