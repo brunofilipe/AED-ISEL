@@ -1,7 +1,7 @@
 package series.serie3;
 
 
-import series.serie2.Problema.HashTable;
+
 
 public class DNACollection {
 
