@@ -28,7 +28,8 @@ public class DNACollection {
         int idx = map.get(p.charAt(charIdx));
         if(fragment[idx] == null){
             fragment[idx] = new Fragment(p.charAt(charIdx));
-        }else {
+        }
+        else {
             if(p.length()-charIdx>1)
                 fragment[idx].isTerminal=false;
         }
