@@ -1,36 +1,41 @@
 package series.serie3;
 
-public class EdgeInAnMST {
+public class EdgeInAnMST extends DisjointSets{
+    @Override
+    public void makeSet(int p) {
 
-    public static int isEdgeInAnMST(Vertex [] graph, int origId, int destId){
+    }
 
-        Vertex [] graphMST = putGraphInMST(graph);
-
-        for (int i = 0; i < graphMST.length; i++) {
-            if (graphMST[i].id == origId) {
-                Edge list = graphMST[i].list;
-                while (list != null) {
-                    if (graph[i].list.adjacent.id == destId)
-                        return 1;
-                    list = list.next;
-                }
-            }
-        }
+    @Override
+    public int findSet(int p) {
         return 0;
     }
 
-    private static Vertex[] putGraphInMST(Vertex[] graph) {
-        Vertex [] newGraph;
-        boolean [] visited;
-        int i=0;
-        while(true){
+    @Override
+    public void union(Edge p, Edge q) {
+
+    }
+
+    @Override
+    public int size() {
+        return 0;
+    }
+
+    @Override
+    public int parent(int i) {
+        return 0;
+    }
 
 
-        break;
 
+    public static int isEdgeInAnMST(Vertex[] graph, int origId, int destId) {
+        Vertex[]graphinMst = kruskal(graph);
+    }
+
+    private  Vertex[] kruskal(Vertex[] graph) {
+        Vertex[]vertices ;
+        for (int i = 0; i < graph.length; i++) {
+            makeSet(i);
         }
-
-
-        return graph;
     }
 }

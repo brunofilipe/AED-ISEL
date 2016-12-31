@@ -1,7 +1,6 @@
 package series.serie3;
 
-import series.serie2.Problema.HashTable;
-import series.serie2.Problema.KeyExtractor;
+
 import series.serie2.Problema.Utils;
 
 import java.util.Comparator;
@@ -10,28 +9,31 @@ import java.util.Comparator;
 public class PriorityQueue<E,P>{
 
     private static class Pair<E, P> {
-        public Pair(E e, P p, int key) {
-            this.data = e;
-            this.priority = p;
-            this.key = key;
-        }
         int key;
         E data;
         P priority;
+        public Pair(E e, P p) {
+            this.data = e;
+            this.priority = p;
+            this.key = this.data.hashCode();
+        }
     }
 
-    private series.serie2.Problema.HashTable<Integer, Integer> table;
+    private HashTable<Integer, Integer> table;
     private Pair<E, P>[] heap;
     private int count;
     private Comparator<P>cmp;
-    private KeyExtractor<E> keyExtractor;
 
-    public PriorityQueue(int size, Comparator<P>cmp, KeyExtractor<E>keyExtractor) {
-        this.table = new series.serie2.Problema.HashTable<>(size, 2);             //loadFactor = 2 para nao ultrapassar o size
+
+    public PriorityQueue(int size, Comparator<P>cmp) {
+        this.table = new HashTable<>(size, 2);             //loadFactor = 2 para nao ultrapassar o size
         this.heap = (Pair<E, P>[])new Pair[size];
         this.count = 0;
         this.cmp = cmp;
-        this.keyExtractor = keyExtractor;
+
+    }
+    public PriorityQueue(Comparator<P>cmp){
+        this(30,cmp);
     }
 
     public HashTable<Integer,Integer> getTable() {
@@ -51,17 +53,24 @@ public class PriorityQueue<E,P>{
     }
 
     public void add(E e, P p) {
-        if(e == null || p == null || keyExtractor == null || isFull()) return;
-        int hash = keyExtractor.getKey(e);
-        int index = increase(this.count, p);
-        heap[index] = new Pair<>(e, p, hash);
-        this.table.put(hash, index);
-        this.count++;
+        Pair<E, P> toAdd = new Pair<>(e, p);
+        int index = increase(count,p);
+        table.put(toAdd.key, index);
+        heap[count] = toAdd;
+        count++;
     }
 
     public E pick() {
         if(isEmpty()) return null;
         return heap[0].data;
+    }
+
+    public E search(E value ){
+        E res = null;
+        for (int i = 0; i < count; ++i){
+            if(heap[i].data.equals(value)) res = value;
+        }
+        return res;
     }
 
     public E poll() {

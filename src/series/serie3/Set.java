@@ -18,7 +18,7 @@ public class Set extends DisjointSets {
     }
 
     @Override
-    public void union(int p, int q) {
+    public void union(Edge p, Edge q) {
         for (int i= 0; i < size(); ++i)
             if ( id[i] == p) id[i] = q;
     }

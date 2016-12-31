@@ -1,8 +1,5 @@
 package series.serie3;
 
-/**
- * Created by João Gameiro on 26/12/2016.
- */
 public class Edge {
     Vertex adjacent;
     double weight;
