@@ -1,10 +1,6 @@
 package series.serie3;
 
-import java.util.Comparator;
 
-/**
- * Created by Bruno on 29/12/2016.
- */
 public class Graph extends DisjointSets {
     Vertex[]v ;
     PriorityQueue<Edge,Double>queue;
@@ -24,7 +20,7 @@ public class Graph extends DisjointSets {
 
     @Override
     public Edge findSet(int p) {
-       return queue.search(v[p].list);
+       return queue.search(v[p].list   );
     }
 
     @Override
@@ -42,13 +38,7 @@ public class Graph extends DisjointSets {
         return 0;
     }
 
-    private Vertex[] kruskal(Vertex[] graph) {
-        Comparator<Double> cmp = (d1,d2)->{
-         if(d1<d2)return 1;
-         else if (d1>d2) return -1;
-          return 0;
-         };
-        PriorityQueue<Edge,Double> queue = new PriorityQueue<Edge, Double>(cmp);
+    public Vertex[] kruskal(Vertex[] graph) {
         for (int i = 0; i < graph.length; i++) {
             makeSet(i);
         }

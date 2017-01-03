@@ -11,8 +11,10 @@ public class Ex3Tests {
         MST mst = new MST();
         try {
             Vertex []graph = mst.readFile("grafo.gr");
+            Graph graph1 = new Graph(graph);
+            graph1.kruskal(graph);
         } catch (IOException ignored) {}
-        int i = 0;
+
 
     }
 }
