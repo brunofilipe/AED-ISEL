@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2fc85a8-f4b7-41ce-96f0-238f988e8ad9" name="Default" comment="commit-hash">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/series/serie3/ArrayDisjointSets.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/series/serie3/QuickUnion.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/series/serie3/WQUPathCompressionHalving.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/series/serie3/WeightedQuickUnion.java" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/series/serie3/EdgeInAnMST.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/series/serie3/Set.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/series/serie3/DisjointSets.java" afterPath="$PROJECT_DIR$/src/series/serie3/DisjointSets.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/series/serie3/Edge.java" afterPath="$PROJECT_DIR$/src/series/serie3/Edge.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/series/serie3/Graph.java" afterPath="$PROJECT_DIR$/src/series/serie3/Graph.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/series/serie3/Vertex.java" afterPath="$PROJECT_DIR$/src/series/serie3/Vertex.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/series/serie3/Ex3Tests.java" afterPath="$PROJECT_DIR$/tests/series/serie3/Ex3Tests.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/series/serie3/MST.java" afterPath="$PROJECT_DIR$/tests/series/serie3/MST.java" />
     </list>
     <ignored path="AED.iws" />
@@ -40,39 +35,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Edge.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/series/serie3/Edge.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Graph.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/series/serie3/Graph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="641">
-              <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
+            <state relative-caret-position="226">
+              <caret line="12" column="56" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1100#1101#0" expanded="true" />
-                <element signature="e#1132#1133#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DisjointSets.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/series/serie3/DisjointSets.java">
+      <file leaf-file-name="grafo.gr" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grafo.gr">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="154">
-              <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-              <folding>
-                <element signature="e#316#317#0" expanded="true" />
-                <element signature="e#367#368#0" expanded="true" />
-              </folding>
+              <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -80,8 +60,8 @@
       <file leaf-file-name="MST.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/series/serie3/MST.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1">
-              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+            <state relative-caret-position="397">
+              <caret line="31" column="20" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -99,22 +79,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WeightedQuickUnion.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/series/serie3/WeightedQuickUnion.java">
+      <file leaf-file-name="Ex3Tests.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/series/serie3/Ex3Tests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QuickUnion.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/series/serie3/QuickUnion.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
-              <folding />
+            <state relative-caret-position="381">
+              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -123,7 +95,17 @@
         <entry file="file://$PROJECT_DIR$/src/series/serie3/WQUPathCompressionHalving.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="44">
-              <caret line="2" column="61" selection-start-line="2" selection-start-column="61" selection-end-line="2" selection-end-column="61" />
+              <caret line="2" column="57" selection-start-line="2" selection-start-column="57" selection-end-line="2" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WeightedQuickUnion.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/series/serie3/WeightedQuickUnion.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -153,7 +135,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/N2.txt" />
         <option value="$PROJECT_DIR$/src/series/serie1/Word.java" />
         <option value="$PROJECT_DIR$/test1.txt" />
         <option value="$PROJECT_DIR$/src/series/serie1/File.java" />
@@ -193,16 +174,17 @@
         <option value="$PROJECT_DIR$/src/series/serie3/Set.java" />
         <option value="$PROJECT_DIR$/src/series/serie3/List.java" />
         <option value="$PROJECT_DIR$/src/series/serie3/MyList.java" />
-        <option value="$PROJECT_DIR$/src/series/serie3/Vertex.java" />
         <option value="$PROJECT_DIR$/src/series/serie3/PriorityQueue.java" />
         <option value="$PROJECT_DIR$/tests/series/serie3/grafo.gr" />
-        <option value="$PROJECT_DIR$/tests/series/serie3/Ex3Tests.java" />
         <option value="$PROJECT_DIR$/src/series/serie3/EdgeInAnMST.java" />
         <option value="$PROJECT_DIR$/src/series/serie3/QuickUnion.java" />
         <option value="$PROJECT_DIR$/src/series/serie3/DisjointSets.java" />
         <option value="$PROJECT_DIR$/src/series/serie3/Edge.java" />
         <option value="$PROJECT_DIR$/src/series/serie3/ArrayDisjointSets.java" />
+        <option value="$PROJECT_DIR$/src/series/serie3/Vertex.java" />
         <option value="$PROJECT_DIR$/tests/series/serie3/MST.java" />
+        <option value="$PROJECT_DIR$/tests/series/serie3/Ex3Tests.java" />
+        <option value="$PROJECT_DIR$/grafo.gr" />
         <option value="$PROJECT_DIR$/src/series/serie3/Graph.java" />
       </list>
     </option>
@@ -268,7 +250,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="tests" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -277,6 +259,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="serie3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AED" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AED" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="series" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -326,59 +326,7 @@
       <recent name="D:\Bruno\Documents\ISEL\3ano\5semestre\AED\AED\tests\series\serie1" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Ex3Tests.createGraph">
-    <configuration default="false" name="DNATests.countTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="series.serie3.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="AED" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="series.serie3" />
-      <option name="MAIN_CLASS_NAME" value="series.serie3.DNATests" />
-      <option name="METHOD_NAME" value="countTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="DNATests.countNoElementTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="series.serie3.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="AED" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="series.serie3" />
-      <option name="MAIN_CLASS_NAME" value="series.serie3.DNATests" />
-      <option name="METHOD_NAME" value="countNoElementTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.Ex3Tests.checkIfIsEdgeInAnMST">
     <configuration default="false" name="DNATests.addCompleteFragmentTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -444,6 +392,58 @@
       <option name="PACKAGE_NAME" value="series.serie3" />
       <option name="MAIN_CLASS_NAME" value="series.serie3.Ex3Tests" />
       <option name="METHOD_NAME" value="createGraph" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="Ex3Tests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="series.serie3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="AED" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="series.serie3" />
+      <option name="MAIN_CLASS_NAME" value="series.serie3.Ex3Tests" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="Ex3Tests.checkIfIsEdgeInAnMST" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="series.serie3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="AED" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="series.serie3" />
+      <option name="MAIN_CLASS_NAME" value="series.serie3.Ex3Tests" />
+      <option name="METHOD_NAME" value="checkIfIsEdgeInAnMST" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -670,19 +670,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.DNATests.countTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.DNATests.countNoElementTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.DNATests.addCompleteFragmentTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.DNATests" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.Ex3Tests.createGraph" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.DNATests.addCompleteFragmentTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.DNATests" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.Ex3Tests.createGraph" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.Ex3Tests" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.Ex3Tests.checkIfIsEdgeInAnMST" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.Ex3Tests.createGraph" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.DNATests" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.DNATests.addCompleteFragmentTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.DNATests.countTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.DNATests.countNoElementTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.Ex3Tests.checkIfIsEdgeInAnMST" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.Ex3Tests" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.Ex3Tests.createGraph" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.DNATests" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.DNATests.addCompleteFragmentTest" />
       </list>
     </recent_temporary>
   </component>
@@ -1036,39 +1036,46 @@
       <option name="project" value="LOCAL" />
       <updated>1483443896986</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="falta a classe comparadora">
+      <created>1483531261583</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1483531261583</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Ex3Tests_createGraph - 2017.01.02 at 18h 43m 24s.xml">
+    <history-entry file="Ex3Tests - 2017.01.04 at 13h 13m 47s.xml">
+      <configuration name="Ex3Tests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Ex3Tests_checkIfIsEdgeInAnMST - 2017.01.04 at 13h 15m 39s.xml">
+      <configuration name="Ex3Tests.checkIfIsEdgeInAnMST" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Ex3Tests_checkIfIsEdgeInAnMST - 2017.01.04 at 13h 18m 02s.xml">
+      <configuration name="Ex3Tests.checkIfIsEdgeInAnMST" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Ex3Tests_checkIfIsEdgeInAnMST - 2017.01.04 at 13h 19m 23s.xml">
+      <configuration name="Ex3Tests.checkIfIsEdgeInAnMST" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Ex3Tests_checkIfIsEdgeInAnMST - 2017.01.04 at 13h 25m 19s.xml">
+      <configuration name="Ex3Tests.checkIfIsEdgeInAnMST" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Ex3Tests_checkIfIsEdgeInAnMST - 2017.01.04 at 13h 27m 55s.xml">
+      <configuration name="Ex3Tests.checkIfIsEdgeInAnMST" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Ex3Tests_checkIfIsEdgeInAnMST - 2017.01.04 at 13h 54m 59s.xml">
+      <configuration name="Ex3Tests.checkIfIsEdgeInAnMST" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Ex3Tests_checkIfIsEdgeInAnMST - 2017.01.04 at 13h 57m 44s.xml">
+      <configuration name="Ex3Tests.checkIfIsEdgeInAnMST" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Ex3Tests_createGraph - 2017.01.04 at 13h 00m 37s.xml">
       <configuration name="Ex3Tests.createGraph" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Ex3Tests_createGraph - 2017.01.02 at 18h 48m 54s.xml">
+    <history-entry file="Ex3Tests_createGraph - 2017.01.04 at 13h 13m 23s.xml">
       <configuration name="Ex3Tests.createGraph" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Ex3Tests_createGraph - 2017.01.02 at 18h 51m 34s.xml">
-      <configuration name="Ex3Tests.createGraph" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Ex3Tests_createGraph - 2017.01.02 at 18h 59m 01s.xml">
-      <configuration name="Ex3Tests.createGraph" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Ex3Tests_createGraph - 2017.01.02 at 19h 02m 56s.xml">
-      <configuration name="Ex3Tests.createGraph" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Ex3Tests_createGraph - 2017.01.02 at 19h 14m 54s.xml">
-      <configuration name="Ex3Tests.createGraph" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TreeUtilsTest_test_createBSTFromRange_isBST_ - 2016.12.23 at 00h 00m 21s.xml">
-      <configuration name="TreeUtilsTest.test_createBSTFromRange_isBST_" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TreeUtilsTest_test_createBSTFromRange_null - 2016.12.21 at 16h 25m 36s.xml">
-      <configuration name="TreeUtilsTest.test_createBSTFromRange_null" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TreeUtilsTest_test_isBst_true - 2016.12.20 at 23h 57m 18s.xml">
-      <configuration name="TreeUtilsTest.test_isBst_true" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="series_serie2_in_AED - 2016.11.24 at 19h 39m 42s.xml">
-      <configuration name="series.serie2 in AED" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -1086,28 +1093,28 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295711" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32822758" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49234137" sideWeight="0.50214595" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34245077" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26586434" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295711" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1828125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16302083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43326038" sideWeight="0.49785408" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.76477027" sideWeight="0.49785408" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32822758" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26586434" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295711" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1130,7 +1137,6 @@
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="problem almost solved out" />
     <MESSAGE value="createFiles added" />
     <MESSAGE value="serie2 - start" />
     <MESSAGE value="1.2-start" />
@@ -1155,7 +1161,8 @@
     <MESSAGE value="commit-hash" />
     <MESSAGE value="grafo criado" />
     <MESSAGE value="again" />
-    <option name="LAST_COMMIT_MESSAGE" value="again" />
+    <MESSAGE value="falta a classe comparadora" />
+    <option name="LAST_COMMIT_MESSAGE" value="falta a classe comparadora" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1180,12 +1187,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/tests/series/serie3/Ex3Tests.java</url>
-          <line>14</line>
+          <line>22</line>
           <properties />
-          <option name="timeStamp" value="351" />
+          <option name="timeStamp" value="361" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="355" />
+      <option name="time" value="365" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1194,13 +1201,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/series/serie2/Problema/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/series/serie2/Problema/KeyExtractor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1399,13 +1399,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/series/serie3/TreeUtilsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/series/serie3/Set.java" />
     <entry file="file://$PROJECT_DIR$/src/series/serie1/MaiorNrOcorrencias.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1419,7 +1412,7 @@
         <state relative-caret-position="353">
           <caret line="29" column="49" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1452,50 +1445,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/series/serie3/Vertex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-171">
-          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-          <folding>
-            <element signature="e#121#122#0" expanded="true" />
-            <element signature="e#147#148#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/series/serie3/Ex3Tests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grafo.gr">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/series/serie3/Edge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/series/serie3/EdgeInAnMST.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -1509,8 +1458,8 @@
         <state relative-caret-position="154">
           <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
           <folding>
-            <element signature="e#316#317#0" expanded="true" />
-            <element signature="e#367#368#0" expanded="true" />
+            <element signature="e#316#317#0" expanded="false" />
+            <element signature="e#367#368#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1523,18 +1472,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/series/serie3/WQUPathCompressionHalving.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_92/src.zip!/java/util/PriorityQueue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="61" selection-start-line="2" selection-start-column="61" selection-end-line="2" selection-end-column="61" />
+        <state relative-caret-position="645">
+          <caret line="352" column="32" selection-start-line="352" selection-start-column="32" selection-end-line="352" selection-end-column="32" />
+          <folding>
+            <element signature="e#12127#12128#0" expanded="false" />
+            <element signature="e#12158#12159#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/series/serie3/Vertex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="22" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/series/serie3/Edge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/series/serie3/TreeUtilsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/series/serie3/MST.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="31" column="20" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grafo.gr">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/series/serie3/WeightedQuickUnion.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        <state relative-caret-position="198">
+          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/series/serie3/WQUPathCompressionHalving.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="57" selection-start-line="2" selection-start-column="57" selection-end-line="2" selection-end-column="57" />
           <folding />
         </state>
       </provider>
@@ -1547,10 +1557,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/series/serie3/MST.java">
+    <entry file="file://$PROJECT_DIR$/tests/series/serie3/Ex3Tests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+        <state relative-caret-position="381">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1559,12 +1569,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/series/serie3/Graph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="641">
-          <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
+        <state relative-caret-position="226">
+          <caret line="12" column="56" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1100#1101#0" expanded="true" />
-            <element signature="e#1132#1133#0" expanded="true" />
           </folding>
         </state>
       </provider>

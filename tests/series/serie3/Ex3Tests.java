@@ -1,20 +1,32 @@
 package series.serie3;
 
+import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
 
 public class Ex3Tests {
 
-    @Test
-    public void createGraph(){
+   private Vertex[]graph;
+
+    @Before
+    public void createMst(){
         MST mst = new MST();
         try {
-            Vertex []graph = mst.readFile("grafo.gr");
-            Graph graph1 = new Graph(graph);
-            graph1.kruskal(graph);
+            graph = mst.readFile("grafo.gr");
         } catch (IOException ignored) {}
+    }
 
+    @Test
+    public void checkIfIsEdgeInAnMST(){
+        boolean isEdge = Graph.isEdgeInAnMST(graph,1,0);
+        Assert.assertTrue(isEdge);
+    }
 
+    @Test
+    public void checkIfIsntEdgeInAnMST(){
+        boolean isntEdge = Graph.isEdgeInAnMST(graph,6,5);
+        Assert.assertFalse(isntEdge);
     }
 }
