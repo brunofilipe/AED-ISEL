@@ -1,49 +1,47 @@
 package series.serie3;
 
 
-public class Graph extends DisjointSets {
-    Vertex[]v ;
-    PriorityQueue<Edge,Double>queue;
-    int count;
+import java.util.*;
+import java.util.PriorityQueue;
 
-    public Graph(Vertex[]v){
-        this.v = v;
-        queue = new PriorityQueue<>(Double::compareTo);
-    }
+public class Graph  {
 
+    public static int isEdgeInAnMST(Vertex[]graph,int origId,int destId) {
+        DisjointSets set = new WQUPathCompressionHalving(graph.length);
+        java.util.PriorityQueue<Edge> pq = new java.util.PriorityQueue<Edge>(new ) {
+            @Override
+            public int compare(Edge o1, Edge o2) {
 
-    @Override
-    public void makeSet(int p) {
-        queue.add(v[p].list,v[p].list.weight);
-        ++count;
-    }
-
-    @Override
-    public Edge findSet(int p) {
-       return queue.search(v[p].list   );
-    }
-
-    @Override
-    public void union(Edge p, Edge q) {
-
-    }
-
-    @Override
-    public int size() {
-        return count;
-    }
-
-    @Override
-    public int parent(int i) {
-        return 0;
-    }
-
-    public Vertex[] kruskal(Vertex[] graph) {
-        for (int i = 0; i < graph.length; i++) {
-            makeSet(i);
+            }
+        });
+        for(int i = 0; i < graph.length;++i) {
+            pq.add(graph[i].list);
         }
-        
-        return null;
+        while ( !pq.isEmpty() ) {
+            Edge e = pq.poll();
+            int u = e.source.id, v = e.dest.id;
+            if ( !set.isConnected( u,  v)) {
+                set.union(u, v);
+            }
+            if(set.isConnected(u,v) && u == origId && v == destId){
+                return 1;
+            }
+        }
+        return -1;
 
     }
+
+    private class EdgeComparator implements Comparator< Edge>{
+
+        private Vertex[]graph;
+        private int origId;
+        private int destId;
+
+
+        @Override
+        public int compare(Edge o1, Edge o2) {
+            return 0;
+        }
+    }
+
 }

@@ -22,12 +22,12 @@ public class Vertex {
         }
         Edge e = list;
 
-        if(e.adjacent.equals(v))
+        if(e.dest.equals(v))
             return;
 
         while(e.next!=null) {
             e = e.next;
-            if(e.adjacent.equals(v))
+            if(e.dest.equals(v))
                 return;
         }
 

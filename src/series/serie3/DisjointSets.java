@@ -5,8 +5,8 @@ public abstract class DisjointSets {
 
 
     public abstract void makeSet( int p );
-    public abstract Edge findSet( int p );
-    public abstract void union(Edge p, Edge q );
+    public abstract int findSet( int p );
+    public abstract void union(int p, int q );
     public abstract int size( );
     public abstract int parent(int i);
 
@@ -14,8 +14,8 @@ public abstract class DisjointSets {
         return findSet( p ) == findSet( q );
     }
     public boolean connect( int p, int q ) {
-        Edge rootP = findSet(p), rootQ = findSet(q);
-        if ( rootP .equals(rootQ) ) return false;
+        int rootP = findSet(p), rootQ = findSet(q);
+        if ( rootP==(rootQ) ) return false;
         union( rootP, rootQ );
         return true;
     }
