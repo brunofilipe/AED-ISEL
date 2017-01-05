@@ -7,29 +7,34 @@ import java.util.PriorityQueue;
 public class Graph  {
 
     public static boolean isEdgeInAnMST(Vertex[]graph,int origId,int destId) {
-        DisjointSets set = new WQUPathCompressionHalving(graph.length);
+        DisjointSets set = new QuickUnion(graph.length);
         EdgeComparator cmp = new EdgeComparator(origId, destId);
-        java.util.PriorityQueue<Edge> pq = new PriorityQueue<>(cmp);
+        //java.util.PriorityQueue<Edge> pq = new PriorityQueue<>(cmp);
+        series.serie3.PriorityQueueV2<Edge,Double>pe = new series.serie3.PriorityQueueV2<>(cmp);
         java.util.ArrayList<Edge> A = new ArrayList<>();
         for (int i = 0; i < graph.length; ++i) {
-            pq.add(graph[i].list);
+            while (graph[i].list != null){
+                pe.add(graph[i].list,graph[i].list.weight);
+                graph[i].list = graph[i].list.next;
+            }
+
         }
-        while (!pq.isEmpty()) {
-            Edge e = pq.poll();
+        while (!pe.isEmpty()) {
+            Edge e = pe.poll();
             int u = e.source.id, v = e.dest.id;
             if (!set.isConnected(u, v)) {
                 set.union(u, v);
                 A.add(e);
-            }
-            if (set.isConnected(u, v) && u == origId && v == destId) {
-                return true;
+                if (u == origId && v == destId || v == origId && u == destId) {
+                    //return true;
+                }
             }
         }
-            return false;
+        return false;
 
     }
 
-    private static class EdgeComparator implements Comparator< Edge>{
+    private static class EdgeComparator implements Comparator< Double>{
         private int origId;
         private int destId;
 
@@ -39,15 +44,15 @@ public class Graph  {
         }
 
         @Override
-        public int compare(Edge o1, Edge o2) {
-           if(o1.weight>o2.weight){
+        public int compare(Double o1, Double o2) {
+           if(o1>o2){
                return 1;
            }
-            if(o1.weight<o2.weight){
+            if(o1<o2){
                 return -1;
             }
-            if(o1.source.id == origId && o1.dest.id == destId || o2.source.id == origId && o2.dest.id == destId){
-                return -1;
+            if(o1== origId && o1 == destId || o2 == origId && o2 == destId){
+                return 1;
             }
             return 0;
         }

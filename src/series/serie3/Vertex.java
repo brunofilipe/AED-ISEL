@@ -4,7 +4,7 @@ package series.serie3;
 public class Vertex {
     int id;
     Edge list;
-    boolean visited;
+
 
     public Vertex(int id){
         this.id=id;
