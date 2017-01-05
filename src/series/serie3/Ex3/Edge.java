@@ -1,9 +1,9 @@
-package series.serie3;
+package series.serie3.Ex3;
 
 public class Edge {
-    Vertex dest;
-    double weight;
-    Edge next;
+    public Vertex dest;
+    public double weight;
+    public Edge next;
     public Vertex source;
 
 

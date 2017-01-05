@@ -1,6 +1,7 @@
 package series.serie3;
 
 import org.junit.Test;
+import series.serie3.Ex2.DNACollection;
 
 import static org.junit.Assert.*;
 

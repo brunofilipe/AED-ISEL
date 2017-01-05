@@ -1,8 +1,7 @@
-package series.serie3;
+package series.serie3.Ex3;
 
 
 import java.util.*;
-import java.util.PriorityQueue;
 
 public class Graph  {
 
@@ -10,7 +9,7 @@ public class Graph  {
         DisjointSets set = new QuickUnion(graph.length);
         EdgeComparator cmp = new EdgeComparator(origId, destId);
         //java.util.PriorityQueue<Edge> pq = new PriorityQueue<>(cmp);
-        series.serie3.PriorityQueueV2<Edge,Double>pe = new series.serie3.PriorityQueueV2<>(cmp);
+        PriorityQueueV2<Edge,Double> pe = new PriorityQueueV2<>(cmp);
         java.util.ArrayList<Edge> A = new ArrayList<>();
         for (int i = 0; i < graph.length; ++i) {
             while (graph[i].list != null){
@@ -26,7 +25,7 @@ public class Graph  {
                 set.union(u, v);
                 A.add(e);
                 if (u == origId && v == destId || v == origId && u == destId) {
-                    //return true;
+                    return true;
                 }
             }
         }

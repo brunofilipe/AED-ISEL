@@ -1,4 +1,4 @@
-package series.serie3;
+package series.serie3.Ex3;
 
 
 public abstract class DisjointSets {

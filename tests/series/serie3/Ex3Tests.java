@@ -3,6 +3,8 @@ package series.serie3;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import series.serie3.Ex3.Graph;
+import series.serie3.Ex3.Vertex;
 
 import java.io.IOException;
 
@@ -29,4 +31,11 @@ public class Ex3Tests {
         boolean isntEdge = Graph.isEdgeInAnMST(graph,6,5);
         Assert.assertFalse(isntEdge);
     }
+
+    @Test
+    public void checkIfDoesntExistEdge(){
+        boolean isntEdge = Graph.isEdgeInAnMST(graph,10,8);
+        Assert.assertFalse(isntEdge);
+    }
 }
+

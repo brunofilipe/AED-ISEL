@@ -1,10 +1,10 @@
-package series.serie3;
+package series.serie3.Ex2;
 
 
 public class Fragment {
 
     private char id;
-    Fragment [] child = new Fragment[4];
+    public Fragment [] child = new Fragment[4];
     boolean isTerminal=false;
 
 

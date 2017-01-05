@@ -1,9 +1,9 @@
-package series.serie3;
+package series.serie3.Ex3;
 
 
 public class Vertex {
-    int id;
-    Edge list;
+    public int id;
+    public Edge list;
 
 
     public Vertex(int id){

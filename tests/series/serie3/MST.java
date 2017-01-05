@@ -1,5 +1,8 @@
 package series.serie3;
 
+import series.serie3.Ex3.Edge;
+import series.serie3.Ex3.Vertex;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;

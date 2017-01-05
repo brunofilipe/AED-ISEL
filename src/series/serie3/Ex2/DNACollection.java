@@ -1,12 +1,12 @@
-package series.serie3;
+package series.serie3.Ex2;
 
 
-
+import series.serie3.HashTable;
 
 public class DNACollection {
 
-    Fragment[] collection;
-    HashTable<Character,Integer> map;
+    public Fragment[] collection;
+    public HashTable<Character,Integer> map;
     public DNACollection(int length){
         map = new HashTable<>(4,2);
         map.put('A',0);

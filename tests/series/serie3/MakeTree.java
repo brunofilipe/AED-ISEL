@@ -1,5 +1,7 @@
 package series.serie3;
 
+import series.serie3.Ex1.TreeNode;
+
 public class MakeTree {
     public static TreeNode<Integer> root,rootTest, rootNull = null;
 

@@ -2,6 +2,7 @@ package series.serie3;
 
 import org.junit.Test;
 import org.junit.Before;
+import series.serie3.Ex1.TreeNode;
 
 import java.util.Comparator;
 
@@ -9,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-import static series.serie3.TreeUtils.*;
+import static series.serie3.Ex1.TreeUtils.*;
 import static series.serie3.MakeTree.*;
 
 
