@@ -7,7 +7,7 @@ public class Graph  {
 
     public static boolean isEdgeInAnMST(Vertex[]graph,int origId,int destId) {
         DisjointSets set = new QuickUnion(graph.length);
-        EdgeComparator cmp = new EdgeComparator(origId, destId);
+        EdgeComparator cmp = new EdgeComparator();
         PriorityQueue<Edge,Double> pe = new PriorityQueue<>(cmp);
         java.util.ArrayList<Edge> A = new ArrayList<>();
         for (Vertex aGraph : graph) {
@@ -15,7 +15,6 @@ public class Graph  {
                 pe.add(aGraph.list, aGraph.list.weight);
                 aGraph.list = aGraph.list.next;
             }
-
         }
         while (!pe.isEmpty()) {
             Edge e = pe.poll();
@@ -33,13 +32,6 @@ public class Graph  {
     }
 
     private static class EdgeComparator implements Comparator< Double>{
-        private int origId;
-        private int destId;
-
-        public EdgeComparator(int origId,int destId){
-            this.origId = origId;
-            this.destId = destId;
-        }
 
         @Override
         public int compare(Double o1, Double o2) {
@@ -47,9 +39,6 @@ public class Graph  {
                return -1;
            }
             if(o1<o2){
-                return 1;
-            }
-            if(o1== origId && o1 == destId || o2 == origId && o2 == destId){
                 return 1;
             }
             return 0;
