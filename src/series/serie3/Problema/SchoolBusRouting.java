@@ -11,6 +11,7 @@ public class SchoolBusRouting {
     private static boolean isExit = false;
     private static Scanner scan;
     private static Crossing[]cross;
+    private static int[]ids;
 
 
 
@@ -47,6 +48,13 @@ public class SchoolBusRouting {
     }
 
     private static void schoolPath() {
+        System.out.println("Choose a  .s file");
+        String filename = scan.next();
+        try {
+            ids = ReadSFile.readFile(filename);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
