@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2fc85a8-f4b7-41ce-96f0-238f988e8ad9" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/series/serie3/MyList.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/series/serie3/WQUPathCompressionHalving.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/series/serie3/WeightedQuickUnion.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes.s" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/series/serie3/Problema/LinkedStack.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/series/serie3/Problema/Stack.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/series/serie3/Problema/ReadSFile.java" afterPath="$PROJECT_DIR$/src/series/serie3/Problema/ReadSFile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/series/serie3/Problema/SchoolBusRouting.java" afterPath="$PROJECT_DIR$/src/series/serie3/Problema/SchoolBusRouting.java" />
     </list>
     <ignored path="AED.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,7 +47,7 @@
       <file leaf-file-name="ReadSFile.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/series/serie3/Problema/ReadSFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
+            <state relative-caret-position="484">
               <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -58,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SchoolBusRouting.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SchoolBusRouting.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/series/serie3/Problema/SchoolBusRouting.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="617">
-              <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+            <state relative-caret-position="793">
+              <caret line="43" column="37" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -73,8 +71,28 @@
       <file leaf-file-name="Crossing.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/series/serie3/Problema/Crossing.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="352">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LinkedStack.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/series/serie3/Problema/LinkedStack.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="48">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Stack.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/series/serie3/Problema/Stack.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -115,8 +133,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/series/serie2/Utils.java" />
-        <option value="$PROJECT_DIR$/src/series/serie2/Problema/Pair.java" />
         <option value="$PROJECT_DIR$/src/series/serie2/Problema/Node.java" />
         <option value="$PROJECT_DIR$/src/series/serie2/Problema/Client.java" />
         <option value="$PROJECT_DIR$/src/series/serie1/Heap.java" />
@@ -166,6 +182,8 @@
         <option value="$PROJECT_DIR$/src/series/serie3/Problema/ReadGrFile.java" />
         <option value="$PROJECT_DIR$/src/series/serie3/Problema/ReadSFile.java" />
         <option value="$PROJECT_DIR$/src/series/serie3/Problema/SchoolBusRouting.java" />
+        <option value="$PROJECT_DIR$/src/series/serie3/Problema/LinkedStack.java" />
+        <option value="$PROJECT_DIR$/src/series/serie3/Problema/Stack.java" />
       </list>
     </option>
   </component>
@@ -200,8 +218,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -414,7 +432,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -424,6 +442,13 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Bruno\Documents\ISEL\3ano\5semestre\AED\AED\src\series\serie3\Problema" />
+      <recent name="D:\Bruno\Documents\ISEL\3ano\5semestre\AED\AED" />
+      <recent name="D:\Bruno\Documents\ISEL\3ano\5semestre\AED\AED\tests\series\serie3" />
+      <recent name="D:\Bruno\Documents\ISEL\3ano\5semestre\AED\AED\src\series\serie2" />
+      <recent name="D:\Bruno\Documents\ISEL\3ano\5semestre\AED\AED\src\series\serie1" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="series.serie2" />
       <recent name="series" />
@@ -432,13 +457,6 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Bruno\Documents\ISEL\3ano\5semestre\AED\AED\src\series\serie3\Problema" />
       <recent name="D:\Bruno\Documents\ISEL\3ano\5semestre\AED\AED\src\series\serie3" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Bruno\Documents\ISEL\3ano\5semestre\AED\AED" />
-      <recent name="D:\Bruno\Documents\ISEL\3ano\5semestre\AED\AED\tests\series\serie3" />
-      <recent name="D:\Bruno\Documents\ISEL\3ano\5semestre\AED\AED\src\series\serie2" />
-      <recent name="D:\Bruno\Documents\ISEL\3ano\5semestre\AED\AED\src\series\serie1" />
-      <recent name="D:\Bruno\Documents\ISEL\3ano\5semestre\AED\AED\tests\series\serie1" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.Ex3Tests.checkIfIsEdgeInAnMST">
@@ -809,13 +827,6 @@
       <option name="presentableId" value="Default" />
       <updated>1475702016178</updated>
     </task>
-    <task id="LOCAL-00007" summary="try to merge">
-      <created>1476113502441</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1476113502441</updated>
-    </task>
     <task id="LOCAL-00008" summary="heap">
       <created>1476113636162</created>
       <option name="number" value="00008" />
@@ -1152,7 +1163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1483807390478</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="problem = started&#10;">
+      <created>1483810609508</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1483810609509</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1310,21 +1328,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tests/series/serie2/QuickSortTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/series/serie2/HashTableTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="75" column="32" selection-start-line="75" selection-start-column="21" selection-end-line="75" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/runners/model/FrameworkMethod.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1595,7 +1598,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/series/serie3/Problema/ReadSFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
+        <state relative-caret-position="484">
           <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1611,21 +1614,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/series/serie3/Problema/SchoolBusRouting.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="793">
+          <caret line="43" column="37" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/series/serie3/Problema/Crossing.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="352">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/series/serie3/Problema/SchoolBusRouting.java">
+    <entry file="file://$PROJECT_DIR$/src/series/serie3/Problema/Stack.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="617">
-          <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="176">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/series/serie3/Problema/LinkedStack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
