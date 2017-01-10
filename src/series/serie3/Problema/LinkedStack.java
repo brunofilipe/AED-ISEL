@@ -19,7 +19,6 @@ public final class LinkedStack<E> implements Stack<E>{
     public E push(E e) {
         Node<E> n= new Node<E>();
         n.item = e;
-        // Inser��o no in�cio duma lista simplesmente ligada.
         n.next = head;
         head = n;
         return e;
@@ -28,7 +27,6 @@ public final class LinkedStack<E> implements Stack<E>{
     @Override
     public E pop() {
         E v = head.item;
-        // Remo��o no in�cio duma lista simplesmente ligada.
         head = head.next;
         return v;
     }
