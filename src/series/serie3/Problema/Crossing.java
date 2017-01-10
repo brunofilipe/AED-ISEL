@@ -9,7 +9,6 @@ public class Crossing {
 
 
     public Crossing(int id){
-
         this.id=id;
     }
 

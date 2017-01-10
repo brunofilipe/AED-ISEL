@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/series/serie3/Problema/SchoolBusRouting.java" line="178" />
+    <bookmark url="file://$PROJECT_DIR$/src/series/serie3/Problema/SchoolBusRouting.java" line="201" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2fc85a8-f4b7-41ce-96f0-238f988e8ad9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/series/serie3/Problema/Color.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/series/serie3/Problema/AEDList.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/series/serie3/Problema/Crossing.java" afterPath="$PROJECT_DIR$/src/series/serie3/Problema/Crossing.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/series/serie3/Problema/LinkedStack.java" afterPath="$PROJECT_DIR$/src/series/serie3/Problema/LinkedStack.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/series/serie3/Problema/SchoolBusRouting.java" afterPath="$PROJECT_DIR$/src/series/serie3/Problema/SchoolBusRouting.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/series/serie3/Problema/Street.java" afterPath="$PROJECT_DIR$/src/series/serie3/Problema/Street.java" />
     </list>
     <ignored path="AED.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,21 +36,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="TreeUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/series/serie3/Ex1/TreeUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="19" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SchoolBusRouting.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/series/serie3/Problema/SchoolBusRouting.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="661">
-              <caret line="101" column="8" selection-start-line="101" selection-start-column="8" selection-end-line="101" selection-end-column="8" />
+            <state relative-caret-position="436">
+              <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -61,78 +51,20 @@
       <file leaf-file-name="Crossing.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/series/serie3/Problema/Crossing.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
-              <folding />
+            <state relative-caret-position="220">
+              <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+              <folding>
+                <element signature="e#219#220#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DNACollection.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/series/serie3/Ex2/DNACollection.java">
+      <file leaf-file-name="Street.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/series/serie3/Problema/Street.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="836">
-              <caret line="38" column="41" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Fragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/series/serie3/Ex2/Fragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArrayDisjointSets.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/series/serie3/Ex3/ArrayDisjointSets.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Graph.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/series/serie3/Ex3/Graph.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QuickUnion.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/series/serie3/Ex3/QuickUnion.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PriorityQueue.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/series/serie3/Ex3/PriorityQueue.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Edge.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/series/serie3/Ex3/Edge.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state relative-caret-position="308">
+              <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -164,7 +96,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/series/serie1/MaiorNrOcorrencias.java" />
         <option value="$PROJECT_DIR$/src/series/serie2/Problema/KeyExtractor.java" />
         <option value="$PROJECT_DIR$/src/series/serie2/Problema/Heaps.java" />
         <option value="$PROJECT_DIR$/src/series/serie2/Problema/ClientPrio.java" />
@@ -206,14 +137,15 @@
         <option value="$PROJECT_DIR$/tests/series/serie3/MST.java" />
         <option value="$PROJECT_DIR$/tests/series/serie3/Ex3Tests.java" />
         <option value="$PROJECT_DIR$/src/series/serie3/Problema/Edge.java" />
-        <option value="$PROJECT_DIR$/src/series/serie3/Problema/Street.java" />
         <option value="$PROJECT_DIR$/src/series/serie3/Problema/ReadGrFile.java" />
         <option value="$PROJECT_DIR$/src/series/serie3/Problema/ReadSFile.java" />
         <option value="$PROJECT_DIR$/src/series/serie3/Problema/Stack.java" />
         <option value="$PROJECT_DIR$/src/series/serie3/Problema/LinkedStack.java" />
         <option value="$PROJECT_DIR$/src/series/serie3/Problema/Color.java" />
         <option value="$PROJECT_DIR$/routes.s" />
+        <option value="$PROJECT_DIR$/src/series/serie3/Problema/AEDList.java" />
         <option value="$PROJECT_DIR$/src/series/serie3/Problema/Crossing.java" />
+        <option value="$PROJECT_DIR$/src/series/serie3/Problema/Street.java" />
         <option value="$PROJECT_DIR$/src/series/serie3/Problema/SchoolBusRouting.java" />
       </list>
     </option>
@@ -465,13 +397,6 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Bruno\Documents\ISEL\3ano\5semestre\AED\AED\src\series\serie3\Problema" />
-      <recent name="D:\Bruno\Documents\ISEL\3ano\5semestre\AED\AED" />
-      <recent name="D:\Bruno\Documents\ISEL\3ano\5semestre\AED\AED\tests\series\serie3" />
-      <recent name="D:\Bruno\Documents\ISEL\3ano\5semestre\AED\AED\src\series\serie2" />
-      <recent name="D:\Bruno\Documents\ISEL\3ano\5semestre\AED\AED\src\series\serie1" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="series.serie2" />
       <recent name="series" />
@@ -480,6 +405,13 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Bruno\Documents\ISEL\3ano\5semestre\AED\AED\src\series\serie3\Problema" />
       <recent name="D:\Bruno\Documents\ISEL\3ano\5semestre\AED\AED\src\series\serie3" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Bruno\Documents\ISEL\3ano\5semestre\AED\AED\src\series\serie3\Problema" />
+      <recent name="D:\Bruno\Documents\ISEL\3ano\5semestre\AED\AED" />
+      <recent name="D:\Bruno\Documents\ISEL\3ano\5semestre\AED\AED\tests\series\serie3" />
+      <recent name="D:\Bruno\Documents\ISEL\3ano\5semestre\AED\AED\src\series\serie2" />
+      <recent name="D:\Bruno\Documents\ISEL\3ano\5semestre\AED\AED\src\series\serie1" />
     </key>
   </component>
   <component name="RunManager" selected="Application.SchoolBusRouting">
@@ -871,13 +803,6 @@
       <option name="presentableId" value="Default" />
       <updated>1475702016178</updated>
     </task>
-    <task id="LOCAL-00009" summary="try to merge">
-      <created>1476976707213</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1476976707213</updated>
-    </task>
     <task id="LOCAL-00010" summary="ip address-almost">
       <created>1477060023951</created>
       <option name="number" value="00010" />
@@ -1214,7 +1139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1483896955879</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="problema - 50%&#10;">
+      <created>1484048749446</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1484048749446</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1264,10 +1196,12 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295711" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32822758" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49234137" sideWeight="0.50214595" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34245077" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.76477027" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295711" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1276,16 +1210,14 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3884026" sideWeight="0.49785408" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3884026" sideWeight="0.49785408" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32822758" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.76477027" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1308,7 +1240,6 @@
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="priority queue +/-" />
     <MESSAGE value="Agency" />
     <MESSAGE value="merge" />
     <MESSAGE value="Problem" />
@@ -1333,7 +1264,8 @@
     <MESSAGE value="ja guarda pesos superiores a 9" />
     <MESSAGE value="problem = started&#10;" />
     <MESSAGE value="LinkedStack and Stack added&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="LinkedStack and Stack added&#10;" />
+    <MESSAGE value="problema - 50%&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="problema - 50%&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1363,7 +1295,7 @@
           <option name="timeStamp" value="409" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="422" />
+      <option name="time" value="424" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1372,13 +1304,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tests/series/serie2/ListUtilTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="30" column="73" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/series/serie1/Word.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
@@ -1570,14 +1495,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/series/serie3/Problema/Street.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/series/serie3/Problema/ReadGrFile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
@@ -1627,14 +1544,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/series/serie3/Ex3/PriorityQueue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/series/serie3/Ex3/Edge.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -1675,14 +1584,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/series/serie3/Problema/Crossing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/series/serie3/Ex3/Graph.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="550">
@@ -1691,10 +1592,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/series/serie3/Ex3/PriorityQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/series/serie3/Problema/AEDList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-219">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/series/serie3/Problema/Street.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/series/serie3/Problema/Crossing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+          <folding>
+            <element signature="e#219#220#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/series/serie3/Problema/SchoolBusRouting.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="661">
-          <caret line="101" column="8" selection-start-line="101" selection-start-column="8" selection-end-line="101" selection-end-column="8" />
+        <state relative-caret-position="436">
+          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
