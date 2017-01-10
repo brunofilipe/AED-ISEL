@@ -18,6 +18,7 @@ public class SchoolBusRouting {
     private static Scanner scan;
     private static Crossing[]cross;
     private static int[]ids;
+    private static int idxOdd = 0;
 
 
 
@@ -58,8 +59,9 @@ public class SchoolBusRouting {
         String filename = scan.next();
         try {
             ids = ReadSFile.readFile(filename);
-            Crossing [] graph =dfs(ids,cross);
-            printPath(graph);
+            Crossing[] graph = idCross(ids, cross);
+            ArrayList<Crossing> list = dfsSearch(graph);
+            int x = 0;
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -99,13 +101,31 @@ public class SchoolBusRouting {
         if(!checkIfISEuler(graph)){ return null;}
         Stack<Crossing> stack = new LinkedStack<>();
         java.util.ArrayList<Crossing> caminho = new ArrayList<>();
+        stack.push(graph[idxOdd]);
+        while(!stack.isEmpty()){
+            Crossing edge = stack.pop();
+            Street iter = edge.list;
+            Street previous = edge.list;
+            while (iter!=null){
+                if(!iter.isVisited){
+                    stack.push(edge);
+                    stack.push(iter.dest);
+                    Street toRemove = iter;
+                    if (previous.equals(toRemove)) {
+                        edge.list = edge.list.next;
+                    } else
+                        previous.next = toRemove.next;
 
-        ///**********/
-        while (!stack.isEmpty()){
-
+                }
+                else {
+                    previous = iter;
+                }
+                iter.isVisited = true;
+                iter = iter.next;
+            }
+            caminho.add(edge);
         }
         return caminho;
-
     }
 
 
@@ -130,13 +150,15 @@ public class SchoolBusRouting {
     private static boolean checkIfISEuler(Crossing[] graph) {
         int count = 0;
         int odd = 0;
-        for (Crossing g : graph){
+        for (int i = 0; i < graph.length; i++) {
+            Crossing g = graph[i];
             Street n = g.list;
-            while (n!=null){
+            while (n != null) {
                 ++count;
                 n = n.next;
             }
-            if(count%2 != 0){
+            if (count % 2 != 0) {
+                idxOdd = i;
                 ++odd;
             }
             count = 0;
@@ -165,7 +187,8 @@ public class SchoolBusRouting {
                         previous.next = toRemove.next;
                     }
 
-                } else {
+                }
+                else {
                     previous = iter;
                 }
                 iter = iter.next;

@@ -5,12 +5,14 @@ public class Street {
     public double weight;
     public Street next;
     public Crossing source;
+    public boolean isVisited ;
 
 
     public Street(Crossing source, Crossing dest, double weight) {
         this.source = source;
         this.dest = dest;
         this.weight = weight;
+        isVisited = false;
 
     }
 
