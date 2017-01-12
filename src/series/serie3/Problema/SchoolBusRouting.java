@@ -54,7 +54,7 @@ public class SchoolBusRouting {
         try {
             ids = ReadSFile.readFile(filename);
             Crossing[] graph = idCross(ids, cross);
-            AEDList<Crossing> list = dfsSearch(graph);
+            LinkedCollection<Crossing> list = dfsSearch(graph);
             printList(list);
         }catch (IOException e) {
             e.printStackTrace();
@@ -64,6 +64,7 @@ public class SchoolBusRouting {
 
 
     private static void e(){
+        System.out.println("Exiting App...");
         isExit = true;
     }
 
@@ -99,10 +100,10 @@ public class SchoolBusRouting {
         return res;
     }
 
-    private static AEDList<Crossing> dfsSearch(Crossing[]graph){
+    private static LinkedCollection<Crossing> dfsSearch(Crossing[]graph){
         if(!checkIfISEuler(graph)){ return null;}
         Stack<Crossing> stack = new LinkedStack<>();
-        AEDList<Crossing>path = new AEDList<>();
+        LinkedCollection<Crossing>path = new LinkedCollection<>();
         stack.push(graph[idxOdd]);
         while(!stack.isEmpty()) {
             Crossing vertex = stack.pop();
@@ -127,7 +128,7 @@ public class SchoolBusRouting {
         return path;
     }
 
-    private static void printList(AEDList<Crossing> list) {
+    private static void printList(LinkedCollection<Crossing> list) {
         for (Crossing aList : list) {
             System.out.print(aList.id + "-");
         }
