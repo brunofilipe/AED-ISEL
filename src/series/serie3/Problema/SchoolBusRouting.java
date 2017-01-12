@@ -128,8 +128,9 @@ public class SchoolBusRouting {
     private static void removeEdge(Crossing vertex, Crossing dest) {
         Street iter = dest.list;
         while (iter != null) {
-            if(iter.dest == vertex){
+            if(iter.dest.id == vertex.id ){
                 iter.isVisited = true;
+                break;
             }
             iter = iter.next;
         }
@@ -152,19 +153,7 @@ public class SchoolBusRouting {
     }
 /*******utils***********/
 
-    private static void printPath(Crossing[] graph) {
-        for (Crossing aGraph : graph) {
-            if (aGraph.color == BLACK) {
-                Street iter = aGraph.list;
-                while (iter != null) {
-                    if (iter.dest.color == BLACK) {
-                        System.out.println(aGraph.id + " " + iter.dest.id + " " + iter.weight);
-                        iter = iter.next;
-                    }
-                }
-            }
-        }
-    }
+
     private static boolean checkIfISEuler(Crossing[] graph) {
         int count = 0;
         int odd = 0;
