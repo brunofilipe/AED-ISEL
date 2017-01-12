@@ -67,35 +67,6 @@ public class SchoolBusRouting {
         }
 
     }
-    private static Crossing[] dfs(int[] ids, Crossing[] cross) {
-        Crossing[] graph = idCross(ids, cross);
-        if(checkIfISEuler(graph)) {
-            for (Crossing u : graph) {
-                u.color = WHITE;
-                u.pre = null;
-            }
-            for (Crossing u : graph) {
-                if (u.color == WHITE) {
-                    dfsVisit(graph, u);
-                }
-            }
-        }
-        return graph;
-    }
-
-    private static void dfsVisit(Crossing[] G, Crossing u) {
-        u.color = GRAY;
-        Street iter = u.list;
-        while (iter!=null){
-            Crossing v = iter.dest;
-            if(v.color == WHITE){
-                v.pre = u;
-                dfsVisit(G,v);
-            }
-            iter = iter.next;
-        }
-        u.color = BLACK;
-    }
 
     private static ArrayList<Crossing> dfsSearch(Crossing[]graph){
         if(!checkIfISEuler(graph)){ return null;}
