@@ -22,6 +22,7 @@ public class ReadGrFile {
             }
             line = br.readLine();
         }
+        linkGraph(graph);
         return graph;
     }
 
@@ -45,6 +46,16 @@ public class ReadGrFile {
             }
         }
         return new Crossing(id);
+    }
+
+    public static void linkGraph(Crossing[]graph){
+        for (int i = 0; i < graph.length; ++i){
+            Street iter = graph[i].list;
+            while (iter!=null){
+                iter.dest = checkIfExists(iter.dest.id,graph);
+                iter = iter.next;
+            }
+        }
     }
 }
 
