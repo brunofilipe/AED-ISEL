@@ -6,6 +6,7 @@ import series.serie3.Ex3.Edge;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 
@@ -60,23 +61,29 @@ public class SchoolBusRouting {
         try {
             ids = ReadSFile.readFile(filename);
             Crossing[] graph = idCross(ids, cross);
-            ArrayList<Crossing> list = dfsSearch(graph);
-            int x = 0;
+           AEDList<Crossing> list = dfsSearch(graph);
+            printList(list);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
     }
 
-    private static ArrayList<Crossing> dfsSearch(Crossing[]graph){
+    private static void printList(AEDList<Crossing> list) {
+        for (Crossing aList : list) {
+            System.out.print(aList.id + "-");
+        }
+    }
+
+    private static AEDList<Crossing> dfsSearch(Crossing[]graph){
         if(!checkIfISEuler(graph)){ return null;}
         Stack<Crossing> stack = new LinkedStack<>();
-        java.util.ArrayList<Crossing> caminho = new ArrayList<>();
+        AEDList<Crossing>path = new AEDList<>();
         stack.push(graph[idxOdd]);
         while(!stack.isEmpty()) {
             Crossing vertex = stack.pop();
             if(!thereAreAdjacent(vertex)){
-                caminho.add(vertex);
+                path.add(vertex);
             }
             else {
                 stack.push(vertex);
@@ -93,7 +100,7 @@ public class SchoolBusRouting {
 
             }
         }
-        return caminho;
+        return path;
     }
 
     private static void removeEdge(Crossing vertex, Crossing dest) {
