@@ -18,7 +18,7 @@ public class ReadGrFile {
                 graph = new Crossing[Integer.parseInt(text[2])];
             }
             else if(Objects.equals(text[0], "a")){
-                putInVertex(graph,Integer.parseInt(text[1]),text);
+                putInCross(graph,Integer.parseInt(text[1]),text);
             }
             line = br.readLine();
         }
@@ -26,7 +26,7 @@ public class ReadGrFile {
         return graph;
     }
 
-    public static void putInVertex(Crossing[]graph,int idx,String []line){
+    public static void putInCross(Crossing[]graph, int idx, String []line){
         if(graph[idx] == null){
             graph[idx] = new Crossing(Integer.parseInt(line[1]));
             graph[idx].list= new Street(graph[idx],checkIfExists(Integer.parseInt(line[2]),graph),Double.parseDouble(line[3]));

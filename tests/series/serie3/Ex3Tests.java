@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import series.serie3.Ex3.Graph;
+import series.serie3.Ex3.ReadFile;
 import series.serie3.Ex3.Vertex;
 
 import java.io.IOException;
@@ -14,7 +15,7 @@ public class Ex3Tests {
 
     @Before
     public void createMst(){
-        MST mst = new MST();
+        ReadFile mst = new ReadFile();
         try {
             graph = mst.readFile("grafo.gr");
         } catch (IOException ignored) {}

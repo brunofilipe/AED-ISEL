@@ -21,7 +21,6 @@ public class ReadSFile {
                 path[idx++] = Integer.parseInt(text[0]);
             }
             line = br.readLine();
-
         }
         return path;
     }

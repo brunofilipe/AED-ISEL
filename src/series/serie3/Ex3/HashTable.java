@@ -1,4 +1,4 @@
-package series.serie3.Problema;
+package series.serie3.Ex3;
 
 
 public class HashTable<K,V> {

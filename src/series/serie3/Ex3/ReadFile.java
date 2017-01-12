@@ -1,4 +1,4 @@
-package series.serie3;
+package series.serie3.Ex3;
 
 import series.serie3.Ex3.Edge;
 import series.serie3.Ex3.Vertex;
@@ -8,7 +8,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Objects;
 
-public class MST {
+public class ReadFile {
 
     public Vertex[] readFile(String fileName) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(fileName));
@@ -48,5 +48,4 @@ public class MST {
         }
         return new Vertex(id);
     }
-
 }

@@ -2,19 +2,12 @@ package series.serie3.Problema;
 
 
 
-import series.serie3.Ex3.Edge;
-
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Scanner;
-
-
-import static series.serie3.Problema.Color.*;
 
 public class SchoolBusRouting {
     private static final Runnable[] COMMAND_LIST = new Runnable[]{SchoolBusRouting::schoolPath, SchoolBusRouting::e};
-    private static final String[]COMMAND_KEY = {"schoolPath","e"  };
+    private static final String[]COMMAND_KEY = {"schoolPath","e" };
     private static boolean isExit = false;
     private static Scanner scan;
     private static Crossing[]cross;
@@ -61,18 +54,49 @@ public class SchoolBusRouting {
         try {
             ids = ReadSFile.readFile(filename);
             Crossing[] graph = idCross(ids, cross);
-           AEDList<Crossing> list = dfsSearch(graph);
+            AEDList<Crossing> list = dfsSearch(graph);
             printList(list);
-        } catch (IOException e) {
+        }catch (IOException e) {
             e.printStackTrace();
         }
 
     }
 
-    private static void printList(AEDList<Crossing> list) {
-        for (Crossing aList : list) {
-            System.out.print(aList.id + "-");
+
+    private static void e(){
+        isExit = true;
+    }
+
+/*******utils***********/
+
+    private static Crossing[] idCross(int[] ids, Crossing[] cross) {
+        Crossing[] res = new Crossing[ids.length];
+
+        for (int i = 0; i <res.length ; i++) {
+            res[i] = cross[ids[i]];
         }
+
+        for (Crossing re : res) {
+            Street iter = re.list;
+            Street previous = re.list;
+            while (iter != null) {
+                if (!contains(ids, iter.dest.id)) {
+                    Street toRemove = iter;
+                    if (previous.equals(toRemove)) {
+                        re.list = re.list.next;
+                    } else {
+                        previous.next = toRemove.next;
+                    }
+
+                }
+                else {
+                    previous = iter;
+                }
+                iter = iter.next;
+
+            }
+        }
+        return res;
     }
 
     private static AEDList<Crossing> dfsSearch(Crossing[]graph){
@@ -103,6 +127,12 @@ public class SchoolBusRouting {
         return path;
     }
 
+    private static void printList(AEDList<Crossing> list) {
+        for (Crossing aList : list) {
+            System.out.print(aList.id + "-");
+        }
+    }
+
     private static void removeEdge(Crossing vertex, Crossing dest) {
         Street iter = dest.list;
         while (iter != null) {
@@ -115,7 +145,7 @@ public class SchoolBusRouting {
     }
 
     private static boolean thereAreAdjacent(Crossing vertex) {
-       Street iter = vertex.list;
+        Street iter = vertex.list;
         while (iter!=null){
             if(!iter.isVisited){
                 return true;
@@ -124,14 +154,6 @@ public class SchoolBusRouting {
         }
         return false;
     }
-
-
-    private static void e(){
-        isExit = true;
-    }
-/*******utils***********/
-
-
     private static boolean checkIfISEuler(Crossing[] graph) {
         int count = 0;
         int odd = 0;
@@ -149,38 +171,6 @@ public class SchoolBusRouting {
             count = 0;
         }
         return odd == 2 || odd==0;
-    }
-    private static Crossing[] idCross(int[] ids, Crossing[] cross) {
-        Crossing[] res = new Crossing[ids.length];
-        int idx = 0;
-        for (Crossing cros : cross) {
-            for (int id : ids) {
-                if (cros.id == id) {
-                    res[idx++] = cros;
-                }
-            }
-        }
-        for (Crossing re : res) {
-            Street iter = re.list;
-            Street previous = re.list;
-            while (iter != null) {
-                if (!contains(ids, iter.dest.id)) {
-                    Street toRemove = iter;
-                    if (previous.equals(toRemove)) {
-                        re.list = re.list.next;
-                    } else {
-                        previous.next = toRemove.next;
-                    }
-
-                }
-                else {
-                    previous = iter;
-                }
-                iter = iter.next;
-
-            }
-        }
-        return res;
     }
 
     private static boolean contains(int[] ids, int id) {
