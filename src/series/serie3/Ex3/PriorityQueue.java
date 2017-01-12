@@ -2,7 +2,7 @@ package series.serie3.Ex3;
 
 
 import series.serie2.Problema.Utils;
-import series.serie3.HashTable;
+import series.serie3.Problema.HashTable;
 
 import java.util.Comparator;
 

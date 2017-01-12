@@ -102,30 +102,49 @@ public class SchoolBusRouting {
         Stack<Crossing> stack = new LinkedStack<>();
         java.util.ArrayList<Crossing> caminho = new ArrayList<>();
         stack.push(graph[idxOdd]);
-        while(!stack.isEmpty()){
-            Crossing edge = stack.pop();
-            Street iter = edge.list;
-            Street previous = edge.list;
-            while (iter!=null){
-                if(!iter.isVisited){
-                    stack.push(edge);
-                    stack.push(iter.dest);
-                    Street toRemove = iter;
-                    if (previous.equals(toRemove)) {
-                        edge.list = edge.list.next;
-                    } else
-                        previous.next = toRemove.next;
-
-                }
-                else {
-                    previous = iter;
-                }
-                iter.isVisited = true;
-                iter = iter.next;
+        while(!stack.isEmpty()) {
+            Crossing vertex = stack.pop();
+            if(!thereAreAdjacent(vertex)){
+                caminho.add(vertex);
             }
-            caminho.add(edge);
+            else {
+                stack.push(vertex);
+                Street iter = vertex.list;
+                while (iter!=null){
+                    if(!iter.isVisited){
+                        stack.push(iter.dest);
+                        iter.isVisited = true;
+                        removeEdge(vertex,iter.dest);
+                        break;
+                    }
+                    iter = iter.next;
+                }
+
+            }
         }
         return caminho;
+    }
+
+    private static void removeEdge(Crossing vertex, Crossing dest) {
+        Street iter = dest.list;
+        while (iter != null) {
+            if(iter.dest.id == vertex.id ){
+                iter.isVisited = true;
+                break;
+            }
+            iter = iter.next;
+        }
+    }
+
+    private static boolean thereAreAdjacent(Crossing vertex) {
+       Street iter = vertex.list;
+        while (iter!=null){
+            if(!iter.isVisited){
+                return true;
+            }
+            iter = iter.next;
+        }
+        return false;
     }
 
 
@@ -134,19 +153,7 @@ public class SchoolBusRouting {
     }
 /*******utils***********/
 
-    private static void printPath(Crossing[] graph) {
-        for (Crossing aGraph : graph) {
-            if (aGraph.color == BLACK) {
-                Street iter = aGraph.list;
-                while (iter != null) {
-                    if (iter.dest.color == BLACK) {
-                        System.out.println(aGraph.id + " " + iter.dest.id + " " + iter.weight);
-                        iter = iter.next;
-                    }
-                }
-            }
-        }
-    }
+
     private static boolean checkIfISEuler(Crossing[] graph) {
         int count = 0;
         int odd = 0;
