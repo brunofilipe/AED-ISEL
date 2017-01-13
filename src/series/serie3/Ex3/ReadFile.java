@@ -1,7 +1,6 @@
 package series.serie3.Ex3;
 
-import series.serie3.Ex3.Edge;
-import series.serie3.Ex3.Vertex;
+
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -41,10 +40,8 @@ public class ReadFile {
     }
 
     public Vertex checkIfExists(int id,Vertex[]graph){
-        for (int i = 0;i < graph.length; ++i){
-            if(graph[i]!=null && graph[i].id== id){
-                return graph[i];
-            }
+        if(graph[id]!=null ){
+                return graph[id];
         }
         return new Vertex(id);
     }
