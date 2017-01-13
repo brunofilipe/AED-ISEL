@@ -130,7 +130,7 @@ public class SchoolBusRouting {
 
     private static void printList(LinkedCollection<Crossing> list) {
         for (Crossing aList : list) {
-            System.out.print(aList.id + "-");
+            System.out.println(aList.id );
         }
     }
 

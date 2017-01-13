@@ -40,19 +40,15 @@ public class ReadGrFile {
     }
 
     public static Crossing checkIfExists(int id,Crossing[]graph){
-        for (int i = 0;i < graph.length; ++i){
-            if(graph[i]!=null && graph[i].id== id){
-                return graph[i];
-            }
-        }
+        if(graph[id]!=null) return graph[id];
         return new Crossing(id);
     }
 
     public static void linkGraph(Crossing[]graph){
-        for (int i = 0; i < graph.length; ++i){
-            Street iter = graph[i].list;
-            while (iter!=null){
-                iter.dest = checkIfExists(iter.dest.id,graph);
+        for (Crossing aGraph : graph) {
+            Street iter = aGraph.list;
+            while (iter != null) {
+                iter.dest = checkIfExists(iter.dest.id, graph);
                 iter = iter.next;
             }
         }

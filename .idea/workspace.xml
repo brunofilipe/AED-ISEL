@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2fc85a8-f4b7-41ce-96f0-238f988e8ad9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/series/serie3/Problema/LinkedCollection.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/series/serie3/Problema/AEDList.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/series/serie3/Problema/Color.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/series/serie3/Ex2/DNACollection.java" afterPath="$PROJECT_DIR$/src/series/serie3/Ex2/DNACollection.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/series/serie3/Problema/ReadGrFile.java" afterPath="$PROJECT_DIR$/src/series/serie3/Problema/ReadGrFile.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/series/serie3/Problema/SchoolBusRouting.java" afterPath="$PROJECT_DIR$/src/series/serie3/Problema/SchoolBusRouting.java" />
     </list>
     <ignored path="AED.iws" />
@@ -43,8 +40,8 @@
       <file leaf-file-name="SchoolBusRouting.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/series/serie3/Problema/SchoolBusRouting.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="57" column="18" selection-start-line="57" selection-start-column="18" selection-end-line="57" selection-end-column="18" />
+            <state relative-caret-position="-21">
+              <caret line="66" column="27" selection-start-line="66" selection-start-column="27" selection-end-line="66" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -52,11 +49,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LinkedCollection.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LinkedStack.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/series/serie3/Problema/LinkedStack.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="638">
+              <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReadGrFile.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/series/serie3/Problema/ReadGrFile.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="781">
+              <caret line="49" column="33" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LinkedCollection.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/series/serie3/Problema/LinkedCollection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+            <state relative-caret-position="66">
+              <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -133,12 +150,12 @@
         <option value="$PROJECT_DIR$/src/series/serie3/Problema/Crossing.java" />
         <option value="$PROJECT_DIR$/src/series/serie3/Problema/Street.java" />
         <option value="$PROJECT_DIR$/src/series/serie3/Problema/HashTable.java" />
-        <option value="$PROJECT_DIR$/src/series/serie3/Problema/ReadGrFile.java" />
         <option value="$PROJECT_DIR$/src/series/serie3/Ex3/Graph.java" />
         <option value="$PROJECT_DIR$/tests/series/serie3/Ex3Tests.java" />
         <option value="$PROJECT_DIR$/src/series/serie3/Ex2/DNACollection.java" />
-        <option value="$PROJECT_DIR$/src/series/serie3/Problema/SchoolBusRouting.java" />
         <option value="$PROJECT_DIR$/src/series/serie3/Problema/LinkedCollection.java" />
+        <option value="$PROJECT_DIR$/src/series/serie3/Problema/SchoolBusRouting.java" />
+        <option value="$PROJECT_DIR$/src/series/serie3/Problema/ReadGrFile.java" />
       </list>
     </option>
   </component>
@@ -299,9 +316,9 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -717,13 +734,6 @@
       <option name="presentableId" value="Default" />
       <updated>1475702016178</updated>
     </task>
-    <task id="LOCAL-00015" summary="almost done">
-      <created>1477390745128</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1477390745128</updated>
-    </task>
     <task id="LOCAL-00016" summary="almost v2">
       <created>1477402171473</created>
       <option name="number" value="00016" />
@@ -1060,7 +1070,14 @@
       <option name="project" value="LOCAL" />
       <updated>1484225463180</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="adicionada LinkedCollection">
+      <created>1484260832501</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1484260832501</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1154,7 +1171,6 @@
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="update" />
     <MESSAGE value="update-done" />
     <MESSAGE value="see &quot;remove&quot;" />
     <MESSAGE value="key" />
@@ -1179,7 +1195,8 @@
     <MESSAGE value="problema -60%&#10;(algoritmo quase pronto)" />
     <MESSAGE value="problema -60%&#10;" />
     <MESSAGE value="otimizar o codigo&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="otimizar o codigo&#10;" />
+    <MESSAGE value="adicionada LinkedCollection" />
+    <option name="LAST_COMMIT_MESSAGE" value="adicionada LinkedCollection" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1393,14 +1410,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/series/serie3/Problema/LinkedStack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/series/serie3/Ex3/Graph.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -1416,14 +1425,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/series/serie3/MST.java" />
-    <entry file="file://$PROJECT_DIR$/src/series/serie3/Problema/ReadGrFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="639">
-          <caret line="35" column="39" selection-start-line="34" selection-start-column="11" selection-end-line="35" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/series/serie3/Problema/ReadSFile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="484">
@@ -1458,7 +1459,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1481,34 +1481,40 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
           <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/series/serie3/Problema/SchoolBusRouting.java">
+    <entry file="file://$PROJECT_DIR$/src/series/serie3/Problema/AEDList.java" />
+    <entry file="file://$PROJECT_DIR$/src/series/serie3/Problema/LinkedStack.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="57" column="18" selection-start-line="57" selection-start-column="18" selection-end-line="57" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/series/serie3/Problema/AEDList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-131">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        <state relative-caret-position="638">
+          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/series/serie3/Problema/LinkedCollection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+        <state relative-caret-position="66">
+          <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/series/serie3/Problema/SchoolBusRouting.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-21">
+          <caret line="66" column="27" selection-start-line="66" selection-start-column="27" selection-end-line="66" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/series/serie3/Problema/ReadGrFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="781">
+          <caret line="49" column="33" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
           <folding />
         </state>
       </provider>
