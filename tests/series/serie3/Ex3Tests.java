@@ -38,5 +38,6 @@ public class Ex3Tests {
         boolean isntEdge = Graph.isEdgeInAnMST(graph,10,8);
         Assert.assertFalse(isntEdge);
     }
+
 }
 

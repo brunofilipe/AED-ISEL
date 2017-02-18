@@ -79,7 +79,7 @@ public class MaiorNrOcorrencias {
                 checkEndofFile(f[0]);
             }
             if(widx==nrWords){
-                Heap.buildMinHeap(words,nrWords,wcmp);
+                Heap.buildMinHeap(words,nrWords,wcmp);//deveria ser usado o increase
                 if(words[0].getCount() < w.getCount())
                     words[0]=w;
                 Heap.minHeapify(words,0,wcmp,nrWords);

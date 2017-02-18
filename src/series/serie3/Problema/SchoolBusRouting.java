@@ -2,6 +2,8 @@ package series.serie3.Problema;
 
 
 
+import series.serie3.Ex3.PriorityQueue;
+
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -13,7 +15,6 @@ public class SchoolBusRouting {
     private static Crossing[]cross;
     private static int[]ids;
     private static int idxOdd = 0;
-
 
 
     public static void main(String[] args) {
@@ -82,11 +83,10 @@ public class SchoolBusRouting {
             Street previous = re.list;
             while (iter != null) {
                 if (!contains(ids, iter.dest.id)) {
-                    Street toRemove = iter;
-                    if (previous.equals(toRemove)) {
+                    if (previous.equals(iter)) {
                         re.list = re.list.next;
                     } else {
-                        previous.next = toRemove.next;
+                        previous.next = iter.next;
                     }
 
                 }
@@ -111,7 +111,7 @@ public class SchoolBusRouting {
                 path.add(vertex);
             }
             else {
-                stack.push(vertex);
+               stack.push(vertex);
                 Street iter = vertex.list;
                 while (iter!=null){
                     if(!iter.isVisited){
@@ -130,7 +130,7 @@ public class SchoolBusRouting {
 
     private static void printList(LinkedCollection<Crossing> list) {
         for (Crossing aList : list) {
-            System.out.println(aList.id );
+            System.out.println(aList.id);
         }
     }
 

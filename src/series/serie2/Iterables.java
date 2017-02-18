@@ -65,7 +65,7 @@ public class Iterables {
                 if(curr!= null)return true;
                 while (!it.hasNext() && iterAux.hasNext() ){
                     it = iterAux.next().iterator();
-                }
+            }
                 boolean flag = it.hasNext();
                 if(flag) curr = it.next();
                 return flag;
@@ -87,6 +87,4 @@ public class Iterables {
             }
         };
 	}
-
-
 }
