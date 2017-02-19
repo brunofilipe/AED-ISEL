@@ -38,8 +38,9 @@ public class Agency implements KeyExtractor<Client> {
     private static void run() {
         String command;
         do{
+            showOptions();
             System.out.println("Choose An Available Command");
-             command= scan.next();
+            command= scan.next();
             checkCommand(command);
         }while (!command.equals("exit"));
     }
@@ -92,19 +93,24 @@ public class Agency implements KeyExtractor<Client> {
     private static void removeNextCostumer() {
         String answ;
         do{
-            System.out.println("Are you sure you want to remove the Client? Y/N");
+            System.out.println("Are you sure you want to remove the next Client? Y/N");
             answ = scan.next();
         }while(!answ.equals("Y") && !answ.equals("N"));
         if(answ.equals("Y")) {
-           int id = queue.poll().getId();
-            System.out.println("The Id of the removed client is " + id);
+            int id = queue.poll().getId();
+            int key = queue.pick().getNs();
+            System.out.println("The Id of the removed client is " + id + "and his Key is: " + key);
         }
     }
 
     private static void getNextCostumer() {
         System.out.println("This is your next Client!");
         int id = queue.pick().getId();
+        int key = queue.pick().getNs();
         System.out.println("ID: " + id);
+        System.out.println("Key: " + key);
+
+
     }
 
     private static void changeService() {
@@ -150,7 +156,7 @@ public class Agency implements KeyExtractor<Client> {
                 "4.getNextCostumer       - " + "Obter o próximo cliente mais prioritário da fila de espera.\n" +
                 "5.changeService <k> <t> - " + "Alterar o serviço que um determinado cliente pretende obter da agência, dado o seu identificador de senha.\n" +
                 "6.waitingTime <k> <n>   - " + "Obter a informação do tempo estimado de espera para um dado cliente, indicando o seu identificador de senha.\n" +
-                " Para esta funcionalidade é necessário identificar o número de funcionários que estão a realizar o atendimento ao cliente. .\n" );
+                "Para esta funcionalidade é necessário identificar o número de funcionários que estão a realizar o atendimento ao cliente...\n" );
     }
 
 }

@@ -1,19 +1,17 @@
 package series.serie2.Problema;
 import java.util.Comparator;
 
-
-
 public class PriorityQueue<E,P>{
 
     private static class Pair<E, P> {
+        int key;
+        E data;
+        P priority;
         public Pair(E e, P p, int key) {
             this.data = e;
             this.priority = p;
             this.key = key;
         }
-        int key;
-        E data;
-        P priority;
     }
 
     private HashTable<Integer, Integer> table;

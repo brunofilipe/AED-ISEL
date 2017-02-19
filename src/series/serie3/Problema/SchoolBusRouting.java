@@ -1,9 +1,5 @@
 package series.serie3.Problema;
 
-
-
-import series.serie3.Ex3.PriorityQueue;
-
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -60,9 +56,7 @@ public class SchoolBusRouting {
         }catch (IOException e) {
             e.printStackTrace();
         }
-
     }
-
 
     private static void e(){
         System.out.println("Exiting App...");
@@ -129,8 +123,12 @@ public class SchoolBusRouting {
     }
 
     private static void printList(LinkedCollection<Crossing> list) {
+        int i=0;
         for (Crossing aList : list) {
-            System.out.println(aList.id);
+            ++i;
+            if(i < list.size())
+                System.out.print(aList.id + "->");
+            else System.out.println(aList.id);
         }
     }
 

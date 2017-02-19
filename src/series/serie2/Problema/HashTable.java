@@ -10,7 +10,6 @@ public class HashTable<K,V> {
         public HNode(K key, V value) {
             this.data = value;
             this.key = key;
-
         }
     }
 

@@ -6,7 +6,7 @@ import java.util.NoSuchElementException;
 
 public class Iterables {
 
-    public static  Iterable<Integer> alternateEvenOdd(final Iterable<Integer> src){
+    public static  Iterable<Integer> alternateEvenOdd( Iterable<Integer> src){
         return () -> new Iterator<Integer>() {
             Iterator<Integer> iterAux = src.iterator();
             Integer curr ;

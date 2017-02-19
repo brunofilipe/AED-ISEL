@@ -82,13 +82,11 @@ public class LinkedCollection<E> extends AbstractQueue<E> {
         };
     }
 
-
     public void clear() {
         ++modCount;
         size = 0;
         sentinel.prev = sentinel.next = sentinel;
     }
-
 
     public E getFirst() { return sentinel.next.key; }
     public E getLast()  { return sentinel.prev.key; }
